@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Base Styles */
+:root {
+  --color-primary: #0049AF;
+  --color-primary-dark: #003D91;
+  --color-primary-light: #3385FF;
+}
+
+html {
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+
+body {
+  color: #1F2937;
+  -webkit-font-smoothing: antialiased;
+}
+
+.bg-dinblu {
+  background-color: #0049AF;
+}
+
+/* Custom Classes */
+.container {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.nav-link {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: #374151;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+  background-color: rgba(0, 73, 175, 0.05);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.625rem 1.25rem;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 73, 175, 0.1), 
+              0 2px 4px -1px rgba(0, 73, 175, 0.06);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.625rem 1.25rem;
+  background-color: rgba(0, 73, 175, 0.05);
+  color: var(--color-primary);
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(0, 73, 175, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Media Queries */
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+
+
