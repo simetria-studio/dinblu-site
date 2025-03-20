@@ -122,7 +122,7 @@
 
           <!-- CTA Buttons Melhorados -->
           <div class="flex flex-wrap gap-4 animate-fade-in-delayed-2">
-            <NuxtLink to="/contato" 
+            <NuxtLink to="https://suporte.dinblu.com.br/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1" 
               class="relative group overflow-hidden px-8 py-4 bg-dinblu rounded-xl
               text-white font-medium transition-all duration-300
               hover:shadow-lg hover:shadow-dinblu/20 hover:-translate-y-0.5">
@@ -138,7 +138,7 @@
               </div>
             </NuxtLink>
             
-            <a href="#demo" 
+            <!-- <a href="#demo" 
               class="group px-8 py-4 rounded-xl text-dinblu font-medium
               border-2 border-dinblu/10 hover:border-dinblu/20
               transition-all duration-300 hover:bg-dinblu/5">
@@ -148,7 +148,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                   d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
-            </a>
+            </a> -->
           </div>
 
    

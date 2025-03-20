@@ -29,7 +29,7 @@
               hover:bg-gray-100 transition-all duration-300 shadow-lg hover:-translate-y-0.5">
               Explorar Soluções
             </a>
-            <NuxtLink to="/contato"
+            <NuxtLink to="https://suporte.dinblu.com.br/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
               class="px-8 py-4 bg-transparent text-white rounded-full font-semibold
               border-2 border-white/30 hover:bg-white/10 transition-all duration-300">
               Fale com um Especialista
@@ -63,67 +63,70 @@
         </div>
 
         <!-- Solutions Grid -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div v-for="solution in solutions" :key="solution.name"
-            class="group relative bg-white rounded-2xl shadow-lg overflow-hidden
-            hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-            <!-- Badge -->
-            <div class="absolute top-4 left-4 z-20">
-              <span class="inline-flex items-center px-4 py-1.5 text-sm font-medium bg-white/95 
-                text-dinblu rounded-full shadow-sm backdrop-blur-sm gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-dinblu"></span>
-                {{ solution.category }}
-              </span>
-            </div>
-
-            <!-- Image -->
-            <div class="relative h-56 overflow-hidden">
-              <img :src="solution.image" :alt="solution.name"
-                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
-              <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent"></div>
-              <h3 class="absolute bottom-4 left-6 text-2xl font-bold text-white">
-                {{ solution.name }}
-              </h3>
-            </div>
-
-            <!-- Content -->
-            <div class="p-6">
-              <p class="text-gray-600 mb-6 min-h-[48px] leading-relaxed">
-                {{ solution.description }}
-              </p>
-
-              <!-- Features -->
-              <ul class="space-y-3 mb-8">
-                <li v-for="(feature, index) in solution.features" :key="index"
-                  class="flex items-center gap-3 text-sm text-gray-600 bg-gray-50/80 
-                  p-2.5 rounded-xl group-hover:bg-dinblu/5 transition-colors">
-                  <span class="w-6 h-6 rounded-full bg-dinblu/10 flex items-center justify-center
-                    group-hover:bg-dinblu/20 transition-colors">
-                    <svg class="w-4 h-4 text-dinblu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                        d="M5 13l4 4L19 7" />
-                    </svg>
-                  </span>
-                  {{ feature }}
-                </li>
-              </ul>
-
-              <!-- CTA -->
-              <NuxtLink :to="solution.path"
-                class="group relative inline-flex items-center justify-center w-full px-6 py-3.5 
-                bg-gray-50 text-dinblu rounded-xl font-medium overflow-hidden">
-                <span class="relative z-10 group-hover:text-white transition-colors duration-300">
-                  Saiba mais
+        <div v-for="(solutions, category) in solutionsByCategory" :key="category" class="mb-16">
+          <h3 class="text-2xl font-bold text-gray-900 mb-8">{{ category }}</h3>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div v-for="solution in solutions" :key="solution.name"
+              class="group relative bg-white rounded-2xl shadow-lg overflow-hidden
+              hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+              <!-- Badge -->
+              <div class="absolute top-4 left-4 z-20">
+                <span class="inline-flex items-center px-4 py-1.5 text-sm font-medium bg-white/95 
+                  text-dinblu rounded-full shadow-sm backdrop-blur-sm gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-dinblu"></span>
+                  {{ solution.category }}
                 </span>
-                <div class="absolute inset-0 bg-dinblu transform scale-x-0 group-hover:scale-x-100 
-                  transition-transform origin-left duration-300"></div>
-                <svg class="relative z-10 w-5 h-5 ml-2 text-dinblu group-hover:text-white 
-                  transform group-hover:translate-x-1 transition-all duration-300" 
-                  fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </NuxtLink>
+              </div>
+
+              <!-- Image -->
+              <div class="relative h-56 overflow-hidden">
+                <img :src="solution.image" :alt="solution.name"
+                  class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent"></div>
+                <h3 class="absolute bottom-4 left-6 text-2xl font-bold text-white">
+                  {{ solution.name }}
+                </h3>
+              </div>
+
+              <!-- Content -->
+              <div class="p-6">
+                <p class="text-gray-600 mb-6 min-h-[48px] leading-relaxed">
+                  {{ solution.description }}
+                </p>
+
+                <!-- Features -->
+                <ul class="space-y-3 mb-8">
+                  <li v-for="(feature, index) in solution.features" :key="index"
+                    class="flex items-center gap-3 text-sm text-gray-600 bg-gray-50/80 
+                    p-2.5 rounded-xl group-hover:bg-dinblu/5 transition-colors">
+                    <span class="w-6 h-6 rounded-full bg-dinblu/10 flex items-center justify-center
+                      group-hover:bg-dinblu/20 transition-colors">
+                      <svg class="w-4 h-4 text-dinblu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                          d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                    {{ feature }}
+                  </li>
+                </ul>
+
+                <!-- CTA -->
+                <NuxtLink :to="solution.path"
+                  class="group relative inline-flex items-center justify-center w-full px-6 py-3.5 
+                  bg-gray-50 text-dinblu rounded-xl font-medium overflow-hidden">
+                  <span class="relative z-10 group-hover:text-white transition-colors duration-300">
+                    Saiba mais
+                  </span>
+                  <div class="absolute inset-0 bg-dinblu transform scale-x-0 group-hover:scale-x-100 
+                    transition-transform origin-left duration-300"></div>
+                  <svg class="relative z-10 w-5 h-5 ml-2 text-dinblu group-hover:text-white 
+                    transform group-hover:translate-x-1 transition-all duration-300" 
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                      d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </NuxtLink>
+              </div>
             </div>
           </div>
         </div>
@@ -146,7 +149,7 @@
               Entre em contato conosco e descubra como podemos ajudar seu negócio a crescer
             </p>
             <div class="flex flex-wrap items-center justify-center gap-4">
-              <NuxtLink to="/contato"
+              <NuxtLink to="https://suporte.dinblu.com.br/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
                 class="px-8 py-4 bg-white text-dinblu rounded-full font-semibold
                 hover:bg-gray-100 transition-all duration-300 shadow-lg hover:-translate-y-0.5">
                 Fale com um Especialista
@@ -165,36 +168,27 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
+
 const solutions = [
+  // Para Empresas
   {
     name: 'Dinblu WEB',
+    category: 'Para Empresas',
     path: '/solucoes/dinblu-web',
-    category: 'Sistema de Gestão',
-    description: 'Tão fácil de mexer que é pra todo mundo. Sistema web completo para gestão empresarial.',
+    description: 'Sistema completo de gestão empresarial.',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000',
     features: [
-      'Gestão financeira completa',
-      'Controle de estoque',
+      'Controle financeiro',
+      'Gestão de estoque',
       'Emissão de NF-e'
     ]
   },
   {
-    name: 'Dinblu Food',
-    path: '/solucoes/dinblu-food',
-    category: 'Sistema de Gestão',
-    description: 'Atende do delivery à cozinha, até a venda de balcão.',
-    image: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2000',
-    features: [
-      'Cardápio digital',
-      'Gestão de delivery',
-      'Controle de mesas'
-    ]
-  },
-  {
     name: 'Dinblu Shop',
+    category: 'Para Empresas',
     path: '/solucoes/dinblu-shop',
-    category: 'E-commerce',
-    description: 'Para o empreendedor brasileiro. E-commerce e gestão para lojas.',
+    description: 'E-commerce completo para sua loja virtual.',
     image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2000',
     features: [
       'Loja virtual completa',
@@ -203,10 +197,23 @@ const solutions = [
     ]
   },
   {
+    name: 'Dinblu Salão',
+    category: 'Para Empresas',
+    path: '/solucoes/dinblu-salao',
+    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=2069',
+    description: 'Sistema completo para gestão de salões de beleza.',
+    features: [
+      'Agendamento online',
+      'Controle financeiro',
+      'Gestão de profissionais',
+      'Comissionamento'
+    ]
+  },
+  {
     name: 'Dinblu Agro',
+    category: 'Para Empresas',
     path: '/solucoes/dinblu-agro',
-    category: 'Sistema de Gestão',
-    description: 'Para pequenos e grandes produtores.',
+    description: 'Sistema completo para gestão do agronegócio.',
     image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2000',
     features: [
       'Controle de produção',
@@ -215,34 +222,22 @@ const solutions = [
     ]
   },
   {
-    name: 'Dinblu Salão',
-    path: '/solucoes/dinblu-salao',
-    category: 'Sistema de Gestão',
-    description: 'Para o cliente, os profissionais e o dono do salão.',
-    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=2000',
+    name: 'Dinblu Food',
+    category: 'Para Empresas',
+    path: '/solucoes/dinblu-food',
+    description: 'Sistema completo para gestão de restaurantes.',
+    image: 'https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?q=80&w=2000',
     features: [
-      'Agendamento online',
-      'Comissionamento',
-      'Controle financeiro'
-    ]
-  },
-  {
-    name: 'Dinblu Pet',
-    path: '/solucoes/dinblu-pet',
-    category: 'Sistema de Gestão',
-    description: 'Para o pet shop, os veterinários e os donos de pet.',
-    image: 'https://images.unsplash.com/photo-1587560699334-cc4ff634909a?q=80&w=2000',
-    features: [
-      'Prontuário digital',
-      'Agendamento de serviços',
-      'Gestão de estoque'
+      'Cardápio digital',
+      'Gestão de delivery',
+      'Controle de mesas'
     ]
   },
   {
     name: 'Dinblu Clinica',
+    category: 'Para Empresas',
     path: '/solucoes/dinblu-clinica',
-    category: 'Sistema de Gestão',
-    description: 'Para o paciente, os profissionais e o gestor.',
+    description: 'Sistema completo para gestão de clínicas.',
     image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2000',
     features: [
       'Prontuário eletrônico',
@@ -251,19 +246,45 @@ const solutions = [
     ]
   },
   {
+    name: 'Dinblu Pet',
+    category: 'Para Empresas',
+    path: '/solucoes/dinblu-pet',
+    description: 'Sistema completo para gestão de pet shops.',
+    image: 'https://images.unsplash.com/photo-1587560699334-cc4ff634909a?q=80&w=2000',
+    features: [
+      'Prontuário digital',
+      'Agendamento de serviços',
+      'Gestão de estoque'
+    ]
+  },
+
+  // Para Pessoas
+  {
     name: 'Dinblu Finanças',
+    category: 'Para Pessoas',
     path: '/solucoes/dinblu-financas',
-    category: 'Finanças Pessoais',
-    description: 'Seu sistema de finanças pessoais.',
-    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2000',
+    image: 'https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?q=80&w=2070',
+    description: 'Controle suas finanças pessoais de forma simples.',
     features: [
       'Controle de gastos',
-      'Planejamento financeiro',
+      'Gestão de investimentos',
+      'Metas financeiras',
       'Relatórios detalhados'
     ]
   }
 ]
 
+// Agrupa as soluções por categoria
+const solutionsByCategory = computed(() => {
+  return solutions.reduce((acc, solution) => {
+    if (!acc[solution.category]) {
+      acc[solution.category] = []
+    }
+    acc[solution.category].push(solution)
+    return acc
+  }, {})
+})
+  
 useHead({
   title: 'Soluções | Dinblu',
   meta: [

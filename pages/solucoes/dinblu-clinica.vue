@@ -24,7 +24,7 @@
               hover:bg-gray-100 transition-all duration-300 shadow-lg hover:-translate-y-0.5">
               Conhecer recursos
             </a>
-            <NuxtLink to="/contato"
+            <NuxtLink to="https://suporte.dinblu.com.br/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
               class="px-8 py-4 bg-transparent text-white rounded-full font-semibold
               border-2 border-white/30 hover:bg-white/10 transition-all duration-300">
               Tenho interesse
@@ -123,7 +123,7 @@
     </section>
 
     <!-- Agendamento Section -->
-    <section class="py-20 bg-white relative overflow-hidden">
+    <section class="py-20 bg-white relative overflow-hidden" id="features">
       <div class="absolute inset-0 bg-gradient-to-br from-gray-50 via-transparent to-transparent"></div>
       
       <div class="container relative z-10">
@@ -232,7 +232,7 @@
               Agende uma demonstração gratuita e descubra como o Dinblu Clínica pode ajudar seu negócio
             </p>
             <div class="flex flex-wrap items-center justify-center gap-4">
-              <NuxtLink to="/contato"
+              <NuxtLink to="https://suporte.dinblu.com.br/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
                 class="px-8 py-4 bg-white text-dinblu rounded-full font-semibold
                 hover:bg-gray-100 transition-all duration-300 shadow-lg hover:-translate-y-0.5">
                 Agendar demonstração

@@ -92,7 +92,7 @@
                 </svg>
               </NuxtLink>
               
-              <a href="https://play.google.com/store/apps/details?id=com.dinblu.financas" 
+              <a href="https://play.google.com/store/apps/details?id=com.dinblu" 
                 target="_blank"
                 class="px-8 py-4 bg-white text-dinblu rounded-full font-semibold
                 hover:bg-dinblu/5 transition-all duration-300 shadow-lg hover:shadow-xl

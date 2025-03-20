@@ -24,7 +24,7 @@
               hover:bg-gray-100 transition-all duration-300 shadow-lg hover:-translate-y-0.5">
               Conhecer recursos
             </a>
-            <NuxtLink to="/contato"
+            <NuxtLink to="https://suporte.dinblu.com.br/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
               class="px-8 py-4 bg-transparent text-white rounded-full font-semibold
               border-2 border-white/30 hover:bg-white/10 transition-all duration-300">
               Tenho interesse
@@ -230,7 +230,7 @@
               Agende uma demonstração gratuita e descubra como o Dinblu Pet pode ajudar seu negócio
             </p>
             <div class="flex flex-wrap items-center justify-center gap-4">
-              <NuxtLink to="/contato"
+              <NuxtLink to="https://suporte.dinblu.com.br/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
                 class="px-8 py-4 bg-white text-dinblu rounded-full font-semibold
                 hover:bg-gray-100 transition-all duration-300 shadow-lg hover:-translate-y-0.5">
                 Agendar demonstração

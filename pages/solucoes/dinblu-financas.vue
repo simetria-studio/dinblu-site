@@ -19,7 +19,7 @@
             com o Dinblu Finanças.
           </p>
           <div class="flex flex-wrap items-center justify-center gap-4 mt-12">
-            <a href="https://play.google.com/store/apps/details?id=com.dinblu.financas" 
+            <a href="https://play.google.com/store/apps/details?id=com.dinblu&pcampaignid=web_share" 
               target="_blank"
               class="px-8 py-4 bg-white text-dinblu rounded-full font-semibold
               hover:bg-gray-100 transition-all duration-300 shadow-lg hover:-translate-y-0.5
@@ -29,10 +29,10 @@
               </svg>
               Baixar no Google Play
             </a>
-            <NuxtLink to="/contato"
+            <NuxtLink to="https://app.dinblu.com.br/login"
               class="px-8 py-4 bg-transparent text-white rounded-full font-semibold
               border-2 border-white/30 hover:bg-white/10 transition-all duration-300">
-              Fale Conosco
+              Acessar Dinblu Finanças
             </NuxtLink>
           </div>
         </div>
@@ -141,7 +141,7 @@
     </section>
 
     <!-- Download Section -->
-    <section class="py-20 bg-gradient-to-br from-dinblu to-blue-600 relative overflow-hidden">
+    <section class="py-20 bg-dinblu relative overflow-hidden">
       <div class="absolute inset-0 bg-[url('/images/grid.svg')] opacity-10"></div>
       
       <div class="container relative">

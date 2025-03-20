@@ -53,7 +53,7 @@
 
       <!-- CTA -->
       <div class="text-center mt-16">
-        <NuxtLink to="/contato"
+        <NuxtLink to="https://suporte.dinblu.com.br/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
           class="inline-flex items-center px-8 py-4 bg-dinblu text-white rounded-full
           font-semibold hover:bg-dinblu-700 transition-all duration-300 group">
           <span>Comece agora</span>

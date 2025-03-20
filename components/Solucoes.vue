@@ -167,6 +167,18 @@ const solutions = [
       'https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?q=80&w=2000',
       'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2000'
     ]
+  },
+  {
+    name: 'Dinblu Salão',
+    path: '/solucoes/dinblu-salao',
+    description: 'Sistema completo para gestão de salões de beleza. Controle de agendamentos, clientes, profissionais e muito mais.',
+    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=2069',
+    features: ['Agendamento Online', 'Controle de Clientes', 'Gestão de Profissionais'],
+    screenshots: [
+      'https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1595871151608-bc7abd1caca3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1522338140262-f46f5913618a?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    ]
   }
 ]
 </script>

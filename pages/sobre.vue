@@ -11,7 +11,7 @@
             Simplificando a gestão empresarial
           </h1>
           <p class="text-xl text-white/90 mb-12 leading-relaxed max-w-3xl mx-auto">
-            Desde 2015 desenvolvendo soluções que transformam a maneira como as empresas trabalham
+            Desde 2021 desenvolvendo soluções que transformam a maneira como as empresas trabalham
           </p>
           
           <!-- Stats -->
@@ -122,7 +122,7 @@
             Conheça nossas soluções e descubra como podemos ajudar sua empresa
           </p>
           <div class="flex justify-center gap-6">
-            <NuxtLink to="/contato"
+            <NuxtLink to="https://suporte.dinblu.com.br/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
               class="px-8 py-4 bg-white text-dinblu rounded-xl font-semibold
               hover:bg-gray-100 transition-all duration-300">
               Fale Conosco
@@ -142,19 +142,14 @@
 <script setup>
 const stats = [
   {
-    value: '+50mil',
+    value: '+15',
     label: 'Empresas atendidas',
     icon: 'IconBuilding'
   },
   {
-    value: '8',
+    value: '3',
     label: 'Anos no mercado',
     icon: 'IconCalendar'
-  },
-  {
-    value: '+200',
-    label: 'Colaboradores',
-    icon: 'IconUsers'
   },
   {
     value: '4.8/5',
@@ -181,47 +176,24 @@ const valores = [
   }
 ]
 
-const equipe = [
-  {
-    name: 'João Silva',
-    role: 'CEO',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200',
-    social: [
-      {
-        icon: 'IconLinkedin',
-        url: 'https://linkedin.com'
-      },
-      {
-        icon: 'IconTwitter',
-        url: 'https://twitter.com'
-      }
-    ]
-  },
-  // ... outros membros da equipe
-]
+
 
 const timeline = [
   {
-    ano: '2015',
+    ano: '2021',
     titulo: 'O início da jornada',
     descricao: 'Fundação da Dinblu com foco em soluções para pequenas empresas.',
     imagem: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070'
   },
   {
-    ano: '2017',
+    ano: '2024',
     titulo: 'Expansão do portfólio',
-    descricao: 'Lançamento de soluções específicas para diferentes segmentos.',
-    imagem: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070'
-  },
-  {
-    ano: '2020',
-    titulo: 'Transformação digital',
     descricao: 'Adaptação rápida para atender as necessidades do mercado durante a pandemia.',
     imagem: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070'
   },
   {
-    ano: '2023',
-    titulo: 'Inovação contínua',
+    ano: '2025',
+    titulo: 'Lançamento do Dinblu Atendimento',
     descricao: 'Lançamento de novas soluções e expansão para novos mercados.',
     imagem: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070'
   }
