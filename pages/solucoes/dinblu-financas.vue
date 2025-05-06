@@ -1,37 +1,33 @@
 <template>
   <div class="min-h-screen page-with-hero">
     <!-- Hero Section -->
-    <section class="relative py-32 bg-dinblu overflow-hidden">
+    <section class="overflow-hidden relative py-32 bg-dinblu">
       <div class="absolute inset-0 bg-[url('/images/grid.svg')] opacity-10"></div>
       
       <div class="container relative z-10">
-        <div class="max-w-4xl mx-auto text-center">
-          <span class="inline-flex items-center px-4 py-1 bg-white/10 backdrop-blur-sm rounded-full 
-            text-white text-sm font-medium mb-6 gap-2">
-            <span class="w-2 h-2 rounded-full bg-green-400"></span>
+        <div class="mx-auto max-w-4xl text-center">
+          <span class="inline-flex gap-2 items-center px-4 py-1 mb-6 text-sm font-medium text-white rounded-full backdrop-blur-sm bg-white/10">
+            <span class="w-2 h-2 bg-green-400 rounded-full"></span>
             Finanças Pessoais
           </span>
-          <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          <h1 class="mb-6 text-4xl font-bold leading-tight text-white md:text-6xl">
             Controle suas finanças de forma simples
           </h1>
-          <p class="text-xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p class="mx-auto mb-12 max-w-2xl text-xl leading-relaxed text-white/90">
             Organize suas despesas, acompanhe investimentos e alcance seus objetivos financeiros 
             com o Dinblu Finanças.
           </p>
-          <div class="flex flex-wrap items-center justify-center gap-4 mt-12">
+          <div class="flex flex-wrap gap-4 justify-center items-center mt-12">
             <a href="https://play.google.com/store/apps/details?id=com.dinblu&pcampaignid=web_share" 
               target="_blank"
-              class="px-8 py-4 bg-white text-dinblu rounded-full font-semibold
-              hover:bg-gray-100 transition-all duration-300 shadow-lg hover:-translate-y-0.5
-              flex items-center gap-2">
+              class="flex gap-2 items-center px-8 py-4 font-semibold bg-white rounded-full shadow-lg transition-all duration-300 text-dinblu hover:bg-gray-100 hover:-translate-y-0.5">
               <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.928 2.072L9.072 12l8.856 9.928L5.072 12l12.856-9.928z"/>
               </svg>
               Baixar no Google Play
             </a>
             <NuxtLink to="https://app.dinblu.com.br/login"
-              class="px-8 py-4 bg-transparent text-white rounded-full font-semibold
-              border-2 border-white/30 hover:bg-white/10 transition-all duration-300">
+              class="px-8 py-4 font-semibold text-white bg-transparent rounded-full border-2 transition-all duration-300 border-white/30 hover:bg-white/10">
               Acessar Dinblu Finanças
             </NuxtLink>
           </div>
@@ -42,11 +38,10 @@
     <!-- Stats Section -->
     <section class="relative -mt-12 mb-20">
       <div class="container">
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300
-            transform hover:-translate-y-1">
-            <div class="flex items-center gap-4 mb-2">
-              <div class="w-12 h-12 rounded-xl bg-dinblu/10 flex items-center justify-center">
+        <div class="grid gap-8 md:grid-cols-3">
+          <div class="p-8 bg-white rounded-2xl shadow-xl transition-all duration-300 transform hover:shadow-2xl hover:-translate-y-1">
+            <div class="flex gap-4 items-center mb-2">
+              <div class="flex justify-center items-center w-12 h-12 rounded-xl bg-dinblu/10">
                 <svg class="w-6 h-6 text-dinblu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                     d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
@@ -57,10 +52,9 @@
             <p class="text-gray-600">Downloads na Play Store</p>
           </div>
 
-          <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300
-            transform hover:-translate-y-1">
-            <div class="flex items-center gap-4 mb-2">
-              <div class="w-12 h-12 rounded-xl bg-dinblu/10 flex items-center justify-center">
+          <div class="p-8 bg-white rounded-2xl shadow-xl transition-all duration-300 transform hover:shadow-2xl hover:-translate-y-1">
+            <div class="flex gap-4 items-center mb-2">
+              <div class="flex justify-center items-center w-12 h-12 rounded-xl bg-dinblu/10">
                 <svg class="w-6 h-6 text-dinblu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                     d="M11 11V9a2 2 0 00-2-2m2 4v4a2 2 0 104 0v-1m-4-3H9m2 0h4m6 1a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -71,10 +65,9 @@
             <p class="text-gray-600">Avaliação dos usuários</p>
           </div>
 
-          <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300
-            transform hover:-translate-y-1">
-            <div class="flex items-center gap-4 mb-2">
-              <div class="w-12 h-12 rounded-xl bg-dinblu/10 flex items-center justify-center">
+          <div class="p-8 bg-white rounded-2xl shadow-xl transition-all duration-300 transform hover:shadow-2xl hover:-translate-y-1">
+            <div class="flex gap-4 items-center mb-2">
+              <div class="flex justify-center items-center w-12 h-12 rounded-xl bg-dinblu/10">
                 <svg class="w-6 h-6 text-dinblu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                     d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -91,12 +84,12 @@
     <!-- Features Section -->
     <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div class="container">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <div class="inline-flex items-center gap-2 px-4 py-2 bg-dinblu/5 rounded-full mb-4">
+        <div class="mx-auto mb-16 max-w-3xl text-center">
+          <div class="inline-flex gap-2 items-center px-4 py-2 mb-4 rounded-full bg-dinblu/5">
             <span class="w-2 h-2 rounded-full bg-dinblu"></span>
             <span class="text-sm font-medium text-dinblu">Recursos principais</span>
           </div>
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
             Tudo que você precisa para organizar suas finanças
           </h2>
           <p class="text-lg text-gray-600">
@@ -104,13 +97,13 @@
           </p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div v-for="feature in features" :key="feature.title"
-            class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-            <div class="w-14 h-14 rounded-xl bg-dinblu/10 flex items-center justify-center mb-6">
+            class="p-8 bg-white rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl">
+            <div class="flex justify-center items-center mb-6 w-14 h-14 rounded-xl bg-dinblu/10">
               <component :is="feature.icon" class="w-7 h-7 text-dinblu" />
             </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">{{ feature.title }}</h3>
+            <h3 class="mb-3 text-xl font-semibold text-gray-900">{{ feature.title }}</h3>
             <p class="text-gray-600">{{ feature.description }}</p>
           </div>
         </div>
@@ -120,8 +113,8 @@
     <!-- App Screenshots -->
     <section class="py-20">
       <div class="container">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div class="mx-auto mb-16 max-w-3xl text-center">
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
             Interface intuitiva e moderna
           </h2>
           <p class="text-lg text-gray-600">
@@ -129,10 +122,9 @@
           </p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div v-for="(screenshot, index) in screenshots" :key="index"
-            class="relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl 
-            transition-all duration-300 hover:-translate-y-1">
+            class="overflow-hidden relative rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
             <img :src="screenshot" :alt="`Screenshot ${index + 1}`"
               class="w-full aspect-[9/16] object-cover" />
           </div>
@@ -141,22 +133,20 @@
     </section>
 
     <!-- Download Section -->
-    <section class="py-20 bg-dinblu relative overflow-hidden">
+    <section class="overflow-hidden relative py-20 bg-dinblu">
       <div class="absolute inset-0 bg-[url('/images/grid.svg')] opacity-10"></div>
       
       <div class="container relative">
-        <div class="max-w-4xl mx-auto text-center">
-          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+        <div class="mx-auto max-w-4xl text-center">
+          <h2 class="mb-6 text-3xl font-bold text-white md:text-4xl">
             Comece agora mesmo a organizar suas finanças
           </h2>
-          <p class="text-xl text-white/90 mb-12">
+          <p class="mb-12 text-xl text-white/90">
             Comece gratuitamente e evolua com nossos planos premium
           </p>
           <a href="https://play.google.com/store/apps/details?id=com.dinblu.financas" 
             target="_blank"
-            class="inline-flex items-center px-8 py-4 bg-white text-dinblu rounded-full
-            font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg 
-            hover:-translate-y-0.5 gap-2">
+            class="inline-flex gap-2 items-center px-8 py-4 font-semibold bg-white rounded-full shadow-lg transition-all duration-300 text-dinblu hover:bg-gray-100 hover:-translate-y-0.5">
             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.928 2.072L9.072 12l8.856 9.928L5.072 12l12.856-9.928z"/>
             </svg>
@@ -169,18 +159,18 @@
     <!-- Benefícios Section -->
     <section class="py-20 bg-white">
       <div class="container">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="grid gap-16 items-center lg:grid-cols-2">
           <div class="order-2 lg:order-1">
             <div class="space-y-8">
-              <div class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center shrink-0">
+              <div class="flex gap-4 items-start">
+                <div class="flex justify-center items-center w-12 h-12 bg-green-100 rounded-xl shrink-0">
                   <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                   </svg>
                 </div>
                 <div>
-                  <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 class="mb-2 text-xl font-semibold text-gray-900">
                     100% Gratuito
                   </h3>
                   <p class="text-gray-600">
@@ -189,15 +179,15 @@
                 </div>
               </div>
 
-              <div class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center shrink-0">
+              <div class="flex gap-4 items-start">
+                <div class="flex justify-center items-center w-12 h-12 bg-blue-100 rounded-xl shrink-0">
                   <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                       d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
                   </svg>
                 </div>
                 <div>
-                  <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 class="mb-2 text-xl font-semibold text-gray-900">
                     Seus dados seguros
                   </h3>
                   <p class="text-gray-600">
@@ -206,15 +196,15 @@
                 </div>
               </div>
 
-              <div class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center shrink-0">
+              <div class="flex gap-4 items-start">
+                <div class="flex justify-center items-center w-12 h-12 bg-purple-100 rounded-xl shrink-0">
                   <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                       d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
                   </svg>
                 </div>
                 <div>
-                  <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 class="mb-2 text-xl font-semibold text-gray-900">
                     Relatórios detalhados
                   </h3>
                   <p class="text-gray-600">
@@ -225,11 +215,10 @@
             </div>
           </div>
 
-          <div class="order-1 lg:order-2 relative">
-            <div class="absolute inset-0 bg-gradient-to-br from-dinblu/20 to-blue-500/20 
-              rounded-3xl blur-3xl opacity-60"></div>
+          <div class="relative order-1 lg:order-2">
+            <div class="absolute inset-0 bg-gradient-to-br rounded-3xl opacity-60 blur-3xl from-dinblu/20 to-blue-500/20"></div>
             <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2070" alt="Dashboard do App"
-              class="relative rounded-2xl shadow-2xl border border-white/20 w-full" />
+              class="relative w-full rounded-2xl border shadow-2xl border-white/20" />
           </div>
         </div>
       </div>
@@ -238,20 +227,20 @@
     <!-- Testimonials Section -->
     <section class="py-20 bg-gray-50">
       <div class="container">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <div class="inline-flex items-center gap-2 px-4 py-2 bg-dinblu/5 rounded-full mb-4">
+        <div class="mx-auto mb-16 max-w-3xl text-center">
+          <div class="inline-flex gap-2 items-center px-4 py-2 mb-4 rounded-full bg-dinblu/5">
             <span class="w-2 h-2 rounded-full bg-dinblu"></span>
             <span class="text-sm font-medium text-dinblu">O que dizem nossos usuários</span>
           </div>
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
             Histórias de sucesso
           </h2>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid gap-8 md:grid-cols-3">
           <div v-for="review in reviews" :key="review.name"
-            class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-            <div class="flex items-center gap-2 mb-4">
+            class="p-8 bg-white rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl">
+            <div class="flex gap-2 items-center mb-4">
               <div v-for="i in 5" :key="i"
                 class="text-yellow-400">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -259,10 +248,10 @@
                 </svg>
               </div>
             </div>
-            <p class="text-gray-600 mb-6">{{ review.text }}</p>
-            <div class="flex items-center gap-4">
+            <p class="mb-6 text-gray-600">{{ review.text }}</p>
+            <div class="flex gap-4 items-center">
               <img :src="review.avatar" :alt="review.name"
-                class="w-12 h-12 rounded-full object-cover" />
+                class="object-cover w-12 h-12 rounded-full" />
               <div>
                 <div class="font-medium text-gray-900">{{ review.name }}</div>
                 <div class="text-sm text-gray-500">{{ review.title }}</div>
@@ -276,20 +265,20 @@
     <!-- FAQ Section -->
     <section class="py-20 bg-white">
       <div class="container">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <div class="inline-flex items-center gap-2 px-4 py-2 bg-dinblu/5 rounded-full mb-4">
+        <div class="mx-auto mb-16 max-w-3xl text-center">
+          <div class="inline-flex gap-2 items-center px-4 py-2 mb-4 rounded-full bg-dinblu/5">
             <span class="w-2 h-2 rounded-full bg-dinblu"></span>
             <span class="text-sm font-medium text-dinblu">Dúvidas frequentes</span>
           </div>
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
             Perguntas e respostas
           </h2>
         </div>
 
-        <div class="max-w-3xl mx-auto">
+        <div class="mx-auto max-w-3xl">
           <div v-for="faq in faqs" :key="faq.question"
-            class="border-b border-gray-200 py-6">
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+            class="py-6 border-b border-gray-200">
+            <h3 class="mb-2 text-lg font-semibold text-gray-900">
               {{ faq.question }}
             </h3>
             <p class="text-gray-600">{{ faq.answer }}</p>
@@ -335,22 +324,22 @@ const features = [
 ]
 
 const screenshots = [
-  'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2070',
-  'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2070',
-  'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2070',
-  'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2070'
+  '/images/1.png',
+  '/images/2.png',
+  '/images/3.png',
+  '/images/4.png'
 ]
 
 const reviews = [
   {
     name: 'Ana Silva',
-    title: 'Usuária há 2 anos',
+    title: 'Usuária há 2 meses',
     text: 'O Dinblu Finanças mudou completamente minha relação com dinheiro. Agora consigo ter total controle dos meus gastos e economizar mais.',
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200'
   },
   {
     name: 'Carlos Santos',
-    title: 'Usuário há 1 ano',
+    title: 'Usuário há 1 mês',
     text: 'App incrível! Interface super intuitiva e recursos que realmente ajudam no controle financeiro. Recomendo muito!',
     avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200'
   },

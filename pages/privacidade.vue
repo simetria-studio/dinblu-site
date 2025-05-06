@@ -6,7 +6,7 @@
       <div class="absolute inset-0 bg-[url('/images/grid.svg')] opacity-20"></div>
       
       <div class="container relative z-10">
-        <h1 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+        <h1 class="mb-6 text-4xl font-bold text-white lg:text-5xl">
           Política de Privacidade
         </h1>
         <p class="text-lg text-white/90">
@@ -18,7 +18,7 @@
     <!-- Conteúdo -->
     <section class="py-16">
       <div class="container">
-        <div class="prose prose-lg max-w-4xl mx-auto">
+        <div class="mx-auto max-w-4xl prose prose-lg">
           <h2>1. Introdução</h2>
           <p>
             A Dinblu está comprometida em proteger sua privacidade. Esta Política de Privacidade 
