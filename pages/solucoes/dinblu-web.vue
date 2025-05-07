@@ -1,32 +1,29 @@
 <template>
   <div class="min-h-screen page-with-hero">
     <!-- Hero Section -->
-    <section class="relative py-32 bg-dinblu overflow-hidden">
+    <section class="overflow-hidden relative py-32 bg-dinblu">
       <div class="absolute inset-0 bg-[url('/images/grid.svg')] opacity-10"></div>
       
       <div class="container relative z-10">
-        <div class="max-w-4xl mx-auto text-center">
-          <span class="inline-flex items-center px-4 py-1 bg-white/10 backdrop-blur-sm rounded-full 
-            text-white text-sm font-medium mb-6 gap-2">
-            <span class="w-2 h-2 rounded-full bg-green-400"></span>
+        <div class="mx-auto max-w-4xl text-center">
+          <span class="inline-flex gap-2 items-center px-4 py-1 mb-6 text-sm font-medium text-white rounded-full backdrop-blur-sm bg-white/10">
+            <span class="w-2 h-2 bg-green-400 rounded-full"></span>
             Sistema de Gestão Empresarial
           </span>
-          <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          <h1 class="mb-6 text-4xl font-bold leading-tight text-white md:text-6xl">
             Tão fácil de mexer que é para todo mundo
           </h1>
-          <p class="text-xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p class="mx-auto mb-12 max-w-2xl text-xl leading-relaxed text-white/90">
             Sistema web completo para gestão empresarial. Controle suas vendas, 
             estoque, financeiro e documentos fiscais em um só lugar.
           </p>
-          <div class="flex flex-wrap items-center justify-center gap-4 mt-12">
+          <div class="flex flex-wrap gap-4 justify-center items-center mt-12">
             <a href="#features" 
-              class="px-8 py-4 bg-white text-dinblu rounded-full font-semibold
-              hover:bg-gray-100 transition-all duration-300 shadow-lg hover:-translate-y-0.5">
+              class="px-8 py-4 font-semibold bg-white rounded-full shadow-lg transition-all duration-300 text-dinblu hover:bg-gray-100 hover:-translate-y-0.5">
               Conhecer recursos
             </a>
             <NuxtLink to="https://suporte.dinblu.com.br/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
-              class="px-8 py-4 bg-transparent text-white rounded-full font-semibold
-              border-2 border-white/30 hover:bg-white/10 transition-all duration-300">
+              class="px-8 py-4 font-semibold text-white bg-transparent rounded-full border-2 transition-all duration-300 border-white/30 hover:bg-white/10">
               Agendar demonstração
             </NuxtLink>
           </div>
@@ -37,11 +34,10 @@
     <!-- Stats Section - NOVA -->
     <section class="relative -mt-12 mb-20">
       <div class="container">
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300
-            transform hover:-translate-y-1">
-            <div class="flex items-center gap-4 mb-2">
-              <div class="w-12 h-12 rounded-xl bg-dinblu/10 flex items-center justify-center">
+        <div class="grid gap-8 md:grid-cols-3">
+          <div class="p-8 bg-white rounded-2xl shadow-xl transition-all duration-300 transform hover:shadow-2xl hover:-translate-y-1">
+            <div class="flex gap-4 items-center mb-2">
+              <div class="flex justify-center items-center w-12 h-12 rounded-xl bg-dinblu/10">
                 <svg class="w-6 h-6 text-dinblu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                     d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
@@ -52,10 +48,9 @@
             <p class="text-gray-600">Empresas confiam no Dinblu</p>
           </div>
 
-          <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300
-            transform hover:-translate-y-1">
-            <div class="flex items-center gap-4 mb-2">
-              <div class="w-12 h-12 rounded-xl bg-dinblu/10 flex items-center justify-center">
+          <div class="p-8 bg-white rounded-2xl shadow-xl transition-all duration-300 transform hover:shadow-2xl hover:-translate-y-1">
+            <div class="flex gap-4 items-center mb-2">
+              <div class="flex justify-center items-center w-12 h-12 rounded-xl bg-dinblu/10">
                 <svg class="w-6 h-6 text-dinblu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                     d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
@@ -66,10 +61,9 @@
             <p class="text-gray-600">Prefeituras integradas</p>
           </div>
 
-          <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300
-            transform hover:-translate-y-1">
-            <div class="flex items-center gap-4 mb-2">
-              <div class="w-12 h-12 rounded-xl bg-dinblu/10 flex items-center justify-center">
+          <div class="p-8 bg-white rounded-2xl shadow-xl transition-all duration-300 transform hover:shadow-2xl hover:-translate-y-1">
+            <div class="flex gap-4 items-center mb-2">
+              <div class="flex justify-center items-center w-12 h-12 rounded-xl bg-dinblu/10">
                 <svg class="w-6 h-6 text-dinblu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                     d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -86,31 +80,28 @@
     <!-- Features Overview - Melhorado -->
     <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div class="container">
-        <div class="text-center mb-16">
-          <div class="inline-flex items-center gap-2 px-4 py-2 bg-dinblu/5 rounded-full mb-4">
+        <div class="mb-16 text-center">
+          <div class="inline-flex gap-2 items-center px-4 py-2 mb-4 rounded-full bg-dinblu/5">
             <span class="w-2 h-2 rounded-full bg-dinblu"></span>
             <span class="text-sm font-medium text-dinblu">Recursos principais</span>
           </div>
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
             Tudo que você precisa em um só lugar
           </h2>
-          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p class="mx-auto max-w-2xl text-lg text-gray-600">
             Simplifique a gestão do seu negócio com nossas soluções integradas
           </p>
         </div>
 
-        <div class="grid lg:grid-cols-3 gap-8">
+        <div class="grid gap-8 lg:grid-cols-3">
           <div v-for="feature in mainFeatures" :key="feature.title"
-            class="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 
-            hover:-translate-y-1 relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-r from-dinblu/5 to-transparent opacity-0 
-              group-hover:opacity-100 transition-opacity duration-300"></div>
+            class="overflow-hidden relative p-8 bg-white rounded-2xl shadow-lg transition-all duration-300 group hover:shadow-xl hover:-translate-y-1">
+            <div class="absolute inset-0 bg-gradient-to-r to-transparent opacity-0 transition-opacity duration-300 from-dinblu/5 group-hover:opacity-100"></div>
             <div class="relative z-10">
-              <div class="w-14 h-14 rounded-xl bg-dinblu/10 flex items-center justify-center mb-6
-                group-hover:bg-dinblu/20 transition-colors duration-300">
+              <div class="flex justify-center items-center mb-6 w-14 h-14 rounded-xl transition-colors duration-300 bg-dinblu/10 group-hover:bg-dinblu/20">
                 <component :is="feature.icon" class="w-7 h-7 text-dinblu" />
               </div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-3">{{ feature.title }}</h3>
+              <h3 class="mb-3 text-xl font-semibold text-gray-900">{{ feature.title }}</h3>
               <p class="text-gray-600">{{ feature.description }}</p>
             </div>
           </div>
@@ -119,26 +110,26 @@
     </section>
 
     <!-- Documentos Fiscais Section - Melhorado -->
-    <section id="features" class="py-20 bg-white relative overflow-hidden">
+    <section id="features" class="overflow-hidden relative py-20 bg-white">
       <div class="absolute inset-0 bg-gradient-to-br from-gray-50 via-transparent to-transparent"></div>
       
       <div class="container">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="grid gap-16 items-center lg:grid-cols-2">
           <div>
-            <div class="inline-flex items-center gap-2 px-4 py-2 bg-dinblu/5 rounded-full mb-6">
+            <div class="inline-flex gap-2 items-center px-4 py-2 mb-6 rounded-full bg-dinblu/5">
               <span class="w-2 h-2 rounded-full bg-dinblu"></span>
               <span class="text-sm font-medium text-dinblu">Documentos Fiscais</span>
             </div>
-            <h2 class="text-3xl font-bold text-gray-900 mt-2 mb-6">
+            <h2 class="mt-2 mb-6 text-3xl font-bold text-gray-900">
               Emissão de notas fiscais e documentos fiscais
             </h2>
             <div class="space-y-8">
-              <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100">
-                <h3 class="text-xl font-semibold text-gray-900 mb-6">Documentos emitidos</h3>
+              <div class="p-8 bg-gray-50 rounded-2xl border border-gray-100">
+                <h3 class="mb-6 text-xl font-semibold text-gray-900">Documentos emitidos</h3>
                 <div class="grid grid-cols-2 gap-4">
                   <div v-for="doc in documentos" :key="doc.sigla"
-                    class="flex items-start gap-3 p-4 bg-white rounded-xl hover:shadow-md transition-shadow">
-                    <span class="w-8 h-8 rounded-xl bg-dinblu/10 flex items-center justify-center mt-1">
+                    class="flex gap-3 items-start p-4 bg-white rounded-xl transition-shadow hover:shadow-md">
+                    <span class="flex justify-center items-center mt-1 w-8 h-8 rounded-xl bg-dinblu/10">
                       <svg class="w-4 h-4 text-dinblu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                       </svg>
@@ -151,12 +142,12 @@
                 </div>
               </div>
 
-              <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100">
-                <h3 class="text-xl font-semibold text-gray-900 mb-6">Integração completa</h3>
-                <div class="grid sm:grid-cols-2 gap-4">
+              <div class="p-8 bg-gray-50 rounded-2xl border border-gray-100">
+                <h3 class="mb-6 text-xl font-semibold text-gray-900">Integração completa</h3>
+                <div class="grid gap-4 sm:grid-cols-2">
                   <div v-for="item in integracoes" :key="item"
-                    class="flex items-center gap-3 p-4 bg-white rounded-xl hover:shadow-md transition-shadow">
-                    <span class="w-8 h-8 rounded-xl bg-dinblu/10 flex items-center justify-center">
+                    class="flex gap-3 items-center p-4 bg-white rounded-xl transition-shadow hover:shadow-md">
+                    <span class="flex justify-center items-center w-8 h-8 rounded-xl bg-dinblu/10">
                       <svg class="w-4 h-4 text-dinblu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                       </svg>
@@ -168,12 +159,11 @@
             </div>
           </div>
           <div class="relative group">
-            <div class="absolute -inset-4 bg-gradient-to-r from-dinblu/30 to-blue-500/30 rounded-3xl 
-              blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute -inset-4 bg-gradient-to-r rounded-3xl opacity-0 blur-xl transition-opacity duration-500 from-dinblu/30 to-blue-500/30 group-hover:opacity-100"></div>
             <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000" 
               alt="Interface fiscal Dinblu WEB"
               class="relative rounded-2xl shadow-2xl" />
-            <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl">
+            <div class="absolute -right-6 -bottom-6 p-6 bg-white rounded-2xl shadow-xl">
               <div class="text-3xl font-bold text-dinblu">98%</div>
               <div class="text-sm text-gray-500">das prefeituras integradas</div>
             </div>
@@ -185,24 +175,24 @@
     <!-- Controle de Vendas Section - Melhorado -->
     <section class="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50">
       <div class="container">
-        <div class="text-center mb-16">
+        <div class="mb-16 text-center">
           <span class="text-sm font-medium text-dinblu">Gestão de Vendas</span>
-          <h2 class="text-3xl font-bold text-gray-900 mt-2 mb-4">
+          <h2 class="mt-2 mb-4 text-3xl font-bold text-gray-900">
             Controle completo das suas vendas
           </h2>
-          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p class="mx-auto max-w-2xl text-lg text-gray-600">
             Do orçamento à entrega, gerencie todo o processo de vendas em um só lugar
           </p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div v-for="feature in vendasFeatures" :key="feature.title"
-            class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all">
-            <div class="flex items-start gap-4 mb-4">
-              <span class="w-10 h-10 rounded-lg bg-dinblu/10 flex items-center justify-center">
+            class="p-6 bg-white rounded-xl shadow-lg transition-all hover:shadow-xl">
+            <div class="flex gap-4 items-start mb-4">
+              <span class="flex justify-center items-center w-10 h-10 rounded-lg bg-dinblu/10">
                 <component :is="feature.icon" class="w-5 h-5 text-dinblu" />
               </span>
-              <h3 class="text-lg font-semibold text-gray-900 pt-1.5">{{ feature.title }}</h3>
+              <h3 class="pt-1.5 text-lg font-semibold text-gray-900">{{ feature.title }}</h3>
             </div>
             <p class="text-gray-600">{{ feature.description }}</p>
           </div>
@@ -211,28 +201,27 @@
     </section>
 
     <!-- Recursos Adicionais - Melhorado -->
-    <section class="py-20 bg-white relative overflow-hidden">
+    <section class="overflow-hidden relative py-20 bg-white">
       <div class="absolute inset-0 bg-[url('/images/grid.svg')] opacity-5"></div>
       <div class="container relative z-10">
-        <div class="text-center mb-16">
-          <div class="inline-flex items-center gap-2 px-4 py-2 bg-dinblu/5 rounded-full mb-4">
+        <div class="mb-16 text-center">
+          <div class="inline-flex gap-2 items-center px-4 py-2 mb-4 rounded-full bg-dinblu/5">
             <span class="w-2 h-2 rounded-full bg-dinblu"></span>
             <span class="text-sm font-medium text-dinblu">Mais recursos</span>
           </div>
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
             Funcionalidades completas para seu negócio
           </h2>
-          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p class="mx-auto max-w-2xl text-lg text-gray-600">
             Explore todos os recursos disponíveis para otimizar sua gestão
           </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
+        <div class="grid gap-8 md:grid-cols-2">
           <div v-for="(categoria, index) in recursosAdicionais" :key="index"
-            class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300
-            border border-gray-100">
-            <h3 class="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-3">
-              <span class="w-10 h-10 rounded-xl bg-dinblu/10 flex items-center justify-center">
+            class="p-8 bg-white rounded-2xl border border-gray-100 shadow-lg transition-all duration-300 hover:shadow-xl">
+            <h3 class="flex gap-3 items-center mb-6 text-xl font-semibold text-gray-900">
+              <span class="flex justify-center items-center w-10 h-10 rounded-xl bg-dinblu/10">
                 <svg class="w-5 h-5 text-dinblu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                     d="M5 13l4 4L19 7"/>
@@ -242,9 +231,8 @@
             </h3>
             <ul class="space-y-4">
               <li v-for="recurso in categoria.recursos" :key="recurso"
-                class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 
-                transition-colors duration-300">
-                <span class="w-6 h-6 rounded-full bg-dinblu/10 flex items-center justify-center">
+                class="flex gap-3 items-center p-3 bg-gray-50 rounded-xl transition-colors duration-300 hover:bg-gray-100">
+                <span class="flex justify-center items-center w-6 h-6 rounded-full bg-dinblu/10">
                   <svg class="w-4 h-4 text-dinblu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                       d="M5 13l4 4L19 7"/>
@@ -261,15 +249,15 @@
     <!-- Planos Section com design moderno -->
     <section class="py-20 bg-white">
       <div class="container">
-        <div class="text-center mb-16">
-          <div class="inline-flex items-center gap-2 px-4 py-2 bg-dinblu/5 rounded-full mb-4">
+        <div class="mb-16 text-center">
+          <div class="inline-flex gap-2 items-center px-4 py-2 mb-4 rounded-full bg-dinblu/5">
             <span class="w-2 h-2 rounded-full bg-dinblu"></span>
             <span class="text-sm font-medium text-dinblu">Planos</span>
           </div>
-          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          <h2 class="mb-4 text-3xl font-bold text-gray-900">
             Escolha o plano ideal para você
           </h2>
-          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p class="mx-auto max-w-2xl text-lg text-gray-600">
             Do MEI à grande empresa, temos o plano perfeito para o seu negócio
           </p>
         </div>
@@ -278,23 +266,23 @@
           <table class="w-full">
             <thead>
               <tr class="bg-gray-50">
-                <th class="py-6 px-6 text-left font-semibold text-gray-900">Recursos</th>
-                <th class="py-6 px-6 text-center font-semibold text-gray-900">Light</th>
-                <th class="py-6 px-6 text-center font-semibold text-gray-900">Básico</th>
-                <th class="py-6 px-6 text-center font-semibold text-gray-900">Intermediário</th>
-                <th class="py-6 px-6 text-center font-semibold text-gray-900">Avançado</th>
+                <th class="px-6 py-6 font-semibold text-left text-gray-900">Recursos</th>
+                <th class="px-6 py-6 font-semibold text-center text-gray-900">Light</th>
+                <th class="px-6 py-6 font-semibold text-center text-gray-900">Básico</th>
+                <th class="px-6 py-6 font-semibold text-center text-gray-900">Intermediário</th>
+                <th class="px-6 py-6 font-semibold text-center text-gray-900">Avançado</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="(feature, index) in planoFeatures" :key="index"
-                class="border-t border-gray-100 hover:bg-gray-50/50 transition-colors">
-                <td class="py-4 px-6 font-medium text-gray-900">{{ feature.name }}</td>
+                class="border-t border-gray-100 transition-colors hover:bg-gray-50/50">
+                <td class="px-6 py-4 font-medium text-gray-900">{{ feature.name }}</td>
                 <td v-for="plan in ['light', 'basico', 'intermediario', 'avancado']" 
                   :key="plan"
-                  class="py-4 px-6 text-center">
+                  class="px-6 py-4 text-center">
                   <template v-if="typeof feature[plan] === 'boolean'">
                     <svg v-if="feature[plan]" 
-                      class="w-6 h-6 text-green-500 mx-auto" 
+                      class="mx-auto w-6 h-6 text-green-500" 
                       fill="none" 
                       stroke="currentColor" 
                       viewBox="0 0 24 24">
@@ -319,27 +307,24 @@
     <!-- CTA Section - Melhorado -->
     <section class="py-20 bg-white from-gray-50 via-white to-gray-50">
       <div class="container">
-        <div class="relative bg-dinblu rounded-3xl p-12 md:p-16 
-          text-center overflow-hidden">
+        <div class="overflow-hidden relative p-12 text-center rounded-3xl bg-dinblu md:p-16">
           <div class="absolute inset-0 bg-[url('/images/grid.svg')] opacity-10"></div>
-          <div class="absolute inset-0 bg-gradient-to-r from-dinblu/20 to-blue-600/20 backdrop-blur-sm"></div>
+          <div class="absolute inset-0 bg-gradient-to-r backdrop-blur-sm from-dinblu/20 to-blue-600/20"></div>
 
           <div class="relative z-10">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 class="mb-6 text-3xl font-bold text-white md:text-4xl">
               Comece a usar o Dinblu WEB hoje mesmo
             </h2>
-            <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+            <p class="mx-auto mb-8 max-w-2xl text-lg text-white/90">
               Agende uma demonstração gratuita e descubra como podemos ajudar seu negócio a crescer
             </p>
-            <div class="flex flex-wrap items-center justify-center gap-4">
+            <div class="flex flex-wrap gap-4 justify-center items-center">
               <NuxtLink to="https://suporte.dinblu.com.br/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
-                class="px-8 py-4 bg-white text-dinblu rounded-full font-semibold
-                hover:bg-gray-100 transition-all duration-300 shadow-lg hover:-translate-y-0.5">
+                class="px-8 py-4 font-semibold bg-white rounded-full shadow-lg transition-all duration-300 text-dinblu hover:bg-gray-100 hover:-translate-y-0.5">
                 Agendar demonstração
               </NuxtLink>
               <a href="tel:+551140028922"
-                class="px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-full font-semibold
-                border-2 border-white/30 hover:bg-white/20 transition-all duration-300">
+                class="px-8 py-4 font-semibold text-white rounded-full border-2 backdrop-blur-sm transition-all duration-300 bg-white/10 border-white/30 hover:bg-white/20">
                 (11) 4002-8922
               </a>
             </div>

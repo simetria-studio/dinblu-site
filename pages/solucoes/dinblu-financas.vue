@@ -217,7 +217,7 @@
 
           <div class="relative order-1 lg:order-2">
             <div class="absolute inset-0 bg-gradient-to-br rounded-3xl opacity-60 blur-3xl from-dinblu/20 to-blue-500/20"></div>
-            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2070" alt="Dashboard do App"
+            <img src="/images/5.png" alt="Dashboard do App"
               class="relative w-full rounded-2xl border shadow-2xl border-white/20" />
           </div>
         </div>
