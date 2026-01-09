@@ -246,60 +246,140 @@
       </div>
     </section>
 
-    <!-- Planos Section com design moderno -->
-    <section class="py-20 bg-white">
+    <!-- Planos Section -->
+    <section class="py-24 bg-gray-50">
       <div class="container">
-        <div class="mb-16 text-center">
-          <div class="inline-flex gap-2 items-center px-4 py-2 mb-4 rounded-full bg-dinblu/5">
+        <!-- Header -->
+        <div class="text-center mb-16">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-dinblu/10 rounded-full mb-6
+            border border-dinblu/20">
             <span class="w-2 h-2 rounded-full bg-dinblu"></span>
-            <span class="text-sm font-medium text-dinblu">Planos</span>
+            <span class="text-sm font-semibold text-dinblu">Planos</span>
           </div>
-          <h2 class="mb-4 text-3xl font-bold text-gray-900">
+          <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
             Escolha o plano ideal para você
           </h2>
-          <p class="mx-auto max-w-2xl text-lg text-gray-600">
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
             Do MEI à grande empresa, temos o plano perfeito para o seu negócio
           </p>
         </div>
 
-        <div class="overflow-x-auto rounded-2xl border border-gray-100 shadow-lg">
-          <table class="w-full">
-            <thead>
-              <tr class="bg-gray-50">
-                <th class="px-6 py-6 font-semibold text-left text-gray-900">Recursos</th>
-                <th class="px-6 py-6 font-semibold text-center text-gray-900">Light</th>
-                <th class="px-6 py-6 font-semibold text-center text-gray-900">Básico</th>
-                <th class="px-6 py-6 font-semibold text-center text-gray-900">Intermediário</th>
-                <th class="px-6 py-6 font-semibold text-center text-gray-900">Avançado</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="(feature, index) in planoFeatures" :key="index"
-                class="border-t border-gray-100 transition-colors hover:bg-gray-50/50">
-                <td class="px-6 py-4 font-medium text-gray-900">{{ feature.name }}</td>
-                <td v-for="plan in ['light', 'basico', 'intermediario', 'avancado']" 
-                  :key="plan"
-                  class="px-6 py-4 text-center">
-                  <template v-if="typeof feature[plan] === 'boolean'">
-                    <svg v-if="feature[plan]" 
-                      class="mx-auto w-6 h-6 text-green-500" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24">
-                      <path stroke-linecap="round" 
-                        stroke-linejoin="round" 
-                        stroke-width="2" 
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                    <span v-else class="text-gray-300">—</span>
-                  </template>
-                  <template v-else>
-                    <span class="font-medium text-gray-900">{{ feature[plan] }}</span>
-                  </template>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <!-- Modern Comparison Table -->
+        <div class="overflow-x-auto">
+          <div class="inline-block min-w-full align-middle">
+            <div class="overflow-hidden rounded-2xl border border-gray-200 shadow-xl bg-white">
+              <table class="min-w-full divide-y divide-gray-200">
+                <!-- Table Header -->
+                <thead class="bg-gray-50 sticky top-0 z-10">
+                  <tr>
+                    <th scope="col" class="pt-12 pb-6 px-6 text-left">
+                      <span class="text-sm font-semibold text-gray-500 uppercase tracking-wider">
+                        Comparativo
+                      </span>
+                    </th>
+                    <th v-for="plan in plansWeb" :key="plan.name" 
+                      scope="col" 
+                      class="pt-12 pb-6 px-4 text-center relative"
+                      :class="plan.popular ? 'bg-dinblu' : ''">
+                      <!-- Popular Badge -->
+                      <div v-if="plan.popular" 
+                        class="absolute top-2 left-1/2 -translate-x-1/2 z-20">
+                        <span class="px-3 py-1 bg-orange-500 rounded-full 
+                          text-xs font-bold text-white shadow-lg uppercase tracking-wider whitespace-nowrap">
+                          Mais Popular
+                        </span>
+                      </div>
+                      
+                      <!-- Plan Name -->
+                      <div class="text-lg font-bold mb-2"
+                        :class="plan.popular ? 'text-white' : 'text-gray-900'">
+                        {{ plan.name }}
+                      </div>
+                      
+                      <!-- Description -->
+                      <div class="text-xs"
+                        :class="plan.popular ? 'text-white/80' : 'text-gray-500'">
+                        {{ plan.description }}
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+
+                <!-- Table Body -->
+                <tbody class="bg-white divide-y divide-gray-200">
+                  <tr v-for="(feature, idx) in allFeaturesWeb" :key="feature"
+                    class="transition-colors duration-200 hover:bg-gray-50"
+                    :class="idx % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'">
+                    <!-- Feature Name -->
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                      {{ feature }}
+                    </td>
+                    
+                    <!-- Feature per Plan -->
+                    <td v-for="plan in plansWeb" :key="plan.name"
+                      class="py-4 px-4 text-center transition-all duration-200"
+                      :class="plan.popular ? 'bg-dinblu/5' : ''">
+                      <div class="flex justify-center">
+                        <svg v-if="isPlanFeatureIncludedWeb(plan.name, feature)" 
+                          class="w-6 h-6 text-green-500" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24">
+                          <path stroke-linecap="round" 
+                            stroke-linejoin="round" 
+                            stroke-width="2.5" 
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <svg v-else
+                          class="w-6 h-6 text-gray-300" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24">
+                          <path stroke-linecap="round" 
+                            stroke-linejoin="round" 
+                            stroke-width="2" 
+                            d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+
+                <!-- Table Footer with CTAs -->
+                <tfoot class="bg-gray-50">
+                  <tr>
+                    <td class="py-6 px-6"></td>
+                    <td v-for="plan in plansWeb" :key="plan.name" 
+                      class="py-6 px-2 text-center"
+                      :class="plan.popular ? 'bg-dinblu/5' : ''">
+                      <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+                        class="inline-block px-4 py-3 rounded-lg font-semibold text-sm transition-all duration-200
+                        hover:shadow-md whitespace-nowrap"
+                        :class="plan.popular
+                          ? 'bg-dinblu text-white hover:bg-blue-700'
+                          : 'bg-dinblu text-white hover:bg-blue-700'">
+                        Escolher Plano
+                      </NuxtLink>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="text-center mt-12">
+          <p class="text-gray-600 mb-4">
+            Todos os planos incluem suporte técnico e atualizações gratuitas
+          </p>
+          <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+            class="inline-flex items-center gap-2 text-dinblu font-semibold hover:gap-3 transition-all duration-300">
+            Falar com especialista
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </NuxtLink>
         </div>
       </div>
     </section>
@@ -586,6 +666,205 @@ const planoFeatures = [
     avancado: true
   }
 ]
+
+// Estrutura de planos para Dinblu Web (6 planos)
+const plansWeb = [
+  {
+    name: 'MEI',
+    description: 'Emissão de até 15 documentos fiscais/mês',
+    popular: false,
+    features: [
+      { name: 'NFe', included: true },
+      { name: 'NFSe', included: true },
+      { name: 'NFCe', included: true },
+      { name: 'Cadastro', included: true },
+      { name: 'Relatórios', included: true },
+      { name: 'Estoque', included: true },
+      { name: 'Pedido de venda', included: true },
+      { name: 'Orçamento', included: true },
+      { name: 'Gestão de Documentos', included: true },
+      { name: 'CTe', included: false },
+      { name: 'MDFe', included: false },
+      { name: 'CTe OS', included: false },
+      { name: 'Gerenciador XML', included: false },
+      { name: 'Produção', included: true },
+      { name: 'Ordem de serviço', included: true },
+      { name: 'Financeiro', included: true },
+      { name: 'Contrato', included: false },
+      { name: 'Pedido de compra', included: false },
+      { name: 'Boleto', included: false },
+      { name: 'Averbação', included: false },
+      { name: 'Sped Contribuições', included: false },
+      { name: 'Sped Fiscal', included: true }
+    ]
+  },
+  {
+    name: 'Contador',
+    description: 'Emissão de até 10 documentos fiscais/mês',
+    popular: false,
+    features: [
+      { name: 'NFe', included: true },
+      { name: 'NFSe', included: true },
+      { name: 'NFCe', included: true },
+      { name: 'Cadastro', included: true },
+      { name: 'Relatórios', included: true },
+      { name: 'Estoque', included: true },
+      { name: 'Pedido de venda', included: true },
+      { name: 'Orçamento', included: true },
+      { name: 'Gestão de Documentos', included: true },
+      { name: 'CTe', included: true },
+      { name: 'MDFe', included: true },
+      { name: 'CTe OS', included: true },
+      { name: 'Gerenciador XML', included: false },
+      { name: 'Produção', included: false },
+      { name: 'Ordem de serviço', included: false },
+      { name: 'Financeiro', included: false },
+      { name: 'Contrato', included: false },
+      { name: 'Pedido de compra', included: false },
+      { name: 'Boleto', included: false },
+      { name: 'Averbação', included: false },
+      { name: 'Sped Contribuições', included: false },
+      { name: 'Sped Fiscal', included: true }
+    ]
+  },
+  {
+    name: 'Básico',
+    description: 'Emissão ilimitada de documentos fiscais',
+    popular: false,
+    features: [
+      { name: 'NFe', included: true },
+      { name: 'NFSe', included: true },
+      { name: 'NFCe', included: true },
+      { name: 'Cadastro', included: true },
+      { name: 'Relatórios', included: true },
+      { name: 'Estoque', included: true },
+      { name: 'Pedido de venda', included: true },
+      { name: 'Orçamento', included: true },
+      { name: 'Gestão de Documentos', included: true },
+      { name: 'CTe', included: true },
+      { name: 'MDFe', included: true },
+      { name: 'CTe OS', included: true },
+      { name: 'Gerenciador XML', included: true },
+      { name: 'Produção', included: false },
+      { name: 'Ordem de serviço', included: false },
+      { name: 'Financeiro', included: false },
+      { name: 'Contrato', included: false },
+      { name: 'Pedido de compra', included: false },
+      { name: 'Boleto', included: false },
+      { name: 'Averbação', included: false },
+      { name: 'Sped Contribuições', included: false },
+      { name: 'Sped Fiscal', included: true }
+    ]
+  },
+  {
+    name: 'Intermediário',
+    description: 'Emissão ilimitada de documentos fiscais',
+    popular: true,
+    features: [
+      { name: 'NFe', included: true },
+      { name: 'NFSe', included: true },
+      { name: 'NFCe', included: true },
+      { name: 'Cadastro', included: true },
+      { name: 'Relatórios', included: true },
+      { name: 'Estoque', included: true },
+      { name: 'Pedido de venda', included: true },
+      { name: 'Orçamento', included: true },
+      { name: 'Gestão de Documentos', included: true },
+      { name: 'CTe', included: true },
+      { name: 'MDFe', included: true },
+      { name: 'CTe OS', included: true },
+      { name: 'Gerenciador XML', included: true },
+      { name: 'Produção', included: true },
+      { name: 'Ordem de serviço', included: true },
+      { name: 'Financeiro', included: true },
+      { name: 'Contrato', included: true },
+      { name: 'Pedido de compra', included: false },
+      { name: 'Boleto', included: false },
+      { name: 'Averbação', included: false },
+      { name: 'Sped Contribuições', included: false },
+      { name: 'Sped Fiscal', included: true }
+    ]
+  },
+  {
+    name: 'Avançado',
+    description: 'Emissão ilimitada de documentos fiscais',
+    popular: false,
+    features: [
+      { name: 'NFe', included: true },
+      { name: 'NFSe', included: true },
+      { name: 'NFCe', included: true },
+      { name: 'Cadastro', included: true },
+      { name: 'Relatórios', included: true },
+      { name: 'Estoque', included: true },
+      { name: 'Pedido de venda', included: true },
+      { name: 'Orçamento', included: true },
+      { name: 'Gestão de Documentos', included: true },
+      { name: 'CTe', included: true },
+      { name: 'MDFe', included: true },
+      { name: 'CTe OS', included: true },
+      { name: 'Gerenciador XML', included: true },
+      { name: 'Produção', included: true },
+      { name: 'Ordem de serviço', included: true },
+      { name: 'Financeiro', included: true },
+      { name: 'Contrato', included: true },
+      { name: 'Pedido de compra', included: true },
+      { name: 'Boleto', included: true },
+      { name: 'Averbação', included: true },
+      { name: 'Sped Contribuições', included: false },
+      { name: 'Sped Fiscal', included: true }
+    ]
+  },
+  {
+    name: 'Premium',
+    description: 'Emissão ilimitada de documentos fiscais',
+    popular: false,
+    features: [
+      { name: 'NFe', included: true },
+      { name: 'NFSe', included: true },
+      { name: 'NFCe', included: true },
+      { name: 'Cadastro', included: true },
+      { name: 'Relatórios', included: true },
+      { name: 'Estoque', included: true },
+      { name: 'Pedido de venda', included: true },
+      { name: 'Orçamento', included: true },
+      { name: 'Gestão de Documentos', included: true },
+      { name: 'CTe', included: true },
+      { name: 'MDFe', included: true },
+      { name: 'CTe OS', included: true },
+      { name: 'Gerenciador XML', included: true },
+      { name: 'Produção', included: true },
+      { name: 'Ordem de serviço', included: true },
+      { name: 'Financeiro', included: true },
+      { name: 'Contrato', included: true },
+      { name: 'Pedido de compra', included: true },
+      { name: 'Boleto', included: true },
+      { name: 'Averbação', included: true },
+      { name: 'Sped Contribuições', included: true },
+      { name: 'Sped Fiscal', included: true }
+    ]
+  }
+]
+
+// Extract all unique features from all plans
+const allFeaturesWeb = computed(() => {
+  const featuresSet = new Set()
+  plansWeb.forEach(plan => {
+    plan.features.forEach(feature => {
+      featuresSet.add(feature.name)
+    })
+  })
+  return Array.from(featuresSet)
+})
+
+// Helper function to check if a plan includes a specific feature
+const isPlanFeatureIncludedWeb = (planName, featureName) => {
+  const plan = plansWeb.find(p => p.name === planName)
+  if (!plan) return false
+  
+  const feature = plan.features.find(f => f.name === featureName)
+  return feature ? feature.included : false
+}
+
 
 useHead({
   title: 'Dinblu WEB - Sistema de Gestão Empresarial | Dinblu',
