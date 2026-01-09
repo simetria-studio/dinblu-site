@@ -384,6 +384,127 @@
       </div>
     </section>
 
+    <!-- Módulos Adicionais Section - Infinite Marquee -->
+    <section class="overflow-hidden pt-16 pb-16 bg-gray-50 border-t border-gray-200">
+      <div class="container">
+        <div class="mb-12 text-center">
+          <div class="inline-flex gap-2 items-center px-4 py-2 mb-4 rounded-full border border-purple-100 bg-purple-50">
+            <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+            <span class="text-sm font-semibold text-purple-600">Extras</span>
+          </div>
+          <h3 class="mb-4 text-2xl font-bold text-gray-900 md:text-3xl">
+            Módulos Adicionais
+          </h3>
+          <p class="mx-auto max-w-2xl text-gray-600">
+            Personalize seu sistema com funcionalidades extras
+          </p>
+        </div>
+
+        <!-- Marquee Container -->
+        <div class="relative">
+          <!-- Fade Edges -->
+          <div class="absolute top-0 bottom-0 left-0 z-10 w-20 pointer-events-none bg-gradient-to-r from-gray-50 to-transparent"></div>
+          <div class="absolute top-0 right-0 bottom-0 z-10 w-20 pointer-events-none bg-gradient-to-l from-gray-50 to-transparent"></div>
+
+          <!-- Row 1: Move Left -->
+          <div class="flex overflow-hidden mb-4 group/marquee">
+            <div class="flex gap-4 py-2 whitespace-nowrap animate-marquee group-hover/marquee:pause">
+              <!-- Original Items -->
+              <div v-for="module in modulesRow1" :key="module.name"
+                class="flex gap-3 items-center p-3 w-64 bg-white rounded-xl border border-gray-200 shadow-sm transition-all duration-200 flex-shrink-0 hover:shadow-md">
+                <div class="flex justify-center items-center w-10 h-10 rounded-lg flex-shrink-0 bg-purple-50">
+                  <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                  </svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-sm font-bold text-gray-900 truncate" :title="module.name">
+                    {{ module.name }}
+                  </h4>
+                </div>
+              </div>
+              <!-- Duplicate Items -->
+              <div v-for="module in modulesRow1" :key="`${module.name}-dup`"
+                class="flex gap-3 items-center p-3 w-64 bg-white rounded-xl border border-gray-200 shadow-sm transition-all duration-200 flex-shrink-0 hover:shadow-md">
+                <div class="flex justify-center items-center w-10 h-10 rounded-lg flex-shrink-0 bg-purple-50">
+                  <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                  </svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-sm font-bold text-gray-900 truncate" :title="module.name">
+                    {{ module.name }}
+                  </h4>
+                </div>
+              </div>
+               <!-- Duplicate Items Again for Safety -->
+               <div v-for="module in modulesRow1" :key="`${module.name}-dup2`"
+                class="flex gap-3 items-center p-3 w-64 bg-white rounded-xl border border-gray-200 shadow-sm transition-all duration-200 flex-shrink-0 hover:shadow-md">
+                <div class="flex justify-center items-center w-10 h-10 rounded-lg flex-shrink-0 bg-purple-50">
+                  <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                  </svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-sm font-bold text-gray-900 truncate" :title="module.name">
+                    {{ module.name }}
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2: Move Right -->
+          <div class="flex overflow-hidden group/marquee">
+            <div class="flex gap-4 py-2 whitespace-nowrap animate-marquee-reverse group-hover/marquee:pause">
+              <!-- Original Items -->
+              <div v-for="module in modulesRow2" :key="module.name"
+                class="flex gap-3 items-center p-3 w-64 bg-white rounded-xl border border-gray-200 shadow-sm transition-all duration-200 flex-shrink-0 hover:shadow-md">
+                <div class="flex justify-center items-center w-10 h-10 rounded-lg flex-shrink-0 bg-blue-50">
+                  <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-sm font-bold text-gray-900 truncate" :title="module.name">
+                    {{ module.name }}
+                  </h4>
+                </div>
+              </div>
+              <!-- Duplicate Items -->
+              <div v-for="module in modulesRow2" :key="`${module.name}-dup`"
+                class="flex gap-3 items-center p-3 w-64 bg-white rounded-xl border border-gray-200 shadow-sm transition-all duration-200 flex-shrink-0 hover:shadow-md">
+                <div class="flex justify-center items-center w-10 h-10 rounded-lg flex-shrink-0 bg-blue-50">
+                  <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-sm font-bold text-gray-900 truncate" :title="module.name">
+                    {{ module.name }}
+                  </h4>
+                </div>
+              </div>
+              <!-- Duplicate Items Again -->
+              <div v-for="module in modulesRow2" :key="`${module.name}-dup2`"
+                class="flex gap-3 items-center p-3 w-64 bg-white rounded-xl border border-gray-200 shadow-sm transition-all duration-200 flex-shrink-0 hover:shadow-md">
+                <div class="flex justify-center items-center w-10 h-10 rounded-lg flex-shrink-0 bg-blue-50">
+                  <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-sm font-bold text-gray-900 truncate" :title="module.name">
+                    {{ module.name }}
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA Section - Melhorado -->
     <section class="py-20 bg-white from-gray-50 via-white to-gray-50">
       <div class="container">
@@ -866,6 +987,28 @@ const isPlanFeatureIncludedWeb = (planName, featureName) => {
 }
 
 
+// Módulos adicionais
+const additionalModules = [
+  { name: 'Força de vendas' },
+  { name: 'Tef Sitef' },
+  { name: 'Adicional Tef' },
+  { name: 'Integração Pix' },
+  { name: 'Assinador' },
+  { name: 'SEUPOS' },
+  { name: 'SEUPOS + STONE' },
+  { name: 'STONE Connect' },
+  { name: 'Averbação' },
+  { name: 'WhatsApp' },
+  { name: 'Boleto' },
+  { name: 'VERO Connect' },
+  { name: 'Mercado Pago Connect' },
+  { name: 'Promoção' }
+]
+
+// Split modules into 2 rows for marquee
+const modulesRow1 = computed(() => additionalModules.slice(0, Math.ceil(additionalModules.length / 2)))
+const modulesRow2 = computed(() => additionalModules.slice(Math.ceil(additionalModules.length / 2)))
+
 useHead({
   title: 'Dinblu WEB - Sistema de Gestão Empresarial | Dinblu',
   meta: [
@@ -896,6 +1039,31 @@ useHead({
 
 .animate-fadeInUp {
   animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-33.33%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 20s linear infinite;
+  will-change: transform;
+}
+
+.group\/marquee:hover .animate-marquee,
+.group\/marquee:hover .animate-marquee-reverse {
+  animation-play-state: paused;
 }
 
 /* Adicione classes de utilidade personalizadas */
