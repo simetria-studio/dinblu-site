@@ -158,59 +158,273 @@
     </section>
 
     <!-- Planos Section -->
-    <section class="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50">
+    <section class="py-24 bg-gray-50">
       <div class="container">
+        <!-- Header -->
         <div class="text-center mb-16">
-          <div class="inline-flex items-center gap-2 px-4 py-2 bg-dinblu/5 rounded-full mb-4">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-dinblu/10 rounded-full mb-6
+            border border-dinblu/20">
             <span class="w-2 h-2 rounded-full bg-dinblu"></span>
-            <span class="text-sm font-medium text-dinblu">Planos</span>
+            <span class="text-sm font-semibold text-dinblu">Planos</span>
           </div>
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Escolha o plano ideal para você
+          <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            Escolha o plano ideal para seu Pet Shop
           </h2>
           <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            Do pequeno ao grande pet shop, temos o plano perfeito para o seu negócio
+            Planos flexíveis que crescem junto com o seu negócio
           </p>
         </div>
 
-        <div class="overflow-x-auto rounded-2xl border border-gray-100 shadow-lg">
-          <table class="w-full">
-            <thead>
-              <tr class="bg-gray-50">
-                <th class="py-6 px-6 text-left font-semibold text-gray-900">Recursos</th>
-                <th class="py-6 px-6 text-center font-semibold text-gray-900">Light</th>
-                <th class="py-6 px-6 text-center font-semibold text-gray-900">Básico</th>
-                <th class="py-6 px-6 text-center font-semibold text-gray-900">Intermediário</th>
-                <th class="py-6 px-6 text-center font-semibold text-gray-900">Avançado</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="(feature, index) in planoFeatures" :key="index"
-                class="border-t border-gray-100 hover:bg-gray-50/50 transition-colors">
-                <td class="py-4 px-6 font-medium text-gray-900">{{ feature.name }}</td>
-                <td v-for="plan in ['light', 'basico', 'intermediario', 'avancado']" 
-                  :key="plan"
-                  class="py-4 px-6 text-center">
-                  <template v-if="typeof feature[plan] === 'boolean'">
-                    <svg v-if="feature[plan]" 
-                      class="w-6 h-6 text-green-500 mx-auto" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24">
-                      <path stroke-linecap="round" 
-                        stroke-linejoin="round" 
-                        stroke-width="2" 
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                    <span v-else class="text-gray-300">—</span>
-                  </template>
-                  <template v-else>
-                    <span class="font-medium text-gray-900">{{ feature[plan] }}</span>
-                  </template>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <!-- Modern Comparison Table -->
+        <div class="overflow-x-auto">
+          <div class="inline-block min-w-full align-middle">
+            <div class="overflow-hidden rounded-2xl border border-gray-200 shadow-xl bg-white">
+              <table class="min-w-full divide-y divide-gray-200">
+                <!-- Table Header -->
+                <thead class="bg-gray-50 sticky top-0 z-10">
+                  <tr>
+                    <th scope="col" class="pt-12 pb-6 px-6 text-left">
+                      <span class="text-sm font-semibold text-gray-500 uppercase tracking-wider">
+                        Comparativo
+                      </span>
+                    </th>
+                    <th v-for="plan in plansPet" :key="plan.name" 
+                      scope="col" 
+                      class="pt-12 pb-6 px-4 text-center relative"
+                      :class="plan.popular ? 'bg-dinblu' : ''">
+                      <!-- Popular Badge -->
+                      <div v-if="plan.popular" 
+                        class="absolute top-2 left-1/2 -translate-x-1/2 z-20">
+                        <span class="px-3 py-1 bg-orange-500 rounded-full 
+                          text-xs font-bold text-white shadow-lg uppercase tracking-wider whitespace-nowrap">
+                          Mais Popular
+                        </span>
+                      </div>
+                      
+                      <!-- Plan Name -->
+                      <div class="text-xl font-bold mb-2"
+                        :class="plan.popular ? 'text-white' : 'text-gray-900'">
+                        {{ plan.name }}
+                      </div>
+                      
+                      <!-- Description/Users -->
+                      <div class="text-sm mb-1"
+                        :class="plan.popular ? 'text-white/90' : 'text-gray-600'">
+                       <!-- {{ plan.price }} -->
+                      </div>
+                      <div class="text-xs"
+                        :class="plan.popular ? 'text-white/80' : 'text-gray-500'">
+                        {{ plan.users }}
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+
+                <!-- Table Body -->
+                <tbody class="bg-white divide-y divide-gray-200">
+                  <tr v-for="(feature, idx) in allFeaturesPet" :key="feature"
+                    class="transition-colors duration-200 hover:bg-gray-50"
+                    :class="idx % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'">
+                    <!-- Feature Name -->
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                      {{ feature }}
+                    </td>
+                    
+                    <!-- Feature per Plan -->
+                    <td v-for="plan in plansPet" :key="plan.name"
+                      class="py-4 px-4 text-center transition-all duration-200"
+                      :class="plan.popular ? 'bg-dinblu/5' : ''">
+                      <div class="flex justify-center">
+                        <svg v-if="isPlanFeatureIncludedPet(plan.name, feature)" 
+                          class="w-6 h-6 text-green-500" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24">
+                          <path stroke-linecap="round" 
+                            stroke-linejoin="round" 
+                            stroke-width="2.5" 
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <svg v-else
+                          class="w-6 h-6 text-gray-300" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24">
+                          <path stroke-linecap="round" 
+                            stroke-linejoin="round" 
+                            stroke-width="2" 
+                            d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+
+                <!-- Table Footer with CTAs -->
+                <tfoot class="bg-gray-50">
+                  <tr>
+                    <td class="py-6 px-6"></td>
+                    <td v-for="plan in plansPet" :key="plan.name" 
+                      class="py-6 px-2 text-center"
+                      :class="plan.popular ? 'bg-dinblu/5' : ''">
+                      <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+                        class="inline-block px-4 py-3 rounded-lg font-semibold text-sm transition-all duration-200
+                        hover:shadow-md whitespace-nowrap"
+                        :class="plan.popular
+                          ? 'bg-dinblu text-white hover:bg-blue-700'
+                          : 'bg-dinblu text-white hover:bg-blue-700'">
+                        Escolher Plano
+                      </NuxtLink>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="text-center mt-12">
+          <p class="text-gray-600 mb-4">
+            Todos os planos incluem suporte técnico e atualizações gratuitas
+          </p>
+          <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+            class="inline-flex items-center gap-2 text-dinblu font-semibold hover:gap-3 transition-all duration-300">
+            Falar com especialista
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+
+    <!-- Módulos Adicionais Section - Infinite Marquee -->
+    <section class="border-t border-gray-200 pt-16 pb-16 overflow-hidden bg-gray-50">
+      <div class="container">
+        <div class="text-center mb-12">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-4
+            border border-purple-100">
+            <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+            <span class="text-sm font-semibold text-purple-600">Extras</span>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Módulos Adicionais
+          </h3>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Personalize seu sistema com funcionalidades extras
+          </p>
+        </div>
+
+        <!-- Marquee Container -->
+        <div class="relative">
+          <!-- Fade Edges -->
+          <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none"></div>
+          <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none"></div>
+
+          <!-- Note: Duplicated modules to simulate marquee effect since there are only 2 items -->
+          
+          <!-- Row 1: Move Left -->
+          <div class="flex overflow-hidden mb-4 group/marquee">
+            <div class="flex gap-4 animate-marquee group-hover/marquee:pause whitespace-nowrap py-2">
+              <!-- Original Items -->
+              <div v-for="module in modulesRow1" :key="module.name"
+                class="flex-shrink-0 w-64 bg-white p-3 rounded-xl border border-gray-200 shadow-sm hover:shadow-md 
+                transition-all duration-200 flex items-center gap-3">
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                  </svg>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <h4 class="text-sm font-bold text-gray-900 truncate" :title="module.name">
+                    {{ module.name }}
+                  </h4>
+                </div>
+              </div>
+              <!-- Duplicate Items -->
+              <div v-for="module in modulesRow1" :key="`${module.name}-dup`"
+                class="flex-shrink-0 w-64 bg-white p-3 rounded-xl border border-gray-200 shadow-sm hover:shadow-md 
+                transition-all duration-200 flex items-center gap-3">
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                  </svg>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <h4 class="text-sm font-bold text-gray-900 truncate" :title="module.name">
+                    {{ module.name }}
+                  </h4>
+                </div>
+              </div>
+               <!-- Duplicate Items Again for Safety -->
+               <div v-for="module in modulesRow1" :key="`${module.name}-dup2`"
+                class="flex-shrink-0 w-64 bg-white p-3 rounded-xl border border-gray-200 shadow-sm hover:shadow-md 
+                transition-all duration-200 flex items-center gap-3">
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                  </svg>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <h4 class="text-sm font-bold text-gray-900 truncate" :title="module.name">
+                    {{ module.name }}
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2: Move Right -->
+          <div class="flex overflow-hidden group/marquee">
+            <div class="flex gap-4 animate-marquee-reverse group-hover/marquee:pause whitespace-nowrap py-2">
+              <!-- Original Items -->
+              <div v-for="module in modulesRow2" :key="module.name"
+                class="flex-shrink-0 w-64 bg-white p-3 rounded-xl border border-gray-200 shadow-sm hover:shadow-md 
+                transition-all duration-200 flex items-center gap-3">
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <h4 class="text-sm font-bold text-gray-900 truncate" :title="module.name">
+                    {{ module.name }}
+                  </h4>
+                </div>
+              </div>
+              <!-- Duplicate Items -->
+              <div v-for="module in modulesRow2" :key="`${module.name}-dup`"
+                class="flex-shrink-0 w-64 bg-white p-3 rounded-xl border border-gray-200 shadow-sm hover:shadow-md 
+                transition-all duration-200 flex items-center gap-3">
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <h4 class="text-sm font-bold text-gray-900 truncate" :title="module.name">
+                    {{ module.name }}
+                  </h4>
+                </div>
+              </div>
+              <!-- Duplicate Items Again -->
+              <div v-for="module in modulesRow2" :key="`${module.name}-dup2`"
+                class="flex-shrink-0 w-64 bg-white p-3 rounded-xl border border-gray-200 shadow-sm hover:shadow-md 
+                transition-all duration-200 flex items-center gap-3">
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <h4 class="text-sm font-bold text-gray-900 truncate" :title="module.name">
+                    {{ module.name }}
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -273,64 +487,159 @@ const clientesFeatures = [
   }
 ]
 
-const planoFeatures = [
+const plansPet = [
   {
-    name: 'Agendamento online',
-    light: true,
-    basico: true,
-    intermediario: true,
-    avancado: true
+    name: 'Básico',
+    users: 'Até 10 profissionais',
+    popular: false,
+    features: [
+      { name: 'NFe', included: true },
+      { name: 'NFCe', included: true },
+      { name: 'NFSe', included: true },
+      { name: 'Cadastros gerais', included: true },
+      { name: 'Controle de agenda', included: true },
+      { name: 'Controle de estoque', included: true },
+      { name: 'Gerenciamento de vendas', included: true },
+      { name: 'Prontuário eletrônico', included: true },
+      { name: 'Anamnese', included: true },
+      { name: 'Relatórios', included: true },
+      { name: 'Personalização de receitas', included: true },
+      { name: 'Controle de atendimento', included: true },
+      { name: 'Gerenciador XML', included: true },
+      { name: 'Orçamento', included: true },
+      { name: 'Gestão de Documentos', included: true },
+      { name: 'Controle Financeiro', included: false },
+      { name: 'Boleto', included: false },
+      { name: 'Pedido de compra', included: false },
+      { name: 'Sped Contribuições', included: false },
+      { name: 'Sped Fiscal', included: true }
+    ]
   },
   {
-    name: 'Cadastro de pets',
-    light: true,
-    basico: true,
-    intermediario: true,
-    avancado: true
+    name: 'Intermediário',
+    users: '11 a 20 profissionais',
+    popular: true,
+    features: [
+      { name: 'NFe', included: true },
+      { name: 'NFCe', included: true },
+      { name: 'NFSe', included: true },
+      { name: 'Cadastros gerais', included: true },
+      { name: 'Controle de agenda', included: true },
+      { name: 'Controle de estoque', included: true },
+      { name: 'Gerenciamento de vendas', included: true },
+      { name: 'Prontuário eletrônico', included: true },
+      { name: 'Anamnese', included: true },
+      { name: 'Relatórios', included: true },
+      { name: 'Personalização de receitas', included: true },
+      { name: 'Controle de atendimento', included: true },
+      { name: 'Gerenciador XML', included: true },
+      { name: 'Orçamento', included: true },
+      { name: 'Gestão de Documentos', included: true },
+      { name: 'Controle Financeiro', included: true },
+      { name: 'Boleto', included: false },
+      { name: 'Pedido de compra', included: false },
+      { name: 'Sped Contribuições', included: false },
+      { name: 'Sped Fiscal', included: true }
+    ]
   },
   {
-    name: 'Histórico médico',
-    light: true,
-    basico: true,
-    intermediario: true,
-    avancado: true
+    name: 'Avançado',
+    users: '21 a 30 profissionais',
+    popular: false,
+    features: [
+      { name: 'NFe', included: true },
+      { name: 'NFCe', included: true },
+      { name: 'NFSe', included: true },
+      { name: 'Cadastros gerais', included: true },
+      { name: 'Controle de agenda', included: true },
+      { name: 'Controle de estoque', included: true },
+      { name: 'Gerenciamento de vendas', included: true },
+      { name: 'Prontuário eletrônico', included: true },
+      { name: 'Anamnese', included: true },
+      { name: 'Relatórios', included: true },
+      { name: 'Personalização de receitas', included: true },
+      { name: 'Controle de atendimento', included: true },
+      { name: 'Gerenciador XML', included: true },
+      { name: 'Orçamento', included: true },
+      { name: 'Gestão de Documentos', included: true },
+      { name: 'Controle Financeiro', included: true },
+      { name: 'Boleto', included: true },
+      { name: 'Pedido de compra', included: true },
+      { name: 'Sped Contribuições', included: false },
+      { name: 'Sped Fiscal', included: true }
+    ]
   },
   {
-    name: 'Controle de vacinas',
-    light: false,
-    basico: true,
-    intermediario: true,
-    avancado: true
-  },
-  {
-    name: 'Gestão financeira',
-    light: false,
-    basico: false,
-    intermediario: true,
-    avancado: true
-  },
-  {
-    name: 'Controle de estoque',
-    light: false,
-    basico: false,
-    intermediario: true,
-    avancado: true
-  },
-  {
-    name: 'Multi-unidades',
-    light: false,
-    basico: false,
-    intermediario: false,
-    avancado: true
-  },
-  {
-    name: 'API de integração',
-    light: false,
-    basico: false,
-    intermediario: false,
-    avancado: true
+    name: 'Premium',
+    users: 'Mais de 30 profissionais',
+    popular: false,
+    features: [
+      { name: 'NFe', included: true },
+      { name: 'NFCe', included: true },
+      { name: 'NFSe', included: true },
+      { name: 'Cadastros gerais', included: true },
+      { name: 'Controle de agenda', included: true },
+      { name: 'Controle de estoque', included: true },
+      { name: 'Gerenciamento de vendas', included: true },
+      { name: 'Prontuário eletrônico', included: true },
+      { name: 'Anamnese', included: true },
+      { name: 'Relatórios', included: true },
+      { name: 'Personalização de receitas', included: true },
+      { name: 'Controle de atendimento', included: true },
+      { name: 'Gerenciador XML', included: true },
+      { name: 'Orçamento', included: true },
+      { name: 'Gestão de Documentos', included: true },
+      { name: 'Controle Financeiro', included: true },
+      { name: 'Boleto', included: true },
+      { name: 'Pedido de compra', included: true },
+      { name: 'Sped Contribuições', included: true },
+      { name: 'Sped Fiscal', included: true }
+    ]
   }
 ]
+
+// Extract all unique features from all plans
+const allFeaturesPet = computed(() => {
+  const featuresSet = new Set()
+  plansPet.forEach(plan => {
+    plan.features.forEach(feature => {
+      featuresSet.add(feature.name)
+    })
+  })
+  return Array.from(featuresSet)
+})
+
+// Helper function to check if a plan includes a specific feature
+const isPlanFeatureIncludedPet = (planName, featureName) => {
+  const plan = plansPet.find(p => p.name === planName)
+  if (!plan) return false
+  
+  const feature = plan.features.find(f => f.name === featureName)
+  return feature ? feature.included : false
+}
+
+// Módulos adicionais
+const additionalModules = [
+  { name: 'Hospedagem do animal' },
+  { name: 'Controle de vacinas' },
+  { name: 'Combos' },
+  { name: 'Tef Sitef' },
+  { name: 'Adicional Tef' },
+  { name: 'Integração Pix' },
+  { name: 'Assinador' },
+  { name: 'SEUPOS' },
+  { name: 'SEUPOS + STONE' },
+  { name: 'STONE Connect' },
+  { name: 'WhatsApp' },
+  { name: 'Boleto' },
+  { name: 'VERO Connect' },
+  { name: 'Mercado Pago Connect' },
+  { name: 'Promoção' }
+]
+
+// Split modules into 2 rows for marquee
+const modulesRow1 = computed(() => additionalModules.slice(0, Math.ceil(additionalModules.length / 2)))
+const modulesRow2 = computed(() => additionalModules.slice(Math.ceil(additionalModules.length / 2)))
 
 useHead({
   title: 'Dinblu Pet - Sistema para Pet Shops | Dinblu',
@@ -362,5 +671,30 @@ useHead({
 
 .animate-fadeInUp {
   animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-33.33%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 20s linear infinite;
+  will-change: transform;
+}
+
+.group\/marquee:hover .animate-marquee,
+.group\/marquee:hover .animate-marquee-reverse {
+  animation-play-state: paused;
 }
 </style> 
