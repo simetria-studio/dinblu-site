@@ -208,7 +208,7 @@
                     </th>
                     <th v-for="plan in plans" :key="plan.name" 
                       scope="col" 
-                      class="pt-12 pb-6 px-6 text-center relative"
+                      class="pt-12 pb-6 px-4 text-center relative"
                       :class="plan.popular ? 'bg-dinblu' : ''">
                       <!-- Popular Badge -->
                       <div v-if="plan.popular" 
@@ -225,9 +225,13 @@
                         {{ plan.name }}
                       </div>
                       
-                      <!-- Users -->
-                      <div class="text-sm"
+                      <!-- Description/Users -->
+                      <div class="text-sm mb-1"
                         :class="plan.popular ? 'text-white/90' : 'text-gray-600'">
+                       <!-- {{ plan.price }} -->
+                      </div>
+                      <div class="text-xs"
+                        :class="plan.popular ? 'text-white/80' : 'text-gray-500'">
                         {{ plan.users }}
                       </div>
                     </th>
@@ -246,7 +250,7 @@
                     
                     <!-- Feature per Plan -->
                     <td v-for="plan in plans" :key="plan.name"
-                      class="py-4 px-6 text-center transition-all duration-200"
+                      class="py-4 px-4 text-center transition-all duration-200"
                       :class="plan.popular ? 'bg-dinblu/5' : ''">
                       <div class="flex justify-center">
                         <svg v-if="isPlanFeatureIncluded(plan.name, feature)" 
@@ -279,10 +283,10 @@
                   <tr>
                     <td class="py-6 px-6"></td>
                     <td v-for="plan in plans" :key="plan.name" 
-                      class="py-6 px-4 text-center"
+                      class="py-6 px-2 text-center"
                       :class="plan.popular ? 'bg-dinblu/5' : ''">
                       <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
-                        class="inline-block px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200
+                        class="inline-block px-4 py-3 rounded-lg font-semibold text-sm transition-all duration-200
                         hover:shadow-md whitespace-nowrap"
                         :class="plan.popular
                           ? 'bg-dinblu text-white hover:bg-blue-700'
@@ -309,6 +313,134 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
             </svg>
           </NuxtLink>
+        </div>
+      </div>
+    </section>
+
+    <!-- Módulos Adicionais Section - Infinite Marquee -->
+    <section class="border-t border-gray-200 pt-16 pb-16 overflow-hidden bg-gray-50">
+      <div class="container">
+        <div class="text-center mb-12">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-4
+            border border-purple-100">
+            <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+            <span class="text-sm font-semibold text-purple-600">Extras</span>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Módulos Adicionais
+          </h3>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Personalize seu sistema com funcionalidades extras
+          </p>
+        </div>
+
+        <!-- Marquee Container -->
+        <div class="relative">
+          <!-- Fade Edges -->
+          <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none"></div>
+          <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none"></div>
+
+          <!-- Row 1: Move Left -->
+          <div class="flex overflow-hidden mb-4 group/marquee">
+            <div class="flex gap-4 animate-marquee group-hover/marquee:pause whitespace-nowrap py-2">
+              <!-- Original Items -->
+              <div v-for="module in modulesRow1" :key="module.name"
+                class="flex-shrink-0 w-64 bg-white p-3 rounded-xl border border-gray-200 shadow-sm hover:shadow-md 
+                transition-all duration-200 flex items-center gap-3">
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                  </svg>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <h4 class="text-sm font-bold text-gray-900 truncate" :title="module.name">
+                    {{ module.name }}
+                  </h4>
+                </div>
+              </div>
+              <!-- Duplicate Items -->
+              <div v-for="module in modulesRow1" :key="`${module.name}-dup`"
+                class="flex-shrink-0 w-64 bg-white p-3 rounded-xl border border-gray-200 shadow-sm hover:shadow-md 
+                transition-all duration-200 flex items-center gap-3">
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                  </svg>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <h4 class="text-sm font-bold text-gray-900 truncate" :title="module.name">
+                    {{ module.name }}
+                  </h4>
+                </div>
+              </div>
+               <!-- Duplicate Items Again for Safety -->
+               <div v-for="module in modulesRow1" :key="`${module.name}-dup2`"
+                class="flex-shrink-0 w-64 bg-white p-3 rounded-xl border border-gray-200 shadow-sm hover:shadow-md 
+                transition-all duration-200 flex items-center gap-3">
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                  </svg>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <h4 class="text-sm font-bold text-gray-900 truncate" :title="module.name">
+                    {{ module.name }}
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2: Move Right -->
+          <div class="flex overflow-hidden group/marquee">
+            <div class="flex gap-4 animate-marquee-reverse group-hover/marquee:pause whitespace-nowrap py-2">
+              <!-- Original Items -->
+              <div v-for="module in modulesRow2" :key="module.name"
+                class="flex-shrink-0 w-64 bg-white p-3 rounded-xl border border-gray-200 shadow-sm hover:shadow-md 
+                transition-all duration-200 flex items-center gap-3">
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <h4 class="text-sm font-bold text-gray-900 truncate" :title="module.name">
+                    {{ module.name }}
+                  </h4>
+                </div>
+              </div>
+              <!-- Duplicate Items -->
+              <div v-for="module in modulesRow2" :key="`${module.name}-dup`"
+                class="flex-shrink-0 w-64 bg-white p-3 rounded-xl border border-gray-200 shadow-sm hover:shadow-md 
+                transition-all duration-200 flex items-center gap-3">
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <h4 class="text-sm font-bold text-gray-900 truncate" :title="module.name">
+                    {{ module.name }}
+                  </h4>
+                </div>
+              </div>
+              <!-- Duplicate Items Again -->
+              <div v-for="module in modulesRow2" :key="`${module.name}-dup2`"
+                class="flex-shrink-0 w-64 bg-white p-3 rounded-xl border border-gray-200 shadow-sm hover:shadow-md 
+                transition-all duration-200 flex items-center gap-3">
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <h4 class="text-sm font-bold text-gray-900 truncate" :title="module.name">
+                    {{ module.name }}
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -603,6 +735,25 @@ const isPlanFeatureIncluded = (planName, featureName) => {
   return feature ? feature.included : false
 }
 
+// Módulos adicionais
+const additionalModules = [
+  { name: 'Tef Sitef' },
+  { name: 'Adicional Tef' },
+  { name: 'Integração Pix' },
+  { name: 'Assinador' },
+  { name: 'SEUPOS' },
+  { name: 'SEUPOS + STONE' },
+  { name: 'STONE Connect' },
+  { name: 'WhatsApp' },
+  { name: 'Boleto' },
+  { name: 'VERO Connect' },
+  { name: 'Mercado Pago Connect' },
+  { name: 'Promoção' }
+]
+
+// Split modules into 2 rows for marquee
+const modulesRow1 = computed(() => additionalModules.slice(0, Math.ceil(additionalModules.length / 2)))
+const modulesRow2 = computed(() => additionalModules.slice(Math.ceil(additionalModules.length / 2)))
 
 useHead({
   title: 'Dinblu Salão - Sistema para Salões de Beleza | Dinblu',
@@ -665,5 +816,30 @@ html {
 /* Melhora a interatividade dos botões */
 .group:hover .group-hover\:translate-x-1 {
   transform: translateX(0.25rem);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-33.33%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 20s linear infinite;
+  will-change: transform;
+}
+
+.group\/marquee:hover .animate-marquee,
+.group\/marquee:hover .animate-marquee-reverse {
+  animation-play-state: paused;
 }
 </style> 
