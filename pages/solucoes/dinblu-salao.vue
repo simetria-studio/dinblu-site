@@ -30,7 +30,7 @@
               hover:shadow-xl hover:shadow-white/20">
               Conhecer recursos
             </a>
-            <NuxtLink to="https://suporte.dinblu.com.br/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+            <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
               class="px-8 py-4 bg-transparent text-white rounded-full font-semibold
               border-2 border-white/30 hover:bg-white/10 transition-all duration-300
               hover:border-white/50">
@@ -176,14 +176,16 @@
     </section>
 
     <!-- Planos Section -->
-    <section class="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50">
+    <section class="py-24 bg-gray-50">
       <div class="container">
+        <!-- Header -->
         <div class="text-center mb-16">
-          <div class="inline-flex items-center gap-2 px-4 py-2 bg-dinblu/5 rounded-full mb-4">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-dinblu/10 rounded-full mb-6
+            border border-dinblu/20">
             <span class="w-2 h-2 rounded-full bg-dinblu"></span>
-            <span class="text-sm font-medium text-dinblu">Planos</span>
+            <span class="text-sm font-semibold text-dinblu">Planos</span>
           </div>
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
             Escolha o plano ideal para você
           </h2>
           <p class="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -191,44 +193,122 @@
           </p>
         </div>
 
-        <div class="overflow-x-auto rounded-2xl border border-gray-100 shadow-lg">
-          <table class="w-full">
-            <thead>
-              <tr class="bg-gray-50">
-                <th class="py-6 px-6 text-left font-semibold text-gray-900">Recursos</th>
-                <th class="py-6 px-6 text-center font-semibold text-gray-900">Light</th>
-                <th class="py-6 px-6 text-center font-semibold text-gray-900">Pro</th>
-                <th class="py-6 px-6 text-center font-semibold text-gray-900">Premium</th>
-                <th class="py-6 px-6 text-center font-semibold text-gray-900">Enterprise</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="(feature, index) in planoFeatures" :key="index"
-                class="border-t border-gray-100 hover:bg-gray-50/50 transition-colors">
-                <td class="py-4 px-6 font-medium text-gray-900">{{ feature.name }}</td>
-                <td v-for="plan in ['light', 'pro', 'premium', 'enterprise']" 
-                  :key="plan"
-                  class="py-4 px-6 text-center">
-                  <template v-if="typeof feature[plan] === 'boolean'">
-                    <svg v-if="feature[plan]" 
-                      class="w-6 h-6 text-green-500 mx-auto" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24">
-                      <path stroke-linecap="round" 
-                        stroke-linejoin="round" 
-                        stroke-width="2" 
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                    <span v-else class="text-gray-300">—</span>
-                  </template>
-                  <template v-else>
-                    <span class="font-medium text-gray-900">{{ feature[plan] }}</span>
-                  </template>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <!-- Modern Comparison Table -->
+        <div class="overflow-x-auto">
+          <div class="inline-block min-w-full align-middle">
+            <div class="overflow-hidden rounded-2xl border border-gray-200 shadow-xl bg-white">
+              <table class="min-w-full divide-y divide-gray-200">
+                <!-- Table Header -->
+                <thead class="bg-gray-50 sticky top-0 z-10">
+                  <tr>
+                    <th scope="col" class="pt-12 pb-6 px-6 text-left">
+                      <span class="text-sm font-semibold text-gray-500 uppercase tracking-wider">
+                        Comparativo
+                      </span>
+                    </th>
+                    <th v-for="plan in plans" :key="plan.name" 
+                      scope="col" 
+                      class="pt-12 pb-6 px-6 text-center relative"
+                      :class="plan.popular ? 'bg-dinblu' : ''">
+                      <!-- Popular Badge -->
+                      <div v-if="plan.popular" 
+                        class="absolute top-2 left-1/2 -translate-x-1/2 z-20">
+                        <span class="px-3 py-1 bg-orange-500 rounded-full 
+                          text-xs font-bold text-white shadow-lg uppercase tracking-wider whitespace-nowrap">
+                          Mais Popular
+                        </span>
+                      </div>
+                      
+                      <!-- Plan Name -->
+                      <div class="text-xl font-bold mb-2"
+                        :class="plan.popular ? 'text-white' : 'text-gray-900'">
+                        {{ plan.name }}
+                      </div>
+                      
+                      <!-- Users -->
+                      <div class="text-sm"
+                        :class="plan.popular ? 'text-white/90' : 'text-gray-600'">
+                        {{ plan.users }}
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+
+                <!-- Table Body -->
+                <tbody class="bg-white divide-y divide-gray-200">
+                  <tr v-for="(feature, idx) in allFeatures" :key="feature"
+                    class="transition-colors duration-200 hover:bg-gray-50"
+                    :class="idx % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'">
+                    <!-- Feature Name -->
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                      {{ feature }}
+                    </td>
+                    
+                    <!-- Feature per Plan -->
+                    <td v-for="plan in plans" :key="plan.name"
+                      class="py-4 px-6 text-center transition-all duration-200"
+                      :class="plan.popular ? 'bg-dinblu/5' : ''">
+                      <div class="flex justify-center">
+                        <svg v-if="isPlanFeatureIncluded(plan.name, feature)" 
+                          class="w-6 h-6 text-green-500" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24">
+                          <path stroke-linecap="round" 
+                            stroke-linejoin="round" 
+                            stroke-width="2.5" 
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <svg v-else
+                          class="w-6 h-6 text-gray-300" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24">
+                          <path stroke-linecap="round" 
+                            stroke-linejoin="round" 
+                            stroke-width="2" 
+                            d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+
+                <!-- Table Footer with CTAs -->
+                <tfoot class="bg-gray-50">
+                  <tr>
+                    <td class="py-6 px-6"></td>
+                    <td v-for="plan in plans" :key="plan.name" 
+                      class="py-6 px-4 text-center"
+                      :class="plan.popular ? 'bg-dinblu/5' : ''">
+                      <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+                        class="inline-block px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200
+                        hover:shadow-md whitespace-nowrap"
+                        :class="plan.popular
+                          ? 'bg-dinblu text-white hover:bg-blue-700'
+                          : 'bg-dinblu text-white hover:bg-blue-700'">
+                        Escolher Plano
+                      </NuxtLink>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="text-center mt-12">
+          <p class="text-gray-600 mb-4">
+            Todos os planos incluem suporte técnico e atualizações gratuitas
+          </p>
+          <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+            class="inline-flex items-center gap-2 text-dinblu font-semibold hover:gap-3 transition-all duration-300">
+            Falar com especialista
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </NuxtLink>
         </div>
       </div>
     </section>
@@ -247,7 +327,7 @@
               Agende uma demonstração gratuita e descubra como o Dinblu Agro pode ajudar seu negócio
             </p>
             <div class="flex flex-wrap items-center justify-center gap-4">
-              <NuxtLink to="https://suporte.dinblu.com.br/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+              <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
                 class="px-8 py-4 bg-white text-dinblu rounded-full font-semibold
                 hover:bg-gray-100 transition-all duration-300 shadow-lg hover:-translate-y-0.5">
                 Agendar demonstração
@@ -255,7 +335,7 @@
               <a href="tel:+551140028922"
                 class="px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-full font-semibold
                 border-2 border-white/30 hover:bg-white/20 transition-all duration-300">
-                (11) 4002-8922
+                (41) 98769-4250
               </a>
             </div>
           </div>
@@ -332,85 +412,149 @@ const features = [
   }
 ]
 
-const planoFeatures = [
+const plans = [
   {
-    name: 'Profissionais',
-    light: 'Até 2',
-    pro: 'Até 5',
-    premium: 'Até 10',
-    enterprise: 'Ilimitado'
+    name: 'Light',
+    users: '1 a 4 profissionais',
+    popular: false,
+    features: [
+      { name: 'Cadastro', included: true },
+      { name: 'Relatórios', included: true },
+      { name: 'Estoque', included: true },
+      { name: 'Pedido de venda', included: true },
+      { name: 'Controle de comandas', included: true },
+      { name: 'Controle de agenda', included: true },
+      { name: 'Gerenciamento de comissões', included: true },
+      { name: 'Orçamento', included: true },
+      { name: 'Gestão de Documentos', included: true },
+      { name: 'Link de Agendamento/ Qr Code', included: false },
+      { name: 'NFe', included: false },
+      { name: 'NFSe', included: false },
+      { name: 'NFCe', included: false },
+      { name: 'Geração XML', included: false },
+      { name: 'Financeiro', included: false },
+      { name: 'Ordem de serviço', included: false },
+      { name: 'Produção', included: false },
+      { name: 'Boleto', included: false },
+      { name: 'Pedido de compra', included: false },
+      { name: 'Sped Contribuições', included: false },
+      { name: 'Sped Fiscal', included: true }
+    ]
   },
   {
-    name: 'Agendamento online',
-    light: true,
-    pro: true,
-    premium: true,
-    enterprise: true
+    name: 'Básico',
+    users: '5 a 10 profissionais',
+    popular: false,
+    features: [
+      { name: 'Cadastro', included: true },
+      { name: 'Relatórios', included: true },
+      { name: 'Estoque', included: true },
+      { name: 'Pedido de venda', included: true },
+      { name: 'Controle de comandas', included: true },
+      { name: 'Controle de agenda', included: true },
+      { name: 'Gerenciamento de comissões', included: true },
+      { name: 'Orçamento', included: true },
+      { name: 'Gestão de Documentos', included: true },
+      { name: 'Link de Agendamento/ Qr Code', included: true },
+      { name: 'NFe', included: true },
+      { name: 'NFSe', included: true },
+      { name: 'NFCe', included: true },
+      { name: 'Geração XML', included: true },
+      { name: 'Financeiro', included: false },
+      { name: 'Ordem de serviço', included: false },
+      { name: 'Produção', included: false },
+      { name: 'Boleto', included: false },
+      { name: 'Pedido de compra', included: false },
+      { name: 'Sped Contribuições', included: false },
+      { name: 'Sped Fiscal', included: true }
+    ]
   },
   {
-    name: 'Controle financeiro',
-    light: true,
-    pro: true,
-    premium: true,
-    enterprise: true
+    name: 'Intermediário',
+    users: '11 a 20 profissionais',
+    popular: true,
+    features: [
+      { name: 'Cadastro', included: true },
+      { name: 'Relatórios', included: true },
+      { name: 'Estoque', included: true },
+      { name: 'Pedido de venda', included: true },
+      { name: 'Controle de comandas', included: true },
+      { name: 'Controle de agenda', included: true },
+      { name: 'Gerenciamento de comissões', included: true },
+      { name: 'Orçamento', included: true },
+      { name: 'Gestão de Documentos', included: true },
+      { name: 'Link de Agendamento/ Qr Code', included: true },
+      { name: 'NFe', included: true },
+      { name: 'NFSe', included: true },
+      { name: 'NFCe', included: true },
+      { name: 'Geração XML', included: true },
+      { name: 'Financeiro', included: true },
+      { name: 'Ordem de serviço', included: true },
+      { name: 'Produção', included: true },
+      { name: 'Boleto', included: false },
+      { name: 'Pedido de compra', included: false },
+      { name: 'Sped Contribuições', included: false },
+      { name: 'Sped Fiscal', included: true }
+    ]
   },
   {
-    name: 'Gestão de clientes',
-    light: true,
-    pro: true,
-    premium: true,
-    enterprise: true
+    name: 'Avançado',
+    users: '21 a 30 profissionais',
+    popular: false,
+    features: [
+      { name: 'Cadastro', included: true },
+      { name: 'Relatórios', included: true },
+      { name: 'Estoque', included: true },
+      { name: 'Pedido de venda', included: true },
+      { name: 'Controle de comandas', included: true },
+      { name: 'Controle de agenda', included: true },
+      { name: 'Gerenciamento de comissões', included: true },
+      { name: 'Orçamento', included: true },
+      { name: 'Gestão de Documentos', included: true },
+      { name: 'Link de Agendamento/ Qr Code', included: true },
+      { name: 'NFe', included: true },
+      { name: 'NFSe', included: true },
+      { name: 'NFCe', included: true },
+      { name: 'Geração XML', included: true },
+      { name: 'Financeiro', included: true },
+      { name: 'Ordem de serviço', included: true },
+      { name: 'Produção', included: true },
+      { name: 'Boleto', included: true },
+      { name: 'Pedido de compra', included: true },
+      { name: 'Sped Contribuições', included: false },
+      { name: 'Sped Fiscal', included: true }
+    ]
   },
   {
-    name: 'Controle de estoque',
-    light: false,
-    pro: true,
-    premium: true,
-    enterprise: true
-  },
-  {
-    name: 'Comissionamento',
-    light: false,
-    pro: true,
-    premium: true,
-    enterprise: true
-  },
-  {
-    name: 'Marketing digital',
-    light: false,
-    pro: true,
-    premium: true,
-    enterprise: true
-  },
-  {
-    name: 'Multi-unidades',
-    light: false,
-    pro: false,
-    premium: true,
-    enterprise: true
-  },
-  {
-    name: 'API de integração',
-    light: false,
-    pro: false,
-    premium: true,
-    enterprise: true
-  },
-  {
-    name: 'Suporte prioritário',
-    light: false,
-    pro: false,
-    premium: true,
-    enterprise: true
-  },
-  {
-    name: 'Personalização total',
-    light: false,
-    pro: false,
-    premium: false,
-    enterprise: true
+    name: 'Premium',
+    users: 'Mais de 30 profissionais',
+    popular: false,
+    features: [
+      { name: 'Cadastro', included: true },
+      { name: 'Relatórios', included: true },
+      { name: 'Estoque', included: true },
+      { name: 'Pedido de venda', included: true },
+      { name: 'Controle de comandas', included: true },
+      { name: 'Controle de agenda', included: true },
+      { name: 'Gerenciamento de comissões', included: true },
+      { name: 'Orçamento', included: true },
+      { name: 'Gestão de Documentos', included: true },
+      { name: 'Link de Agendamento/ Qr Code', included: true },
+      { name: 'NFe', included: true },
+      { name: 'NFSe', included: true },
+      { name: 'NFCe', included: true },
+      { name: 'Geração XML', included: true },
+      { name: 'Financeiro', included: true },
+      { name: 'Ordem de serviço', included: true },
+      { name: 'Produção', included: true },
+      { name: 'Boleto', included: true },
+      { name: 'Pedido de compra', included: true },
+      { name: 'Sped Contribuições', included: true },
+      { name: 'Sped Fiscal', included: true }
+    ]
   }
 ]
+
 
 const gestaoFeatures = [
   'Agendamento online integrado com WhatsApp',
@@ -438,6 +582,27 @@ const financeiroFeatures = [
     icon: 'IconPieChart'
   }
 ]
+
+// Extract all unique features from all plans
+const allFeatures = computed(() => {
+  const featuresSet = new Set()
+  plans.forEach(plan => {
+    plan.features.forEach(feature => {
+      featuresSet.add(feature.name)
+    })
+  })
+  return Array.from(featuresSet)
+})
+
+// Helper function to check if a plan includes a specific feature
+const isPlanFeatureIncluded = (planName, featureName) => {
+  const plan = plans.find(p => p.name === planName)
+  if (!plan) return false
+  
+  const feature = plan.features.find(f => f.name === featureName)
+  return feature ? feature.included : false
+}
+
 
 useHead({
   title: 'Dinblu Salão - Sistema para Salões de Beleza | Dinblu',

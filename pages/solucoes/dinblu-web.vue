@@ -22,7 +22,7 @@
               class="px-8 py-4 font-semibold bg-white rounded-full shadow-lg transition-all duration-300 text-dinblu hover:bg-gray-100 hover:-translate-y-0.5">
               Conhecer recursos
             </a>
-            <NuxtLink to="https://suporte.dinblu.com.br/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+            <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
               class="px-8 py-4 font-semibold text-white bg-transparent rounded-full border-2 transition-all duration-300 border-white/30 hover:bg-white/10">
               Agendar demonstração
             </NuxtLink>
@@ -319,13 +319,13 @@
               Agende uma demonstração gratuita e descubra como podemos ajudar seu negócio a crescer
             </p>
             <div class="flex flex-wrap gap-4 justify-center items-center">
-              <NuxtLink to="https://suporte.dinblu.com.br/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+              <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
                 class="px-8 py-4 font-semibold bg-white rounded-full shadow-lg transition-all duration-300 text-dinblu hover:bg-gray-100 hover:-translate-y-0.5">
                 Agendar demonstração
               </NuxtLink>
               <a href="tel:+551140028922"
                 class="px-8 py-4 font-semibold text-white rounded-full border-2 backdrop-blur-sm transition-all duration-300 bg-white/10 border-white/30 hover:bg-white/20">
-                (11) 4002-8922
+                (41) 98769-4250
               </a>
             </div>
           </div>

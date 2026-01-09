@@ -122,7 +122,7 @@
             Conheça nossas soluções e descubra como podemos ajudar sua empresa
           </p>
           <div class="flex justify-center gap-6">
-            <NuxtLink to="https://suporte.dinblu.com.br/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+            <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
               class="px-8 py-4 bg-white text-dinblu rounded-xl font-semibold
               hover:bg-gray-100 transition-all duration-300">
               Fale Conosco

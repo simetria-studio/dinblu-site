@@ -24,7 +24,7 @@
               hover:bg-gray-100 transition-all duration-300 shadow-lg hover:-translate-y-0.5">
               Conhecer recursos
             </a>
-            <NuxtLink to="https://suporte.dinblu.com.br/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+            <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
               class="px-8 py-4 bg-transparent text-white rounded-full font-semibold
               border-2 border-white/30 hover:bg-white/10 transition-all duration-300">
               Tenho interesse
@@ -232,7 +232,7 @@
               Agende uma demonstração gratuita e descubra como o Dinblu Clínica pode ajudar seu negócio
             </p>
             <div class="flex flex-wrap items-center justify-center gap-4">
-              <NuxtLink to="https://suporte.dinblu.com.br/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+              <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
                 class="px-8 py-4 bg-white text-dinblu rounded-full font-semibold
                 hover:bg-gray-100 transition-all duration-300 shadow-lg hover:-translate-y-0.5">
                 Agendar demonstração
@@ -240,7 +240,7 @@
               <a href="tel:+551140028922"
                 class="px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-full font-semibold
                 border-2 border-white/30 hover:bg-white/20 transition-all duration-300">
-                (11) 4002-8922
+                (41) 98769-4250
               </a>
             </div>
           </div>

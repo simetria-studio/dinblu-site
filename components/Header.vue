@@ -148,14 +148,14 @@
 
           <!-- CTA -->
           <div class="flex items-center gap-4">
-            <NuxtLink target="_blank" to="https://suporte.dinblu.com.br/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+            <NuxtLink target="_blank" to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
               class="px-6 py-2.5 bg-dinblu text-white rounded-full font-medium 
               hover:bg-dinblu/90 transition-all duration-300 shadow-lg hover:shadow-xl 
               hover:-translate-y-0.5 hover:shadow-dinblu/20">
               Fale conosco
             </NuxtLink>
             
-            <a href="https://suporte.dinblu.com.br/" target="_blank"
+            <a href="https://https://gestao.dinblu.com.br/user/login/" target="_blank"
               class="group px-6 py-2.5 bg-white text-dinblu rounded-full font-medium
               hover:bg-dinblu/5 transition-all duration-300 shadow-lg hover:shadow-xl
               hover:-translate-y-0.5 border border-dinblu/10 hover:border-dinblu/30
@@ -243,7 +243,7 @@
           </NuxtLink>
 
           <!-- CTA Mobile -->
-          <NuxtLink to="https://suporte.dinblu.com.br/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+          <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
             class="block p-4 text-center bg-dinblu text-white rounded-xl font-medium
             hover:bg-dinblu/90 transition-all duration-300 shadow-lg hover:shadow-xl
             hover:-translate-y-0.5 hover:shadow-dinblu/20">
