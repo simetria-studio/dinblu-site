@@ -158,59 +158,155 @@
     </section>
 
     <!-- Planos Section -->
-    <section class="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50">
+    <section class="py-24 bg-gray-50">
       <div class="container">
+        <!-- Header -->
         <div class="text-center mb-16">
-          <div class="inline-flex items-center gap-2 px-4 py-2 bg-dinblu/5 rounded-full mb-4">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-dinblu/10 rounded-full mb-6
+            border border-dinblu/20">
             <span class="w-2 h-2 rounded-full bg-dinblu"></span>
-            <span class="text-sm font-medium text-dinblu">Planos</span>
+            <span class="text-sm font-semibold text-dinblu">Planos</span>
           </div>
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Escolha o plano ideal para você
+          <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            Escolha o plano ideal para sua loja virtual
           </h2>
           <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            Do pequeno ao grande e-commerce, temos o plano perfeito para o seu negócio
+            Planos flexíveis que crescem junto com o seu e-commerce
           </p>
         </div>
 
-        <div class="overflow-x-auto rounded-2xl border border-gray-100 shadow-lg">
-          <table class="w-full">
-            <thead>
-              <tr class="bg-gray-50">
-                <th class="py-6 px-6 text-left font-semibold text-gray-900">Recursos</th>
-                <th class="py-6 px-6 text-center font-semibold text-gray-900">Light</th>
-                <th class="py-6 px-6 text-center font-semibold text-gray-900">Básico</th>
-                <th class="py-6 px-6 text-center font-semibold text-gray-900">Intermediário</th>
-                <th class="py-6 px-6 text-center font-semibold text-gray-900">Avançado</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="(feature, index) in planoFeatures" :key="index"
-                class="border-t border-gray-100 hover:bg-gray-50/50 transition-colors">
-                <td class="py-4 px-6 font-medium text-gray-900">{{ feature.name }}</td>
-                <td v-for="plan in ['light', 'basico', 'intermediario', 'avancado']" 
-                  :key="plan"
-                  class="py-4 px-6 text-center">
-                  <template v-if="typeof feature[plan] === 'boolean'">
-                    <svg v-if="feature[plan]" 
-                      class="w-6 h-6 text-green-500 mx-auto" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24">
-                      <path stroke-linecap="round" 
-                        stroke-linejoin="round" 
-                        stroke-width="2" 
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                    <span v-else class="text-gray-300">—</span>
+        <!-- Modern Comparison Table -->
+        <div class="overflow-x-auto">
+          <div class="inline-block min-w-full align-middle">
+            <div class="overflow-hidden rounded-2xl border border-gray-200 shadow-xl bg-white">
+              <table class="min-w-full divide-y divide-gray-200">
+                <!-- Table Header -->
+                <thead class="bg-gray-50 sticky top-0 z-10">
+                  <tr>
+                    <th scope="col" class="pt-12 pb-6 px-6 text-left">
+                      <span class="text-sm font-semibold text-gray-500 uppercase tracking-wider">
+                        Comparativo
+                      </span>
+                    </th>
+                    <th v-for="plan in plansShop" :key="plan.name" 
+                      scope="col" 
+                      class="pt-12 pb-6 px-4 text-center relative"
+                      :class="plan.popular ? 'bg-dinblu' : ''">
+                      <!-- Popular Badge -->
+                      <div v-if="plan.popular" 
+                        class="absolute top-2 left-1/2 -translate-x-1/2 z-20">
+                        <span class="px-3 py-1 bg-orange-500 rounded-full 
+                          text-xs font-bold text-white shadow-lg uppercase tracking-wider whitespace-nowrap">
+                          Mais Popular
+                        </span>
+                      </div>
+                      
+                      <!-- Plan Name -->
+                      <div class="text-xl font-bold mb-2"
+                        :class="plan.popular ? 'text-white' : 'text-gray-900'">
+                        {{ plan.name }}
+                      </div>
+                      
+                      <!-- Price -->
+                      <div class="text-lg font-bold mb-1"
+                         :class="plan.popular ? 'text-blue-100' : 'text-dinblu'">
+                        {{ plan.price }}
+                      </div>
+
+                      <!-- Description/Users -->
+                      <div class="text-xs"
+                        :class="plan.popular ? 'text-white/80' : 'text-gray-500'">
+                        {{ plan.products }}
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+
+                <!-- Table Body with Categories -->
+                <tbody class="bg-white divide-y divide-gray-200">
+                  <template v-for="(group, groupIdx) in featureGroupsShop" :key="groupIdx">
+                    <!-- Category Header -->
+                    <tr class="bg-gray-100">
+                      <td colspan="5" class="py-3 px-6 text-sm font-bold text-gray-900 uppercase tracking-wide">
+                        {{ group.category }}
+                      </td>
+                    </tr>
+                    
+                    <!-- Features in Category -->
+                    <tr v-for="(feature, idx) in group.features" :key="feature"
+                      class="transition-colors duration-200 hover:bg-gray-50"
+                      :class="idx % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'">
+                      <!-- Feature Name -->
+                      <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                        {{ feature }}
+                      </td>
+                      
+                      <!-- Feature per Plan -->
+                      <td v-for="plan in plansShop" :key="plan.name"
+                        class="py-4 px-4 text-center transition-all duration-200"
+                        :class="plan.popular ? 'bg-dinblu/5' : ''">
+                        <div class="flex justify-center">
+                          <svg v-if="isPlanFeatureIncludedShop(plan.name, feature)" 
+                            class="w-6 h-6 text-green-500" 
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" 
+                              stroke-linejoin="round" 
+                              stroke-width="2.5" 
+                              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                          </svg>
+                          <svg v-else
+                            class="w-6 h-6 text-gray-300" 
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" 
+                              stroke-linejoin="round" 
+                              stroke-width="2" 
+                              d="M6 18L18 6M6 6l12 12"/>
+                          </svg>
+                        </div>
+                      </td>
+                    </tr>
                   </template>
-                  <template v-else>
-                    <span class="font-medium text-gray-900">{{ feature[plan] }}</span>
-                  </template>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                </tbody>
+
+                <!-- Table Footer with CTAs -->
+                <tfoot class="bg-gray-50">
+                  <tr>
+                    <td class="py-6 px-6"></td>
+                    <td v-for="plan in plansShop" :key="plan.name" 
+                      class="py-6 px-2 text-center"
+                      :class="plan.popular ? 'bg-dinblu/5' : ''">
+                      <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+                        class="inline-block px-4 py-3 rounded-lg font-semibold text-sm transition-all duration-200
+                        hover:shadow-md whitespace-nowrap"
+                        :class="plan.popular
+                          ? 'bg-dinblu text-white hover:bg-blue-700'
+                          : 'bg-dinblu text-white hover:bg-blue-700'">
+                        Escolher Plano
+                      </NuxtLink>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="text-center mt-12">
+          <p class="text-gray-600 mb-4">
+            Todos os planos incluem suporte técnico e atualizações gratuitas
+          </p>
+          <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+            class="inline-flex items-center gap-2 text-dinblu font-semibold hover:gap-3 transition-all duration-300">
+            Falar com especialista
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </NuxtLink>
         </div>
       </div>
     </section>
@@ -273,64 +369,145 @@ const marketplaceFeatures = [
   }
 ]
 
-const planoFeatures = [
+const plansShop = [
   {
-    name: 'Produtos cadastrados',
-    light: '100',
-    basico: '500',
-    intermediario: '2000',
-    avancado: 'Ilimitado'
+    name: 'Básico',
+    products: 'Cadastro de até 50 produtos',
+    popular: false,
+    features: [
+      { name: 'Subdomínio gratuito', included: true },
+      { name: 'Certificado SSL gratuito', included: true },
+      { name: 'Cadastro de produtos XML', included: true },
+      { name: 'Gerenciamento de clientes', included: true },
+      { name: 'Relatório de vendas', included: true },
+      { name: 'Gerenciamento das etapas de venda', included: true },
+      { name: 'Gerenciamento das etapas de venda', included: true },
+      { name: 'Pedidos manuais', included: false },
+      { name: 'Temas gratuitos disponíveis', included: true },
+      { name: 'Integração Whatsapp', included: false },
+      { name: 'Integração Mercado livre', included: false },
+      { name: 'Checkout transparente', included: true },
+      { name: 'Mercado Pago', included: true },
+      { name: 'Pagamento local', included: false },
+      { name: 'Melhor envio', included: false },
+      { name: 'Integração Dinblu Web', included: false }
+    ]
   },
   {
-    name: 'Gestão de produtos',
-    light: true,
-    basico: true,
-    intermediario: true,
-    avancado: true
+    name: 'Intermediário',
+    products: 'Cadastro de até 100 produtos',
+    popular: false,
+    features: [
+      { name: 'Subdomínio gratuito', included: true },
+      { name: 'Certificado SSL gratuito', included: true },
+      { name: 'Cadastro de produtos XML', included: true },
+      { name: 'Gerenciamento de clientes', included: true },
+      { name: 'Relatório de vendas', included: true },
+      { name: 'Gerenciamento das etapas de venda', included: true },
+      { name: 'Pedidos manuais', included: true },
+      { name: 'Temas gratuitos disponíveis', included: true },
+      { name: 'Integração Whatsapp', included: true },
+      { name: 'Integração Mercado livre', included: true },
+      { name: 'Checkout transparente', included: true },
+      { name: 'Mercado Pago', included: true },
+      { name: 'Pagamento local', included: true },
+      { name: 'Melhor envio', included: true },
+      { name: 'Integração Dinblu Web', included: true }
+    ]
   },
   {
-    name: 'Controle de estoque',
-    light: true,
-    basico: true,
-    intermediario: true,
-    avancado: true
+    name: 'Avançado',
+    products: 'Cadastro de até 200 produtos',
+    popular: true,
+    features: [
+      { name: 'Subdomínio gratuito', included: true },
+      { name: 'Certificado SSL gratuito', included: true },
+      { name: 'Cadastro de produtos XML', included: true },
+      { name: 'Gerenciamento de clientes', included: true },
+      { name: 'Relatório de vendas', included: true },
+      { name: 'Gerenciamento das etapas de venda', included: true },
+      { name: 'Pedidos manuais', included: true },
+      { name: 'Temas gratuitos disponíveis', included: true },
+      { name: 'Integração Whatsapp', included: true },
+      { name: 'Integração Mercado livre', included: true },
+      { name: 'Checkout transparente', included: true },
+      { name: 'Mercado Pago', included: true },
+      { name: 'Pagamento local', included: true },
+      { name: 'Melhor envio', included: true },
+      { name: 'Integração Dinblu Web', included: true }
+    ]
   },
   {
-    name: 'Mercado Livre',
-    light: false,
-    basico: true,
-    intermediario: true,
-    avancado: true
-  },
-  {
-    name: 'Amazon',
-    light: false,
-    basico: false,
-    intermediario: true,
-    avancado: true
-  },
-  {
-    name: 'Shopee',
-    light: false,
-    basico: false,
-    intermediario: true,
-    avancado: true
-  },
-  {
-    name: 'Automação de preços',
-    light: false,
-    basico: false,
-    intermediario: false,
-    avancado: true
-  },
-  {
-    name: 'API de integração',
-    light: false,
-    basico: false,
-    intermediario: false,
-    avancado: true
+    name: 'Premium',
+    products: 'Cadastro ilimitado de produtos',
+    popular: false,
+    features: [
+      { name: 'Subdomínio gratuito', included: true },
+      { name: 'Certificado SSL gratuito', included: true },
+      { name: 'Cadastro de produtos XML', included: true },
+      { name: 'Gerenciamento de clientes', included: true },
+      { name: 'Relatório de vendas', included: true },
+      { name: 'Gerenciamento das etapas de venda', included: true },
+      { name: 'Pedidos manuais', included: true },
+      { name: 'Temas gratuitos disponíveis', included: true },
+      { name: 'Integração Whatsapp', included: true },
+      { name: 'Integração Mercado livre', included: true },
+      { name: 'Checkout transparente', included: true },
+      { name: 'Mercado Pago', included: true },
+      { name: 'Pagamento local', included: true },
+      { name: 'Melhor envio', included: true },
+      { name: 'Integração Dinblu Web', included: true }
+    ]
   }
 ]
+
+// Feature Groups for Categorized Display
+const featureGroupsShop = [
+  {
+    category: 'Recursos gerais',
+    features: [
+      'Subdomínio gratuito',
+      'Certificado SSL gratuito',
+      'Cadastro de produtos XML',
+      'Gerenciamento de clientes',
+      'Relatório de vendas',
+      'Gerenciamento das etapas de venda',
+      'Pedidos manuais',
+      'Temas gratuitos disponíveis',
+      'Integração Whatsapp',
+      'Integração Mercado livre'
+    ]
+  },
+  {
+    category: 'Formas de pagamento',
+    features: [
+      'Checkout transparente',
+      'Mercado Pago',
+      'Pagamento local'
+    ]
+  },
+  {
+    category: 'Formas de envio',
+    features: [
+      'Melhor envio'
+    ]
+  },
+  {
+    category: 'Gestão',
+    features: [
+      'Integração Dinblu Web'
+    ]
+  }
+]
+
+// Helper function to check if a plan includes a specific feature
+const isPlanFeatureIncludedShop = (planName, featureName) => {
+  const plan = plansShop.find(p => p.name === planName)
+  if (!plan) return false
+  
+  const feature = plan.features.find(f => f.name === featureName)
+  return feature ? feature.included : false
+}
 
 useHead({
   title: 'Dinblu Shop - Sistema para E-commerce | Dinblu',
