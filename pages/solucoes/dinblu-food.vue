@@ -31,7 +31,7 @@
     </section>
 
     <!-- Stats Section - NOVA -->
-    <section class="relative -mt-12 mb-20">
+    <!-- <section class="relative -mt-12 mb-20">
       <div class="container">
         <div class="grid md:grid-cols-3 gap-8">
           <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300
@@ -74,6 +74,69 @@
               <div class="text-3xl font-bold text-gray-900">24/7</div>
             </div>
             <p class="text-gray-600">Suporte especializado</p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Segmentos Atendidos Section - NOVA -->
+    <section class="overflow-hidden py-20 bg-gray-900">
+      <div class="container">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-3xl font-bold text-white md:text-4xl">
+            Segmentos Atendidos
+          </h2>
+          <p class="mx-auto max-w-2xl text-lg text-gray-300">
+            Soluções perfeitas para todos os tipos de estabelecimentos
+          </p>
+        </div>
+
+        <!-- Marquee Container -->
+        <div class="relative">
+          <!-- Fade Edges -->
+          <div class="absolute top-0 bottom-0 left-0 z-10 w-20 pointer-events-none bg-gradient-to-r from-gray-900 to-transparent"></div>
+          <div class="absolute top-0 right-0 bottom-0 z-10 w-20 pointer-events-none bg-gradient-to-l from-gray-900 to-transparent"></div>
+
+          <!-- Row 1: Move Left -->
+          <div class="flex overflow-hidden mb-4 group/marquee">
+            <div class="flex gap-4 py-2 whitespace-nowrap animate-marquee group-hover/marquee:pause">
+              <!-- Original Items -->
+              <div v-for="segment in segmentosRow1Food" :key="segment"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
+              </div>
+              <!-- Duplicate Items -->
+              <div v-for="segment in segmentosRow1Food" :key="`${segment}-dup`"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
+              </div>
+              <!-- Duplicate Items Again -->
+              <div v-for="segment in segmentosRow1Food" :key="`${segment}-dup2`"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2: Move Right -->
+          <div class="flex overflow-hidden group/marquee">
+            <div class="flex gap-4 py-2 whitespace-nowrap animate-marquee-reverse group-hover/marquee:pause">
+              <!-- Original Items -->
+              <div v-for="segment in segmentosRow2Food" :key="segment"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
+              </div>
+              <!-- Duplicate Items -->
+              <div v-for="segment in segmentosRow2Food" :key="`${segment}-dup`"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
+              </div>
+              <!--Duplicate Items Again -->
+              <div v-for="segment in segmentosRow2Food" :key="`${segment}-dup2`"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -185,6 +248,55 @@
                 <span class="text-gray-700">{{ feature }}</span>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Frente de Caixa e PDV Section - NOVA -->
+    <section class="py-20 bg-white">
+      <div class="container">
+        <div class="grid gap-12 items-center lg:grid-cols-2">
+          <div class="relative group">
+            <div class="absolute -inset-4 rounded-3xl blur-xl opacity-0 transition-opacity duration-500 bg-gradient-to-r from-green-400/30 to-blue-500/30 group-hover:opacity-100"></div>
+            <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=2070" 
+              alt="Frente de Caixa"
+              class="relative rounded-2xl shadow-2xl" />
+          </div>
+          
+          <div>
+            <div class="inline-flex gap-2 items-center px-4 py-2 mb-6 rounded-full border border-green-200 bg-green-50">
+              <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
+              <span class="text-sm font-semibold text-green-600">Frente de Caixa</span>
+            </div>
+            <h2 class="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
+              Frente de Caixa e PDV
+            </h2>
+            <p class="mb-8 text-lg text-gray-600 leading-relaxed">
+              Tenha total controle do seu caixa e venda de forma rápida e personalizada. Emita NFCe e envie por e-mail ou WhatsApp.
+            </p>
+            <ul class="space-y-4">
+              <li class="flex gap-3 items-start">
+                <svg class="mt-0.5 w-6 h-6 flex-shrink-0 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">Controle total do caixa em tempo real</span>
+              </li>
+              <li class="flex gap-3 items-start">
+                <svg class="mt-0.5 w-6 h-6 flex-shrin k-0 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">Venda rápida e personalizada</span>
+              </li>
+              <li class="flex gap-3 items-start">
+                <svg class="mt-0.5 w-6 h-6 flex-shrink-0 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">Emissão de NFCe e envio automático</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -509,7 +621,7 @@
     </section>
 
     <!-- CTA Section - Melhorado -->
-    <section class="py-20 bg-white">
+    <!-- <section class="py-20 bg-white">
       <div class="container">
         <div class="relative bg-dinblu rounded-3xl p-12 md:p-16 
           text-center overflow-hidden">
@@ -538,7 +650,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 
@@ -629,6 +741,23 @@ const additionalModules = [
 // Split modules into 2 rows for marquee
 const modulesRow1 = computed(() => additionalModules.slice(0, Math.ceil(additionalModules.length / 2)))
 const modulesRow2 = computed(() => additionalModules.slice(Math.ceil(additionalModules.length / 2)))
+
+// Segmentos Atendidos Food
+const segmentosAtendidosFood = [
+  'Bares',
+  'Restaurantes',
+  'Pizzarias',
+  'Delivery',
+  'Padarias',
+  'Docerias',
+  'Lanchonetes',
+  'Food Trucks'
+]
+
+// Split segments into 2 rows for marquee
+const segmentosRow1Food = computed(() => segmentosAtendidosFood.slice(0, Math.ceil(segmentosAtendidosFood.length / 2)))
+const segmentosRow2Food = computed(() => segmentosAtendidosFood.slice(Math.ceil(segmentosAtendidosFood.length / 2)))
+
 
 // Estrutura de planos para Dinblu Food (4 planos)
 const plansFood = [
