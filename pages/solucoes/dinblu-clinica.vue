@@ -35,7 +35,7 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="relative -mt-12 mb-20">
+    <!-- <section class="relative -mt-12 mb-20">
       <div class="container">
         <div class="grid md:grid-cols-3 gap-8">
           <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300
@@ -81,6 +81,79 @@
             </div>
             <p class="text-gray-600">Suporte especializado</p>
           </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Segmentos Atendidos Section -->
+    <section class="overflow-hidden py-20 bg-gray-900">
+      <div class="container">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-3xl font-bold text-white md:text-4xl">
+            Segmentos Atendidos
+          </h2>
+          <p class="mx-auto max-w-2xl text-lg text-gray-300">
+            Soluções especializadas para todos os profissionais da saúde
+          </p>
+        </div>
+
+        <div class="relative">
+          <div class="absolute top-0 bottom-0 left-0 z-10 w-20 pointer-events-none bg-gradient-to-r from-gray-900 to-transparent"></div>
+          <div class="absolute top-0 right-0 bottom-0 z-10 w-20 pointer-events-none bg-gradient-to-l from-gray-900 to-transparent"></div>
+
+          <div class="flex overflow-hidden mb-4 group/marquee">
+            <div class="flex gap-4 py-2 whitespace-nowrap animate-marquee group-hover/marquee:pause">
+              <div v-for="segment in segmentosRow1Clinica" :key="segment"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
+              </div>
+              <div v-for="segment in segmentosRow1Clinica" :key="`${segment}-dup`"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
+              </div>
+              <div v-for="segment in segmentosRow1Clinica" :key="`${segment}-dup2`"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex overflow-hidden group/marquee">
+            <div class="flex gap-4 py-2 whitespace-nowrap animate-marquee-reverse group-hover/marquee:pause">
+              <div v-for="segment in segmentosRow2Clinica" :key="segment"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
+              </div>
+              <div v-for="segment in segmentosRow2Clinica" :key="`${segment}-dup`"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
+              </div>
+              <div v-for="segment in segmentosRow2Clinica" :key="`${segment}-dup2`"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Agenda Inteligente Section -->
+    <section class="py-20 bg-white">
+      <div class="container">
+        <div class="mx-auto max-w-4xl text-center">
+          <div class="inline-flex gap-2 items-center px-4 py-2 mb-6 rounded-full border border-purple-200 bg-purple-50">
+            <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <span class="text-sm font-semibold text-purple-600">Agenda Otimizada</span>
+          </div>
+          <h2 class="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
+            Agenda inteligente e otimizada
+          </h2>
+          <p class="mb-8 text-lg text-gray-600 leading-relaxed">
+            É possível realizar agendamentos recorrentes, registrar faltas e comunicar com o paciente via WhatsApp.
+          </p>
         </div>
       </div>
     </section>
@@ -154,6 +227,67 @@
               <h3 class="text-xl font-semibold text-gray-900 mb-3">{{ feature.title }}</h3>
               <p class="text-gray-600">{{ feature.description }}</p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controle Financeiro Section -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-white">
+      <div class="container">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+            Controle Financeiro
+          </h2>
+          <p class="mx-auto max-w-2xl text-lg text-gray-600">
+            Menos burocracia, papéis e planilhas para acompanhar receita, despesas e relatórios
+          </p>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-2">
+          <div class="p-8 bg-white rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <div class="inline-flex gap-2 items-center px-3 py-1 mb-4 rounded-full border border-blue-200 bg-blue-50">
+              <span class="text-xs font-semibold text-blue-600">Orçamentos</span>
+            </div>
+            <h3 class="mb-4 text-xl font-bold text-gray-900">Orçamentos</h3>
+            <p class="text-gray-600">
+              Gere orçamentos para seus pacientes avaliarem o tratamento.
+            </p>
+          </div>
+
+          <div class="p-8 bg-white rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <div class="inline-flex gap-2 items-center px-3 py-1 mb-4 rounded-full border border-green-200 bg-green-50">
+              <span class="text-xs font-semibold text-green-600">Emissão de NFSe</span>
+            </div>
+            <h3 class="mb-4 text-xl font-bold text-gray-900">Emissão de NFSe</h3>
+            <p class="text-gray-600">
+              Emita NFSe de forma descomplicada.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- E Muito Mais Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+            E muito mais pelo seu negócio
+          </h2>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div v-for="extra in muitoMaisClinica" :key="extra.title"
+            class="p-6 bg-white rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <div class="flex justify-center items-center mb-4 w-12 h-12 rounded-xl transition-colors"
+              :class="extra.bgColor">
+              <svg class="w-6 h-6" :class="extra.iconColor" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="extra.iconPath"/>
+              </svg>
+            </div>
+            <h3 class="mb-3 text-lg font-bold text-gray-900">{{ extra.title }}</h3>
+            <p class="text-sm text-gray-600">{{ extra.description }}</p>
           </div>
         </div>
       </div>
@@ -459,7 +593,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-white">
+    <!-- <section class="py-20 bg-white">
       <div class="container">
         <div class="relative bg-dinblu rounded-3xl p-12 md:p-16 text-center overflow-hidden">
           <div class="absolute inset-0 bg-[url('/images/grid.svg')] opacity-10"></div>
@@ -487,7 +621,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 
@@ -514,6 +648,68 @@ const agendamentoFeatures = [
     title: 'Lembretes',
     description: 'Lembretes automáticos de consultas para pacientes.'
   }
+]
+
+const segmentosAtendidosClinica = [
+    'Clínicas',
+    'Consultórios',
+    'Médicos',
+    'Dentistas',
+    'Fisioterapeutas',
+    'Fonoaudiólogos',
+    'Nutricionistas',
+    'Psicólogos',
+    'Terapeutas ocupacionais',
+    'Esteticistas',
+    'Profissionais da saúde'
+]
+
+const segmentosRow1Clinica = computed(() => segmentosAtendidosClinica.slice(0, Math.ceil(segmentosAtendidosClinica.length / 2)))
+const segmentosRow2Clinica = computed(() => segmentosAtendidosClinica.slice(Math.ceil(segmentosAtendidosClinica.length / 2)))
+
+const muitoMaisClinica = [
+    {
+        title: 'Controle de caixa',
+        description: 'Controle de caixa separado entre clínica e profissional.',
+        bgColor: 'bg-blue-50',
+        iconColor: 'text-blue-600',
+    },
+    {
+        title: 'Entrada de notas',
+        description: 'De forma automática, vinculado ao site da Receita Federal.',
+        bgColor: 'bg-green-50',
+        iconColor: 'text-green-600',
+    },
+    {
+        title: 'Integração',
+        description: 'Comunicação discreta entre médicos (as) e secretárias (os) para facilitar e agilizar o atendimento ao cliente.',
+        bgColor: 'bg-purple-50',
+        iconColor: 'text-purple-600',
+    },
+    {
+        title: 'Cadastros e permissões',
+        description: 'Permite o cadastro ilimitado de colaboradores, define o papel que cada um desempenha e suas respectivas funcionalidades.',
+        bgColor: 'bg-orange-50',
+        iconColor: 'text-orange-600',
+    },
+    {
+        title: 'Controle de consultas',
+        description: 'Por meio do controle de consultas, você e sua equipe podem fazer uma melhor gestão de horários.',
+        bgColor: 'bg-pink-50',
+        iconColor: 'text-pink-600',
+    },
+    {
+        title: 'Gestão inteligente',
+        description: 'Aprimoré sua gestão com uma dashboard interativa, que conta com gráficos e relatórios simples de interpretar.',
+        bgColor: 'bg-indigo-50',
+        iconColor: 'text-indigo-600',
+    },
+    {
+        title: 'Controle de estoque',
+        description: 'Registre a venda de itens que são comercializados pela clínica.',
+        bgColor: 'bg-teal-50',
+        iconColor: 'text-teal-600',
+    }
 ]
 
 const plansClinica = [
