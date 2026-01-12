@@ -32,46 +32,109 @@
     </section>
 
     <!-- Stats Section - NOVA -->
-    <section class="relative -mt-12 mb-20">
+    <!-- <section class="relative -mt-12 mb-20">
       <div class="container">
-        <div class="grid gap-8 md:grid-cols-3">
-          <div class="p-8 bg-white rounded-2xl shadow-xl transition-all duration-300 transform hover:shadow-2xl hover:-translate-y-1">
-            <div class="flex gap-4 items-center mb-2">
-              <div class="flex justify-center items-center w-12 h-12 rounded-xl bg-dinblu/10">
-                <svg class="w-6 h-6 text-dinblu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                </svg>
+          <!-- <div class="grid gap-8 md:grid-cols-3">
+            <div class="p-8 bg-white rounded-2xl shadow-xl transition-all duration-300 transform hover:shadow-2xl hover:-translate-y-1">
+              <div class="flex gap-4 items-center mb-2">
+                <div class="flex justify-center items-center w-12 h-12 rounded-xl bg-dinblu/10">
+                  <svg class="w-6 h-6 text-dinblu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                  </svg>
+                </div>
+                <div class="text-3xl font-bold text-gray-900">+50mil</div>
               </div>
-              <div class="text-3xl font-bold text-gray-900">+50mil</div>
+              <p class="text-gray-600">Empresas confiam no Dinblu</p>
             </div>
-            <p class="text-gray-600">Empresas confiam no Dinblu</p>
+
+            <div class="p-8 bg-white rounded-2xl shadow-xl transition-all duration-300 transform hover:shadow-2xl hover:-translate-y-1">
+              <div class="flex gap-4 items-center mb-2">
+                <div class="flex justify-center items-center w-12 h-12 rounded-xl bg-dinblu/10">
+                  <svg class="w-6 h-6 text-dinblu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                  </svg>
+                </div>
+                <div class="text-3xl font-bold text-gray-900">98%</div>
+              </div>
+              <p class="text-gray-600">Prefeituras integradas</p>
+            </div>
+
+            <div class="p-8 bg-white rounded-2xl shadow-xl transition-all duration-300 transform hover:shadow-2xl hover:-translate-y-1">
+              <div class="flex gap-4 items-center mb-2">
+                <div class="flex justify-center items-center w-12 h-12 rounded-xl bg-dinblu/10">
+                  <svg class="w-6 h-6 text-dinblu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </div>
+                <div class="text-3xl font-bold text-gray-900">24/7</div>
+              </div>
+              <p class="text-gray-600">Suporte especializado</p>
+            </div>
+          </div>
+        </div>
+    </section> -->
+
+    <!-- Segmentos Atendidos Section - NOVA -->
+    <section class="overflow-hidden py-20 bg-gray-900">
+      <div class="container">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-3xl font-bold text-white md:text-4xl">
+            Segmentos Atendidos
+          </h2>
+          <p class="mx-auto max-w-2xl text-lg text-gray-300">
+            Soluções personalizadas para diversos tipos de negócio
+          </p>
+        </div>
+
+        <!-- Marquee Container -->
+        <div class="relative">
+          <!-- Fade Edges -->
+          <div class="absolute top-0 bottom-0 left-0 z-10 w-20 pointer-events-none bg-gradient-to-r from-gray-900 to-transparent"></div>
+          <div class="absolute top-0 right-0 bottom-0 z-10 w-20 pointer-events-none bg-gradient-to-l from-gray-900 to-transparent"></div>
+
+          <!-- Row 1: Move Left -->
+          <div class="flex overflow-hidden mb-4 group/marquee">
+            <div class="flex gap-4 py-2 whitespace-nowrap animate-marquee group-hover/marquee:pause">
+              <!-- Original Items -->
+              <div v-for="segment in segmentosRow1" :key="segment"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
+              </div>
+              <!-- Duplicate Items -->
+              <div v-for="segment in segmentosRow1" :key="`${segment}-dup`"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
+              </div>
+              <!-- Duplicate Items Again -->
+              <div v-for="segment in segmentosRow1" :key="`${segment}-dup2`"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
+              </div>
+            </div>
           </div>
 
-          <div class="p-8 bg-white rounded-2xl shadow-xl transition-all duration-300 transform hover:shadow-2xl hover:-translate-y-1">
-            <div class="flex gap-4 items-center mb-2">
-              <div class="flex justify-center items-center w-12 h-12 rounded-xl bg-dinblu/10">
-                <svg class="w-6 h-6 text-dinblu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                </svg>
+          <!-- Row 2: Move Right -->
+          <div class="flex overflow-hidden group/marquee">
+            <div class="flex gap-4 py-2 whitespace-nowrap animate-marquee-reverse group-hover/marquee:pause">
+              <!-- Original Items -->
+              <div v-for="segment in segmentosRow2" :key="segment"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
               </div>
-              <div class="text-3xl font-bold text-gray-900">98%</div>
-            </div>
-            <p class="text-gray-600">Prefeituras integradas</p>
-          </div>
-
-          <div class="p-8 bg-white rounded-2xl shadow-xl transition-all duration-300 transform hover:shadow-2xl hover:-translate-y-1">
-            <div class="flex gap-4 items-center mb-2">
-              <div class="flex justify-center items-center w-12 h-12 rounded-xl bg-dinblu/10">
-                <svg class="w-6 h-6 text-dinblu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
+              <!-- Duplicate Items -->
+              <div v-for="segment in segmentosRow2" :key="`${segment}-dup`"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
               </div>
-              <div class="text-3xl font-bold text-gray-900">24/7</div>
+              <!-- Duplicate Items Again -->
+              <div v-for="segment in segmentosRow2" :key="`${segment}-dup2`"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
+              </div>
             </div>
-            <p class="text-gray-600">Suporte especializado</p>
           </div>
         </div>
       </div>
@@ -96,7 +159,7 @@
         <div class="grid gap-8 lg:grid-cols-3">
           <div v-for="feature in mainFeatures" :key="feature.title"
             class="overflow-hidden relative p-8 bg-white rounded-2xl shadow-lg transition-all duration-300 group hover:shadow-xl hover:-translate-y-1">
-            <div class="absolute inset-0 bg-gradient-to-r to-transparent opacity-0 transition-opacity duration-300 from-dinblu/5 group-hover:opacity-100"></div>
+            <div class="absolute inset-0 opacity-0 transition-opacity duration-300 from-dinblu/5 group-hover:opacity-100"></div>
             <div class="relative z-10">
               <div class="flex justify-center items-center mb-6 w-14 h-14 rounded-xl transition-colors duration-300 bg-dinblu/10 group-hover:bg-dinblu/20">
                 <component :is="feature.icon" class="w-7 h-7 text-dinblu" />
@@ -111,8 +174,6 @@
 
     <!-- Documentos Fiscais Section - Melhorado -->
     <section id="features" class="overflow-hidden relative py-20 bg-white">
-      <div class="absolute inset-0 bg-gradient-to-br from-gray-50 via-transparent to-transparent"></div>
-      
       <div class="container">
         <div class="grid gap-16 items-center lg:grid-cols-2">
           <div>
@@ -131,7 +192,7 @@
                     class="flex gap-3 items-start p-4 bg-white rounded-xl transition-shadow hover:shadow-md">
                     <span class="flex justify-center items-center mt-1 w-8 h-8 rounded-xl bg-dinblu/10">
                       <svg class="w-4 h-4 text-dinblu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
                       </svg>
                     </span>
                     <div>
@@ -149,12 +210,17 @@
                     class="flex gap-3 items-center p-4 bg-white rounded-xl transition-shadow hover:shadow-md">
                     <span class="flex justify-center items-center w-8 h-8 rounded-xl bg-dinblu/10">
                       <svg class="w-4 h-4 text-dinblu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
                       </svg>
                     </span>
                     <span class="text-gray-600">{{ item }}</span>
                   </div>
                 </div>
+              </div>
+
+              <div class="p-8 bg-dinblu/5 rounded-2xl border border-dinblu/20">
+                <h3 class="mb-4 text-xl font-semibold text-gray-900">Entrada de Notas</h3>
+                <p class="text-gray-600">De forma automática, vinculado ao site da Receita Federal.</p>
               </div>
             </div>
           </div>
@@ -172,33 +238,106 @@
       </div>
     </section>
 
-    <!-- Controle de Vendas Section - Melhorado -->
-    <section class="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50">
+    <!-- Controle de Vendas Section - Expandido -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-50">
       <div class="container">
         <div class="mb-16 text-center">
-          <span class="text-sm font-medium text-dinblu">Gestão de Vendas</span>
-          <h2 class="mt-2 mb-4 text-3xl font-bold text-gray-900">
-            Controle completo das suas vendas
+          <div class="inline-flex gap-2 items-center px-4 py-2 mb-4 rounded-full bg-dinblu/5">
+            <span class="w-2 h-2 rounded-full bg-dinblu"></span>
+            <span class="text-sm font-medium text-dinblu">Gestão de Vendas</span>
+          </div>
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+            Controle de vendas
           </h2>
           <p class="mx-auto max-w-2xl text-lg text-gray-600">
             Do orçamento à entrega, gerencie todo o processo de vendas em um só lugar
           </p>
         </div>
 
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <div v-for="feature in vendasFeatures" :key="feature.title"
-            class="p-6 bg-white rounded-xl shadow-lg transition-all hover:shadow-xl">
-            <div class="flex gap-4 items-start mb-4">
-              <span class="flex justify-center items-center w-10 h-10 rounded-lg bg-dinblu/10">
-                <component :is="feature.icon" class="w-5 h-5 text-dinblu" />
-              </span>
-              <h3 class="pt-1.5 text-lg font-semibold text-gray-900">{{ feature.title }}</h3>
-            </div>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div v-for="feature in vendasFeaturesExpanded" :key="feature.title"
+            class="p-6 bg-white rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <h3 class="mb-3 text-lg font-bold text-dinblu">{{ feature.title }}</h3>
             <p class="text-gray-600">{{ feature.description }}</p>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Controle Fiscal e Contábil Section - NOVA -->
+    <section class="py-20 bg-white">
+      <div class="container">
+        <div class="mb-16 text-center">
+          <div class="inline-flex gap-2 items-center px-4 py-2 mb-4 rounded-full bg-green-50 border border-green-200">
+            <span class="w-2 h-2 rounded-full bg-green-500"></span>
+            <span class="text-sm font-medium text-green-600">Contabilidade</span>
+          </div>
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+            Controle fiscal e Contábil
+          </h2>
+          <p class="mx-auto max-w-2xl text-lg text-gray-600">
+            Desenvolvido para MEI, ME, Simples, Lucro Real e Lucro Presumido. Emissão dos principais documentos fiscais.
+          </p>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-2">
+          <div class="p-8 bg-gradient-to-br from-green-50 to-white rounded-2xl border border-green-100 shadow-lg">
+            <h3 class="mb-6 text-xl font-bold text-green-600">Documentos emitidos</h3>
+            <ul class="space-y-3">
+              <li v-for="doc in documentosContabeis" :key="doc"
+                class="flex gap-3 items-center p-3 bg-white rounded-xl">
+                <span class="flex justify-center items-center w-6 h-6 rounded-full bg-green-50">
+                  <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </span>
+                <span class="text-gray-700">{{ doc }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="p-8 bg-gradient-to-br from-blue-50 to-white rounded-2xl border border-blue-100 shadow-lg">
+            <h3 class="mb-6 text-xl font-bold text-dinblu">Painel do Contador</h3>
+            <p class="mb-4 text-gray-600">
+              Facilite o contato com o seu contador. Ele terá todos os documentos recebidos e enviados pela sua empresa de forma imediata e gratuita.
+            </p>
+            <div class="flex gap-2 items-center p-4 bg-blue-50 rounded-xl">
+              <svg class="w-5 h-5 text-dinblu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span class="text-sm text-gray-700">Integração automática e gratuita</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Frente de Caixa e PDV Section - NOVA -->
+    <section class="py-20 bg-gradient-to-br from-purple-50 via-white to-purple-50">
+      <div class="container">
+        <div class="mb-16 text-center">
+          <div class="inline-flex gap-2 items-center px-4 py-2 mb-4 rounded-full bg-purple-50 border border-purple-200">
+            <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+            <span class="text-sm font-medium text-purple-600">Ponto de Venda</span>
+          </div>
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+            Frente de caixa e PDV
+          </h2>
+          <p class="mx-auto max-w-2xl text-lg text-gray-600">
+            Controle toda a movimentação de caixa da sua loja física e virtual.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div v-for="feature in pdvFeatures" :key="feature.title"
+            class="p-6 bg-white rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <h3 class="mb-3 text-lg font-bold text-purple-600">{{ feature.title }}</h3>
+            <p class="text-sm text-gray-600">{{ feature.description }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <!-- Recursos Adicionais - Melhorado -->
     <section class="overflow-hidden relative py-20 bg-white">
@@ -506,7 +645,7 @@
     </section>
 
     <!-- CTA Section - Melhorado -->
-    <section class="py-20 bg-white from-gray-50 via-white to-gray-50">
+    <!-- <section class="py-20 bg-white from-gray-50 via-white to-gray-50">
       <div class="container">
         <div class="overflow-hidden relative p-12 text-center rounded-3xl bg-dinblu md:p-16">
           <div class="absolute inset-0 bg-[url('/images/grid.svg')] opacity-10"></div>
@@ -532,7 +671,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 
@@ -572,36 +711,84 @@ const integracoes = [
   'Integração com certificado digital'
 ]
 
-const vendasFeatures = [
+const segmentosAtendidos = [
+  'Autopeças e oficinas',
+  'Lojas de calçados',
+  'Caça e pesca',
+  'Lojas de departamentos',
+  'Conveniências',
+  'Lojas de doces e alimentos',
+  'Livrarias e papelarias',
+  'Lojas de móveis e eletrodomésticos',
+  'Lojas de cosméticos',
+  'Lojas de materiais esportivos',
+  'Lojas de bijuterias',
+  'Lojas de presentes e variedades',
+  'Lojas de brinquedos',
+  'Materiais de construção e ferragens',
+  'Hortifruti e verduraria',
+  'Mercados e açougues',
+  'Joalherias, óticas e relojoarias',
+  'Prestadores de serviços e outros',
+  'Panificadoras e cafeterias',
+  'Lojas de roupas e acessórios'
+]
+
+// Split segments into 2 rows for marquee
+const segmentosRow1 = computed(() => segmentosAtendidos.slice(0, Math.ceil(segmentosAtendidos.length / 2)))
+const segmentosRow2 = computed(() => segmentosAtendidos.slice(Math.ceil(segmentosAtendidos.length / 2)))
+
+
+const vendasFeaturesExpanded = [
   {
-    icon: 'IconShoppingCart',
-    title: 'PDV Completo',
-    description: 'Frente de caixa completa com controle de vendas, produtos, clientes e formas de pagamento.'
+    title: 'Pedido de venda e OS',
+    description: 'Crie sua venda de forma descomplicada e, por meio dela, você pode emitir documentos fiscais. Crie ordem de serviço e tenha controle de tudo que acontece no seu negócio.'
   },
   {
-    icon: 'IconClipboard',
-    title: 'Orçamentos',
-    description: 'Crie e envie orçamentos profissionais para seus clientes por e-mail ou WhatsApp.'
+    title: 'Cotações e compras',
+    description: 'Elimine desistências e barreiras na hora de formalizar parcerias e negócios, oferecendo uma experiência simples e segura no ato de colher assinaturas.'
   },
   {
-    icon: 'IconTruck',
-    title: 'Pedidos e Entregas',
-    description: 'Controle seus pedidos e entregas com facilidade, do início ao fim do processo.'
+    title: 'Orçamento e condicional',
+    description: 'Envie orçamentos de forma inteligente. Personalize as informações do seu condicional para o seu cliente e envie do seu e-mail, Whatsapp.'
   },
   {
-    icon: 'IconUsers',
-    title: 'Comissões',
-    description: 'Controle de comissões por vendedor, com relatórios detalhados e pagamentos.'
+    title: 'Geração de contratos',
+    description: 'Controle e histórico de negociações com cobrança que serão realizadas mês a mês.'
   },
   {
-    icon: 'IconChart',
-    title: 'Relatórios',
-    description: 'Relatórios detalhados de vendas, produtos, clientes e muito mais.'
+    title: 'Venda externa e futura',
+    description: 'Venda para o seu cliente e tenha o controle apurado do que já foi entregue e faturado.'
   },
   {
-    icon: 'IconMobile',
-    title: 'App de Vendas',
-    description: 'Aplicativo para seus vendedores realizarem vendas externas com facilidade.'
+    title: 'Geração de romaneios',
+    description: 'Facilite o carregamento de mercadorias que serão entregues pela sua transportadora.'
+  }
+]
+
+const documentosContabeis = [
+  'Sintegra',
+  'Sped Fiscal',
+  'Contribuições',
+  'Bloco K'
+]
+
+const pdvFeatures = [
+  {
+    title: 'Controle de caixa',
+    description: 'Abra e feche seu caixa de forma rápida e tenha os seus resultados de venda de forma simples e apurada.'
+  },
+  {
+    title: 'Venda rápida',
+    description: 'Em poucos cliques você consegue efetuar sua venda de forma rápida e descomplicada.'
+  },
+  {
+    title: 'NFCe',
+    description: 'Emita NFCe pelo celular e envie por e-mail ou whatsapp com facilidade.'
+  },
+  {
+    title: 'Força de vendas',
+    description: 'Potencialize e gerencie sua área comercial com a padronização de vendas. É possível inserir imagens nos produtos e gerar a NFC-e. Realize a venda diretamente com o cliente ou transfira o pedido para ser faturado na empresa.'
   }
 ]
 
