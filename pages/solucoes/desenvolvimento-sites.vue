@@ -1,8 +1,8 @@
 <template>
   <div class="min-h-screen page-with-hero">
     <!-- Hero Section -->
-    <section class="relative py-32 bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-600 overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 backdrop-blur-sm"></div>
+    <section class="relative py-32">
+      <div class="absolute inset-0"></div>
       
       <div class="container relative z-10">
         <div class="max-w-4xl mx-auto text-center">
@@ -38,7 +38,7 @@
 
         <div class="grid md:grid-cols-3 gap-8">
           <div v-for="benefit in benefits" :key="benefit.title"
-            class="p-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl 
+            class="p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl 
             transition-all duration-300 hover:-translate-y-1 border border-gray-100">
             <div class="w-14 h-14 rounded-xl mb-6 flex items-center justify-center"
               :class="benefit.bgColor">
@@ -54,7 +54,7 @@
     </section>
 
     <!-- Tipos de Sites Section -->
-    <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section class="py-20 bg-white">
       <div class="container">
         <div class="text-center mb-16">
           <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -108,7 +108,7 @@
             <div v-for="(step, index) in processoSteps" :key="step.title"
               class="flex gap-6 items-start">
               <div class="flex-shrink-0">
-                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-cyan-600 
+                <div class="w-12 h-12 rounded-full 
                   flex items-center justify-center text-gray-900 font-bold text-lg shadow-lg">
                   {{ index + 1}}
                 </div>

@@ -160,14 +160,18 @@ const quickLinks = [
 ]
 
 const solutions = [
+  // Sistemas
   { name: 'Dinblu WEB', path: '/solucoes/dinblu-web' },
   { name: 'Dinblu Food', path: '/solucoes/dinblu-food' },
   { name: 'Dinblu Shop', path: '/solucoes/dinblu-shop' },
-  { name: 'Dinblu Agro', path: '/solucoes/dinblu-agro' },
   { name: 'Dinblu Pet', path: '/solucoes/dinblu-pet' },
-  { name: 'Dinblu Clinica', path: '/solucoes/dinblu-clinica' },
+  { name: 'Dinblu Clínica', path: '/solucoes/dinblu-clinica' },
+  { name: 'Dinblu Agro', path: '/solucoes/dinblu-agro' },
   { name: 'Dinblu Salão', path: '/solucoes/dinblu-salao' },
-  { name: 'Dinblu Finanças', path: '/solucoes/dinblu-financas' }
+  // Outros
+  { name: 'Desenvolvimento de Sites', path: '/solucoes/desenvolvimento-sites' },
+  { name: 'Desenvolvimentos', path: '/solucoes/desenvolvimentos' },
+  { name: 'Aplicativos Mobile', path: '/solucoes/aplicativos-mobile' }
 ]
 
 const contacts = [
