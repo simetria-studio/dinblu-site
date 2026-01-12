@@ -42,7 +42,7 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="relative -mt-12 mb-20">
+    <!-- <section class="relative -mt-12 mb-20">
       <div class="container">
         <div class="grid md:grid-cols-3 gap-8">
           <div v-for="(stat, index) in stats" :key="index"
@@ -56,6 +56,97 @@
               <div class="text-3xl font-bold text-gray-900">{{ stat.value }}</div>
             </div>
             <p class="text-gray-600">{{ stat.label }}</p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Segmentos Atendidos Section - NOVA -->
+    <section class="overflow-hidden py-20 bg-gray-900">
+      <div class="container">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-3xl font-bold text-white md:text-4xl">
+            Segmentos Atendidos
+          </h2>
+          <p class="mx-auto max-w-2xl text-lg text-gray-300">
+            Soluções personalizadas para profissionais da beleza
+          </p>
+        </div>
+
+        <!-- Marquee Container -->
+        <div class="relative">
+          <!-- Fade Edges -->
+          <div class="absolute top-0 bottom-0 left-0 z-10 w-20 pointer-events-none bg-gradient-to-r from-gray-900 to-transparent"></div>
+          <div class="absolute top-0 right-0 bottom-0 z-10 w-20 pointer-events-none bg-gradient-to-l from-gray-900 to-transparent"></div>
+
+          <!-- Row 1: Move Left -->
+          <div class="flex overflow-hidden mb-4 group/marquee">
+            <div class="flex gap-4 py-2 whitespace-nowrap animate-marquee group-hover/marquee:pause">
+              <!-- Original Items -->
+              <div v-for="segment in segmentosRow1" :key="segment"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
+              </div>
+              <!-- Duplicate Items -->
+              <div v-for="segment in segmentosRow1" :key="`${segment}-dup`"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
+              </div>
+              <!-- Duplicate Items Again -->
+              <div v-for="segment in segmentosRow1" :key="`${segment}-dup2`"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2: Move Right -->
+          <div class="flex overflow-hidden group/marquee">
+            <div class="flex gap-4 py-2 whitespace-nowrap animate-marquee-reverse group-hover/marquee:pause">
+              <!-- Original Items -->
+              <div v-for="segment in segmentosRow2" :key="segment"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
+              </div>
+              <!-- Duplicate Items -->
+              <div v-for="segment in segmentosRow2" :key="`${segment}-dup`"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
+              </div>
+              <!-- Duplicate Items Again -->
+              <div v-for="segment in segmentosRow2" :key="`${segment}-dup2`"
+                class="group p-5 w-80 bg-gray-800/40 rounded-xl border border-gray-700/50 transition-all duration-200 flex-shrink-0 hover:bg-gray-800/70 hover:border-dinblu/40 hover:shadow-md cursor-default">
+                <span class="text-gray-200 group-hover:text-white transition-colors duration-300">{{ segment }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controle de Agenda Section - NOVA -->
+    <section class="py-20 bg-white">
+      <div class="container">
+        <div class="grid gap-16 items-center lg:grid-cols-2">
+          <div>
+            <div class="inline-flex gap-2 items-center px-4 py-2 mb-6 rounded-full border border-green-200 bg-green-50">
+              <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              <span class="text-sm font-semibold text-green-600">Agendamento Online</span>
+            </div>
+            <h2 class="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
+              Controle de agenda e link de agendamento
+            </h2>
+            <p class="mb-8 text-lg text-gray-600 leading-relaxed">
+              Com a agenda on-line, o próprio cliente escolhe o melhor horário e você controla tudo de qualquer lugar. Ganhe tempo com lembretes automáticos para evitar atrasos e cancelamentos.
+            </p>
+          </div>
+          <div class="relative group">
+            <div class="absolute -inset-4 rounded-3xl blur-xl opacity-0 transition-opacity duration-500 bg-gradient-to-r from-green-400/30 to-blue-500/30 group-hover:opacity-100"></div>
+            <img src="https://images.unsplash.com/photo-1506863530036-1efeddceb993?q=80&w=2044" 
+              alt="Controle de Agenda"
+              class="relative rounded-2xl shadow-2xl" />
           </div>
         </div>
       </div>
@@ -135,8 +226,39 @@
       </div>
     </section>
 
+    <!-- E Muito Mais Section - NOVA -->
+    <section class="py-20 bg-blue-50">
+      <div class="container">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+            E muito mais pelo seu negócio
+          </h2>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div v-for="extra in muitoMais" :key="extra.title"
+            class="p-8 bg-white rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <div class="flex justify-center items-center mb-6 w-14 h-14 rounded-xl transition-colors"
+              :class="extra.bgColor">
+              <component :is="extra.icon" class="w-7 h-7" :class="extra.iconColor" />
+            </div>
+            <h3 class="mb-3 text-xl font-bold text-gray-900">{{ extra.title }}</h3>
+            <p class="mb-4 text-gray-600">{{ extra.description }}</p>
+            <ul v-if="extra.items" class="space-y-2">
+              <li v-for="item in extra.items" :key="item" class="flex gap-2 items-start text-sm text-gray-600">
+                <svg class="mt-0.5 w-4 h-4 flex-shrink-0 text-dinblu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                {{ item }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Features Section -->
-    <section id="recursos" class="py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <!-- <section id="recursos" class="py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
       <div class="absolute inset-0 pointer-events-none">
         <div class="absolute right-0 top-0 w-[600px] h-[600px] 
           bg-gradient-to-br from-dinblu/5 to-transparent rounded-full blur-3xl"></div>
@@ -173,7 +295,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Planos Section -->
     <section class="py-24 bg-gray-50">
@@ -714,6 +836,55 @@ const financeiroFeatures = [
     icon: 'IconPieChart'
   }
 ]
+
+// Segmentos Atendidos
+const segmentosAtendidos = [
+  'Salões',
+  'Clínicas de estética',
+  'Esmaltarias',
+  'Estúdios',
+  'SPAs',
+  'Centros de beleza',
+  'Profissionais liberais'
+]
+
+// Split segments into 2 rows for marquee
+const segmentosRow1 = computed(() => segmentosAtendidos.slice(0, Math.ceil(segmentosAtendidos.length / 2)))
+const segmentosRow2 = computed(() => segmentosAtendidos.slice(Math.ceil(segmentosAtendidos.length / 2)))
+
+// E Muito Mais
+const muitoMais = [
+  {
+    title: 'Gestão Fiscal',
+    description: 'Leve sua empresa aos melhores caminhos quando o assunto é legislação.',
+    icon: 'IconChart',
+    bgColor: 'bg-blue-50',
+    iconColor: 'text-blue-600',
+    items: ['NFe', 'NFCe', 'Livros fiscais']
+  },
+  {
+    title: 'Histórico de clientes',
+    description: 'Acesse todos os atendimentos realizados, consulte aniversariantes e ainda deixe uma mensagem automática via notificação a eles.',
+    icon: 'IconUsers',
+    bgColor: 'bg-green-50',
+    iconColor: 'text-green-600'
+  },
+  {
+    title: 'Pedido de compras',
+    description: 'Acesse o catálogo de produtos de seu distribuidor e gerencie os pedidos diretamente dentro da plataforma.',
+    icon: 'IconShoppingCart',
+    bgColor: 'bg-purple-50',
+    iconColor: 'text-purple-600'
+  },
+  {
+    title: 'Modelo de documento',
+    description: 'Aprimore sua gestão com uma dashboard interativa que conta com gráficos e relatórios simples de interpretar, e tenha em tempo real relatórios personalizados.',
+    icon: 'IconReports',
+    bgColor: 'bg-orange-50',
+    iconColor: 'text-orange-600'
+  }
+]
+
 
 // Extract all unique features from all plans
 const allFeatures = computed(() => {
