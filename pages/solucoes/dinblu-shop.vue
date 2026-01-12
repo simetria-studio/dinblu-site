@@ -35,7 +35,7 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="relative -mt-12 mb-20">
+    <!-- <section class="relative -mt-12 mb-20">
       <div class="container">
         <div class="grid md:grid-cols-3 gap-8">
           <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300
@@ -81,7 +81,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- E-commerce Section -->
     <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
@@ -120,11 +120,92 @@
       </div>
     </section>
 
+    <!-- Para o Controle de Tudo Section -->
+    <section class="py-20 bg-white">
+      <div class="container">
+        <div class="mb-16 text-center">
+          <div class="inline-flex gap-2 items-center px-4 py-2 mb-4 rounded-full bg-dinblu/5">
+            <span class="w-2 h-2 rounded-full bg-dinblu"></span>
+            <span class="text-sm font-medium text-dinblu">Gestão Completa</span>
+          </div>
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+            Para o controle de tudo
+          </h2>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-3">
+          <div v-for="control in controleTotal" :key="control.title"
+            class="p-8 bg-gradient-to-br from-blue-50 to-white rounded-2xl border border-blue-100 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <h3 class="mb-4 text-xl font-bold text-dinblu">{{ control.title }}</h3>
+            <p class="text-gray-600">{{ control.description }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controle Financeiro Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+            Controle financeiro
+          </h2>
+          <p class="mx-auto max-w-2xl text-lg text-gray-600">
+            Menos burocracia, papéis e planilhas para acompanhar receita, despesas e relatórios. Tudo é feito de forma automática e personalizada para atender as necessidades da sua loja.
+          </p>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div v-for="finance in controleFinanceiro" :key="finance.title"
+            class="p-8 bg-white rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <h3 class="mb-3 text-xl font-bold text-dinblu">{{ finance.title }}</h3>
+            <p class="text-gray-600">{{ finance.description }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Segurança LGPD Section -->
+    <section class="py-20 bg-white">
+      <div class="container">
+        <div class="mx-auto max-w-4xl text-center">
+          <div class="inline-flex gap-2 items-center px-4 py-2 mb-6 rounded-full border border-green-200 bg-green-50">
+            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+            <span class="text-sm font-semibold text-green-600">Segurança e Conformidade</span>
+          </div>
+          <h2 class="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
+            Segurança: atende integralmente à LGPD
+          </h2>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Não se preocupe! A loja conta com mecanismos para evitar fraudes, como a validação de contas e e-mails, e atende todos os quesitos da Lei Geral de Proteção de Dados (LGPD).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catálogo de Produtos Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container">
+        <div class="mx-auto max-w-4xl text-center">
+          <div class="inline-flex gap-2 items-center px-4 py-2 mb-4 rounded-full bg-dinblu/5">
+            <span class="w-2 h-2 rounded-full bg-dinblu"></span>
+            <span class="text-sm font-medium text-dinblu">Organização</span>
+          </div>
+          <h2 class="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
+            Catálogo de produtos
+          </h2>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            É possível criar atributos personalizados para cada item da sua loja. Os produtos podem ser agrupados em categorias para facilitar a navegação de seus clientes.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Marketplaces Section -->
-    <section class="py-20 bg-white relative overflow-hidden" id="features">
-      <div class="absolute inset-0 bg-gradient-to-br from-gray-50 via-transparent to-transparent"></div>
-      
-      <div class="container relative z-10">
+    <section class="py-20 bg-white" id="features">
+      <div class="container">
         <div class="text-center mb-16">
           <div class="inline-flex items-center gap-2 px-4 py-2 bg-dinblu/5 rounded-full mb-4">
             <span class="w-2 h-2 rounded-full bg-dinblu"></span>
@@ -312,7 +393,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-white">
+    <!-- <section class="py-20 bg-white">
       <div class="container">
         <div class="relative bg-dinblu rounded-3xl p-12 md:p-16 text-center overflow-hidden">
           <div class="absolute inset-0 bg-[url('/images/grid.svg')] opacity-10"></div>
@@ -340,7 +421,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 
@@ -353,6 +434,37 @@ const ecommerceFeatures = [
   'Automação de preços',
   'Gestão de fretes'
 ]
+
+const controleTotal = [
+  {
+    title: 'Controle total do negócio',
+    description: 'É possível gerenciar todos os pedidos realizados pelos seus clientes. Você ainda personaliza as etapas do processo de compra e mantém o consumidor informado sobre o andamento do pedido.'
+  },
+  {
+    title: 'Integração completa',
+    description: 'Cálculo automático de frete e prazo: a loja é totalmente integrada ao Melhor Envio, fornecendo aos seus clientes o cálculo exato do prazo e preço do serviço de entrega. É possível ainda definir valores específicos de frete para intervalos de CEP.'
+  },
+  {
+    title: 'Integrado ao Mercado Livre, Mercado Pago e WhatsApp',
+    description: 'Conecte sua loja aos principais canais de venda e pagamento do mercado brasileiro, aumentando suas oportunidades de negócio.'
+  }
+]
+
+const controleFinanceiro = [
+  {
+    title: 'Controle de estoque',
+    description: 'Acompanhe o seu estoque em tempo real.'
+  },
+  {
+    title: 'Controle de pedidos',
+    description: 'É possível controlar os pedidos feitos pelos seus clientes.'
+  },
+  {
+    title: 'Importação de XML',
+    description: 'É possível importar produtos sem esforço, por meio de notas fiscais no formato XML.'
+  }
+]
+
 
 const marketplaceFeatures = [
   {
