@@ -567,7 +567,7 @@
       </div>
     </section>
 
-    <section class="py-20 bg-white">
+    <!-- <section class="py-20 bg-white">
       <div class="container">
         <div class="relative bg-dinblu rounded-3xl p-12 md:p-16 text-center overflow-hidden">
           <div class="absolute inset-0 bg-[url('/images/grid.svg')] opacity-10"></div>
@@ -595,7 +595,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 

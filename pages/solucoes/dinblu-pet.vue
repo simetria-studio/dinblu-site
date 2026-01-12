@@ -35,7 +35,7 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="relative -mt-12 mb-20">
+    <!-- <section class="relative -mt-12 mb-20">
       <div class="container">
         <div class="grid md:grid-cols-3 gap-8">
           <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300
@@ -78,6 +78,91 @@
               <div class="text-3xl font-bold text-gray-900">24/7</div>
             </div>
             <p class="text-gray-600">Suporte especializado</p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Agenda Inteligente Section - NOVA -->
+    <section class="py-20 bg-white">
+      <div class="container">
+        <div class="mx-auto max-w-4xl text-center">
+          <div class="inline-flex gap-2 items-center px-4 py-2 mb-6 rounded-full border border-purple-200 bg-purple-50">
+            <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <span class="text-sm font-semibold text-purple-600">Agenda Otimizada</span>
+          </div>
+          <h2 class="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
+            Agenda inteligente e otimizada
+          </h2>
+          <p class="mb-8 text-lg text-gray-600 leading-relaxed">
+            É possível realizar agendamentos recorrentes, registrar faltas e comunicar com o cliente via WhatsApp.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Para o Controle de Tudo Section - NOVA -->
+    <section class="py-20 bg-blue-50">
+      <div class="container">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+            Para o controle de tudo
+          </h2>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-2">
+          <div class="p-8 bg-white rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <div class="inline-flex gap-2 items-center px-3 py-1 mb-4 rounded-full border border-blue-200 bg-blue-50">
+              <span class="text-xs font-semibold text-blue-600">Prontuário eletrônico</span>
+            </div>
+            <h3 class="mb-4 text-xl font-bold text-gray-900">Prontuário eletrônico</h3>
+            <p class="mb-4 text-gray-600">
+              Registre informações, anexe imagens e exames para acompanhar todo o histórico do pet.
+            </p>
+            <p class="text-sm text-gray-600">
+              Compartilhe o prontuário com outros profissionais do pet shop para um atendimento mais completo e eficaz.
+            </p>
+          </div>
+
+          <div class="p-8 bg-white rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <div class="inline-flex gap-2 items-center px-3 py-1 mb-4 rounded-full border border-green-200 bg-green-50">
+              <span class="text-xs font-semibold text-green-600">Controle de atendimento</span>
+            </div>
+            <h3 class="mb-4 text-xl font-bold text-gray-900">Controle de atendimento</h3>
+            <p class="mb-4 text-gray-600">
+              Mantenha o registro completo dos atendimentos, vacinações, exames, cirurgias, banho e tosa.
+            </p>
+            <p class="text-sm text-gray-600">
+              Envie lembretes para os seus clientes via WhatsApp para evitar esquecimentos e faltas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controle Fiscal e Contábil Section - NOVA -->
+    <section class="py-20 bg-white">
+      <div class="container">
+        <div class="grid gap-12 items-center lg:grid-cols-2">
+          <div>
+            <h2 class="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
+              Controle Fiscal e Contábil
+            </h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
+              Emita NFe, NFCe, CTe e NFSe de forma descomplicada.
+            </p>
+          </div>
+
+          <div class="p-8 bg-gradient-to-br from-orange-50 to-white rounded-2xl border border-orange-100 shadow-lg">
+            <div class="inline-flex gap-2 items-center px-3 py-1 mb-4 rounded-full border border-orange-200 bg-orange-50">
+              <span class="text-xs font-semibold text-orange-600">Painel do Contador</span>
+            </div>
+            <h3 class="mb-4 text-xl font-bold text-gray-900">Painel do Contador</h3>
+            <p class="text-gray-600">
+              Facilite o contato com o seu contador. Ele terá todas as documentos recebidos e enviados pela sua empresa de forma imediata e gratuita.
+            </p>
           </div>
         </div>
       </div>
@@ -152,6 +237,31 @@
               <h3 class="text-xl font-semibold text-gray-900 mb-3">{{ feature.title }}</h3>
               <p class="text-gray-600">{{ feature.description }}</p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- E Muito Mais Section - NOVA -->
+    <section class="py-20 bg-gray-50">
+      <div class="container">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+            E muito mais pelo seu negócio
+          </h2>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div v-for="extra in muitoMaisPet" :key="extra.title"
+            class="p-6 bg-white rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <div class="flex justify-center items-center mb-4 w-12 h-12 rounded-xl transition-colors"
+              :class="extra.bgColor">
+              <svg class="w-6 h-6" :class="extra.iconColor" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="extra.iconPath"/>
+              </svg>
+            </div>
+            <h3 class="mb-3 text-lg font-bold text-gray-900">{{ extra.title }}</h3>
+            <p class="text-sm text-gray-600">{{ extra.description }}</p>
           </div>
         </div>
       </div>
@@ -430,7 +540,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-white">
+    <!-- <section class="py-20 bg-white">
       <div class="container">
         <div class="relative bg-dinblu rounded-3xl p-12 md:p-16 text-center overflow-hidden">
           <div class="absolute inset-0 bg-[url('/images/grid.svg')] opacity-10"></div>
@@ -458,7 +568,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 
@@ -640,6 +750,46 @@ const additionalModules = [
 // Split modules into 2 rows for marquee
 const modulesRow1 = computed(() => additionalModules.slice(0, Math.ceil(additionalModules.length / 2)))
 const modulesRow2 = computed(() => additionalModules.slice(Math.ceil(additionalModules.length / 2)))
+
+// E Muito Mais pelo seu negócio
+const muitoMaisPet = [
+  {
+    title: 'Internações',
+    description: 'Para assegurar as hospedagens dos pets, todas as reservas ficam registradas no sistema, para que você tenha controle de tudo.',
+    bgColor: 'bg-blue-50',
+    iconColor: 'text-blue-600',
+    iconPath: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4'
+  },
+  {
+    title: 'Hospedagem do pet',
+    description: 'Para assegurar as hospedagens dos pets, todas as reservas ficam registradas no sistema.',
+    bgColor: 'bg-green-50',
+    iconColor: 'text-green-600',
+    iconPath: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'
+  },
+  {
+    title: 'Cadastro de raça, espécie e pet',
+    description: 'Permite o cadastro completo do pet, espécie ou raça. Cada perfil possibilita adicionar raça de preferência, aniversário, vacinas e fotos.',
+    bgColor: 'bg-purple-50',
+    iconColor: 'text-purple-600',
+    iconPath: 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z'
+  },
+  {
+    title: 'Vacinas',
+    description: 'Possibilita aos veterinários coletar e inserir informações sobre animais internados, incluindo histórico de atendimentos, exames e prescrições de medicamentos.',
+    bgColor: 'bg-pink-50',
+    iconColor: 'text-pink-600',
+    iconPath: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2'
+  },
+  {
+    title: 'Modelo de documento',
+    description: 'Controle de caixa separado entre clínica e pet shop.',
+    bgColor: 'bg-indigo-50',
+    iconColor: 'text-indigo-600',
+    iconPath: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'
+  }
+]
+
 
 useHead({
   title: 'Dinblu Pet - Sistema para Pet Shops | Dinblu',
