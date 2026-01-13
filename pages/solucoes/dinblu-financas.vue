@@ -11,11 +11,11 @@
             Finanças Pessoais
           </span>
           <h1 class="mb-6 text-4xl font-bold leading-tight text-white md:text-6xl">
-            Controle suas finanças de forma simples
+            Transforme sua relação com o dinheiro
           </h1>
           <p class="mx-auto mb-12 max-w-2xl text-xl leading-relaxed text-white/90">
-            Organize suas despesas, acompanhe investimentos e alcance seus objetivos financeiros 
-            com o Dinblu Finanças.
+            Controle total das suas finanças pessoais. Organize despesas, acompanhe investimentos 
+            e conquiste sua liberdade financeira com o app mais completo e fácil de usar.
           </p>
           <div class="flex flex-wrap gap-4 justify-center items-center mt-12">
             <a href="https://play.google.com/store/apps/details?id=com.dinblu&pcampaignid=web_share" 
@@ -36,7 +36,7 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="relative -mt-12 mb-20">
+    <!-- <section class="relative -mt-12 mb-20">
       <div class="container">
         <div class="grid gap-8 md:grid-cols-3">
           <div class="p-8 bg-white rounded-2xl shadow-xl transition-all duration-300 transform hover:shadow-2xl hover:-translate-y-1">
@@ -79,7 +79,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Features Section -->
     <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
@@ -90,10 +90,10 @@
             <span class="text-sm font-medium text-dinblu">Recursos principais</span>
           </div>
           <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-            Tudo que você precisa para organizar suas finanças
+            Recursos que colocam você no controle
           </h2>
           <p class="text-lg text-gray-600">
-            Ferramentas poderosas e intuitivas para ajudar você a alcançar seus objetivos financeiros
+            Ferramentas profissionais com a simplicidade que você precisa para tomar melhores decisões financeiras
           </p>
         </div>
 
@@ -139,10 +139,10 @@
       <div class="container relative">
         <div class="mx-auto max-w-4xl text-center">
           <h2 class="mb-6 text-3xl font-bold text-white md:text-4xl">
-            Comece agora mesmo a organizar suas finanças
+            Sua liberdade financeira começa hoje
           </h2>
           <p class="mb-12 text-xl text-white/90">
-            Comece gratuitamente e evolua com nossos planos premium
+            Mais de 100 mil pessoas já transformaram suas finanças com o Dinblu. Baixe grátis e comece agora!
           </p>
           <a href="https://play.google.com/store/apps/details?id=com.dinblu.financas" 
             target="_blank"
@@ -171,10 +171,10 @@
                 </div>
                 <div>
                   <h3 class="mb-2 text-xl font-semibold text-gray-900">
-                    100% Gratuito
+                    100% Gratuito para sempre
                   </h3>
                   <p class="text-gray-600">
-                    Todas as funcionalidades disponíveis gratuitamente, sem custos ocultos ou mensalidades.
+                    Acesso completo aos recursos essenciais sem pagar nada, nunca. Zero custos ocultos, zero compromisso, zero complicação.
                   </p>
                 </div>
               </div>
@@ -188,10 +188,10 @@
                 </div>
                 <div>
                   <h3 class="mb-2 text-xl font-semibold text-gray-900">
-                    Seus dados seguros
+                    Segurança bancária para seus dados
                   </h3>
                   <p class="text-gray-600">
-                    Criptografia de ponta a ponta e backup automático na nuvem para sua tranquilidade.
+                    Criptografia de nível militar, autenticação biométrica e backup automático em nuvem. Suas informações protegidas com a mesma tecnologia dos maiores bancos.
                   </p>
                 </div>
               </div>
@@ -205,10 +205,10 @@
                 </div>
                 <div>
                   <h3 class="mb-2 text-xl font-semibold text-gray-900">
-                    Relatórios detalhados
+                    Inteligência financeira automatizada
                   </h3>
                   <p class="text-gray-600">
-                    Gráficos e análises para entender seus gastos e tomar melhores decisões financeiras.
+                    Relatórios visuais poderosos que revelam padrões de gastos, preveem despesas futuras e sugerem onde você pode economizar mais.
                   </p>
                 </div>
               </div>
@@ -225,7 +225,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-20 bg-gray-50">
+    <!-- <section class="py-20 bg-gray-50">
       <div class="container">
         <div class="mx-auto mb-16 max-w-3xl text-center">
           <div class="inline-flex gap-2 items-center px-4 py-2 mb-4 rounded-full bg-dinblu/5">
@@ -260,6 +260,155 @@
           </div>
         </div>
       </div>
+    </section> -->
+
+    <!-- Pricing Section -->
+    <section class="py-24">
+      <div class="container">
+        <!-- Header -->
+        <div class="text-center mb-16">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-dinblu/10 rounded-full mb-6 border border-dinblu/20">
+            <span class="w-2 h-2 rounded-full bg-dinblu"></span>
+            <span class="text-sm font-semibold text-dinblu">Planos</span>
+          </div>
+          <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            Escolha o plano ideal para você
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Comece grátis e evolua quando precisar de mais recursos
+          </p>
+        </div>
+
+        <!-- Pricing Cards -->
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <!-- Plano Gratuito -->
+          <div class="bg-white rounded-2xl border-2 border-gray-200 shadow-lg p-8 hover:shadow-xl transition-all duration-300">
+            <div class="text-center mb-8">
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">Gratuito</h3>
+              <div class="flex items-baseline justify-center gap-2 mb-4">
+                <span class="text-5xl font-bold text-gray-900">R$ 0</span>
+                <span class="text-gray-500">/mês</span>
+              </div>
+              <p class="text-gray-600">Perfeito para começar</p>
+            </div>
+
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">Apenas 1 conta</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">Apenas 1 cartão</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">Categorias padrões</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">Relatório básico</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">Lançamentos ilimitados</span>
+              </li>
+            </ul>
+
+            <a href="https://play.google.com/store/apps/details?id=com.dinblu&pcampaignid=web_share" 
+              target="_blank"
+              class="block w-full text-center px-6 py-4 bg-gray-100 text-gray-900 font-semibold rounded-xl hover:bg-gray-200 transition-all duration-300">
+              Começe agora mesmo
+            </a>
+          </div>
+
+          <!-- Plano Premium -->
+          <div class="rounded-2xl shadow-2xl p-8 relative overflow-hidden transform hover:scale-105 transition-all duration-300" style="background: linear-gradient(to bottom, #1e40af, #6366f1);">
+            <!-- Popular Badge -->
+            <div class="absolute top-4 right-4">
+              <span class="px-3 py-1 bg-orange-500 rounded-full text-xs font-bold text-white shadow-lg uppercase tracking-wider">
+                Mais Popular
+              </span>
+            </div>
+
+            <div class="text-center mb-8">
+              <h3 class="text-2xl font-bold text-white mb-2">Premium</h3>
+              <div class="flex items-baseline justify-center gap-2 mb-4">
+                <span class="text-5xl font-bold text-white">R$ 9,90</span>
+                <span class="text-white/80">/mês</span>
+              </div>
+              <p class="text-white/90">Recursos ilimitados</p>
+            </div>
+
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-white flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-white font-medium">Cadastro ilimitado de contas</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-white flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-white font-medium">Cadastro ilimitado de cartões</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-white flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-white font-medium">Cadastro de categorias personalizadas</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-white flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-white font-medium">Cadastro de subcategorias</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-white flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-white font-medium">Relatórios avançados</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-white flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-white font-medium">DRE Pessoal (Demonstrativo de Resultados)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-white flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-white font-medium">Importação de lançamentos & Conciliação</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-white flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-white font-medium">Lançamentos ilimitados</span>
+              </li>
+            </ul>
+
+            <a href="https://app.dinblu.com.br/login" 
+              target="_blank"
+              class="block w-full text-center px-6 py-4 bg-white text-dinblu font-semibold rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-lg">
+              Assinar Premium
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- FAQ Section -->
@@ -275,13 +424,30 @@
           </h2>
         </div>
 
-        <div class="mx-auto max-w-3xl">
-          <div v-for="faq in faqs" :key="faq.question"
-            class="py-6 border-b border-gray-200">
-            <h3 class="mb-2 text-lg font-semibold text-gray-900">
-              {{ faq.question }}
-            </h3>
-            <p class="text-gray-600">{{ faq.answer }}</p>
+        <div class="mx-auto max-w-3xl space-y-4">
+          <div v-for="(faq, index) in faqs" :key="faq.question"
+            class="overflow-hidden bg-white rounded-xl border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-md">
+            <button
+              @click="toggleFaq(index)"
+              class="flex justify-between items-center py-5 px-6 w-full text-left transition-colors duration-200 hover:bg-gray-50"
+              :aria-expanded="openFaqIndex === index">
+              <h3 class="pr-8 text-lg font-semibold text-gray-900">
+                {{ faq.question }}
+              </h3>
+              <svg 
+                class="flex-shrink-0 w-6 h-6 text-dinblu transition-transform duration-300"
+                :class="{ 'rotate-180': openFaqIndex === index }"
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div 
+              class="overflow-hidden transition-all duration-300"
+              :style="{ maxHeight: openFaqIndex === index ? '500px' : '0' }">
+              <p class="px-6 pb-5 text-gray-600 leading-relaxed">{{ faq.answer }}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -290,36 +456,43 @@
 </template>
 
 <script setup>
+// FAQ Accordion state
+const openFaqIndex = ref(null)
+
+const toggleFaq = (index) => {
+  openFaqIndex.value = openFaqIndex.value === index ? null : index
+}
+
 const features = [
   {
     icon: 'IconChart',
-    title: 'Versão gratuita e premium',
-    description: 'Comece gratuitamente e desbloqueie recursos avançados com nossa assinatura premium.'
+    title: 'Comece grátis, evolua quando quiser',
+    description: 'Acesso completo na versão gratuita. Desbloqueie recursos avançados como múltiplas contas, relatórios ilimitados e sincronização em nuvem com a versão Premium.'
   },
   {
     icon: 'IconTarget',
-    title: 'Metas financeiras',
-    description: 'Defina e acompanhe suas metas de economia e investimentos.'
+    title: 'Metas que você realmente alcança',
+    description: 'Defina objetivos financeiros realistas e acompanhe seu progresso em tempo real. Economie para viagens, reserva de emergência ou aquela compra especial.'
   },
   {
     icon: 'IconPieChart',
-    title: 'Categorização',
-    description: 'Organize seus gastos em categorias e veja onde seu dinheiro está indo.'
+    title: 'Veja para onde vai seu dinheiro',
+    description: 'Categorize automaticamente seus gastos e descubra onde você pode economizar. Gráficos intuitivos mostram exatamente como você está gastando.'
   },
   {
     icon: 'IconTrend',
-    title: 'Relatórios detalhados',
-    description: 'Análises e gráficos para entender seus hábitos financeiros.'
+    title: 'Inteligência financeira na palma da mão',
+    description: 'Relatórios detalhados e análises preditivas ajudam você a tomar decisões mais inteligentes sobre seu dinheiro. Compare meses, identifique padrões e otimize seus gastos.'
   },
   {
     icon: 'IconBell',
-    title: 'Lembretes',
-    description: 'Nunca mais esqueça de pagar uma conta ou fazer um investimento.'
+    title: 'Nunca mais pague juros por atraso',
+    description: 'Alertas inteligentes garantem que você nunca esqueça de pagar uma conta. Configure lembretes personalizados para contas recorrentes e investimentos programados.'
   },
   {
     icon: 'IconShield',
-    title: 'Segurança',
-    description: 'Seus dados protegidos com as mais avançadas tecnologias de criptografia.'
+    title: 'Suas informações completamente protegidas',
+    description: 'Criptografia de ponta a ponta, autenticação biométrica e backup automático em nuvem. Seus dados financeiros seguros com a mesma tecnologia usada por bancos.'
   }
 ]
 
@@ -353,29 +526,45 @@ const reviews = [
 
 const faqs = [
   {
-    question: 'O aplicativo possui versão gratuita?',
-    answer: 'Sim, o Dinblu Finanças possui uma versão gratuita com funcionalidades essenciais para o controle financeiro. Para recursos avançados, oferecemos planos de assinatura com benefícios exclusivos.'
-  },
-  {
-    question: 'Quais são as diferenças entre a versão gratuita e premium?',
-    answer: 'A versão gratuita inclui controle de despesas, receitas e categorização básica. A versão premium adiciona relatórios avançados, metas financeiras, backup na nuvem, múltiplas contas e outras funcionalidades exclusivas.'
+    question: 'O aplicativo é realmente gratuito?',
+    answer: 'Sim! O Dinblu Finanças oferece uma versão 100% gratuita com todos os recursos essenciais para controle financeiro pessoal. Você pode usar indefinidamente sem pagar nada. A versão Premium é opcional e desbloqueia recursos avançados.'
   },
   {
     question: 'Meus dados financeiros estão seguros?',
-    answer: 'Absolutamente. Utilizamos criptografia de ponta a ponta e os mais altos padrões de segurança para proteger suas informações.'
+    answer: 'Absolutamente. Utilizamos criptografia de ponta a ponta e todos os dados são armazenados em servidores seguros. Seus dados nunca são compartilhados com terceiros.'
   },
   {
     question: 'Posso usar em mais de um dispositivo?',
-    answer: 'Sim! Com a versão premium, você pode acessar sua conta em múltiplos dispositivos Android. Seus dados são sincronizados automaticamente entre todos os dispositivos.'
+    answer: 'Sim! Em qualquer plano você tem acesso e sincronização automática em múltiplos dispositivos Android e através da versão web. Suas informações ficam sempre atualizadas em todos os aparelhos.'
+  },
+  {
+    question: 'Como funciona a sincronização na nuvem?',
+    answer: 'Todos os seus dados são automaticamente sincronizados em tempo real com a nuvem. Você pode trocar de celular, acessar pelo navegador ou usar múltiplos dispositivos sem perder nenhuma informação.'
+  },
+  {
+    question: 'Posso conectar minha conta bancária?',
+    answer: 'O Dinblu Finanças não conecta diretamente com contas bancárias por questões de segurança e privacidade. No entanto, você pode importar extratos em formato OFX e lançar transações manualmente de forma rápida e intuitiva. Estamos trabalhando em integração Open Banking para futuras versões.'
   }
 ]
 
 useHead({
-  title: 'Dinblu Finanças - App de Controle Financeiro | Dinblu',
+  title: 'Dinblu Finanças - App Gratuito de Controle Financeiro Pessoal | Organize Seu Dinheiro',
   meta: [
     {
       name: 'description',
-      content: 'Aplicativo gratuito para controle de finanças pessoais. Organize despesas, defina metas e acompanhe investimentos.'
+      content: 'Transforme sua relação com o dinheiro! App 100% gratuito para controle de finanças pessoais. +100 mil downloads, avaliação 4.8★. Organize despesas, defina metas e conquiste sua liberdade financeira.'
+    },
+    {
+      name: 'keywords',
+      content: 'app finanças pessoais, controle financeiro gratuito, organizar dinheiro, gastos mensais, economia pessoal, planejamento financeiro'
+    },
+    {
+      property: 'og:title',
+      content: 'Dinblu Finanças - Transforme sua relação com o dinheiro'
+    },
+    {
+      property: 'og:description',
+      content: 'App 100% gratuito para controle de finanças pessoais. Mais de 100 mil downloads. Organize despesas, acompanhe investimentos e conquiste sua liberdade financeira.'
     }
   ]
 })
