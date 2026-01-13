@@ -47,17 +47,16 @@
     </section>
 
     <!-- Solutions Grid -->
-    <section id="solutions" class="py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
+    <section id="solutions" class="py-24 bg-gray-50 relative overflow-hidden">
       <!-- Decorative elements -->
-      <div class="absolute top-0 left-0 w-96 h-96 bg-dinblu/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-      <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+      <div class="absolute top-0 left-0 w-96 h-96 rounded-full" style="background-color: rgba(0, 74, 173, 0.03); filter: blur(100px);"></div>
+      <div class="absolute bottom-0 right-0 w-96 h-96 rounded-full" style="background-color: rgba(0, 74, 173, 0.02); filter: blur(100px);"></div>
       
       <div class="container relative z-10">
         <!-- Section Header -->
         <div class="max-w-3xl mx-auto text-center mb-20">
-          <span class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-dinblu/10 to-purple-500/10 
-            backdrop-blur-sm text-dinblu rounded-full text-sm font-semibold mb-6 
-            border border-dinblu/20 shadow-sm">
+          <span class="inline-flex items-center px-4 py-2 backdrop-blur-sm rounded-full text-sm font-semibold mb-6" 
+            style="background-color: rgba(0, 74, 173, 0.1); color: #004aad; border: 1px solid rgba(0, 74, 173, 0.2);">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                 d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
@@ -65,7 +64,7 @@
             Nossas Soluções
           </span>
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            Escolha a solução <span class="text-transparent bg-clip-text bg-gradient-to-r from-dinblu to-purple-600">ideal</span> para você
+            Escolha a solução <span style="color: #004aad;">ideal</span> para você
           </h2>
           <p class="text-lg text-gray-600 leading-relaxed">
             Cada solução é pensada para atender às necessidades específicas do seu segmento
@@ -177,8 +176,7 @@
     <!-- CTA Section -->
     <section class="py-24 bg-white relative overflow-hidden">
       <div class="container">
-        <div class="relative bg-gradient-to-br from-dinblu via-dinblu to-purple-600 rounded-3xl 
-          p-12 md:p-20 text-center overflow-hidden shadow-2xl">
+        <div class="relative rounded-3xl p-12 md:p-20 text-center overflow-hidden shadow-2xl" style="background-color: #004aad;">
           
           <!-- Animated Background Pattern -->
           <div class="absolute inset-0 bg-[url('/images/grid.svg')] opacity-5 animate-pulse"></div>
@@ -186,7 +184,7 @@
           <!-- Decorative circles -->
           <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl 
             -translate-y-1/2 translate-x-1/2"></div>
-          <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl 
+          <div class="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl 
             translate-y-1/2 -translate-x-1/2"></div>
 
           <!-- Content -->
