@@ -47,118 +47,218 @@
     </section>
 
     <!-- Solutions Grid -->
-    <section id="solutions" class="py-20 bg-gray-50">
-      <div class="container">
+    <section id="solutions" class="py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
+      <!-- Decorative elements -->
+      <div class="absolute top-0 left-0 w-96 h-96 bg-dinblu/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+      
+      <div class="container relative z-10">
         <!-- Section Header -->
-        <div class="max-w-3xl mx-auto text-center mb-16">
-          <span class="inline-block px-4 py-1 bg-dinblu/5 text-dinblu rounded-full text-sm font-medium mb-4">
+        <div class="max-w-3xl mx-auto text-center mb-20">
+          <span class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-dinblu/10 to-purple-500/10 
+            backdrop-blur-sm text-dinblu rounded-full text-sm font-semibold mb-6 
+            border border-dinblu/20 shadow-sm">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
             Nossas Soluções
           </span>
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Escolha a solução ideal para você
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            Escolha a solução <span class="text-transparent bg-clip-text bg-gradient-to-r from-dinblu to-purple-600">ideal</span> para você
           </h2>
-          <p class="text-lg text-gray-600">
+          <p class="text-lg text-gray-600 leading-relaxed">
             Cada solução é pensada para atender às necessidades específicas do seu segmento
           </p>
         </div>
 
-        <!-- Solutions Grid -->
-        <div v-for="(solutions, category) in solutionsByCategory" :key="category" class="mb-16">
-          <h3 class="text-2xl font-bold text-gray-900 mb-8">{{ category }}</h3>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div v-for="solution in solutions" :key="solution.name"
-              class="group relative bg-white rounded-2xl shadow-lg overflow-hidden
-              hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-              <!-- Badge -->
-              <div class="absolute top-4 left-4 z-20">
-                <span class="inline-flex items-center px-4 py-1.5 text-sm font-medium bg-white/95 
-                  text-dinblu rounded-full shadow-sm backdrop-blur-sm gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-dinblu"></span>
-                  {{ solution.category }}
-                </span>
+        <!-- Solutions Grid by Category -->
+        <div v-for="(solutions, category) in solutionsByCategory" :key="category" class="mb-20 last:mb-0">
+          <!-- Category Header -->
+          <div class="flex items-center gap-4 mb-8 group/category">
+            <!-- Ícone do Grupo com gradiente animado -->
+            <div class="relative w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 
+              transition-all duration-500 group-hover/category:scale-110"
+              :style="{ 
+                background: `linear-gradient(135deg, ${getCategoryIcon(category).bg}, ${getCategoryIcon(category).color}20)`,
+                boxShadow: `0 4px 20px ${getCategoryIcon(category).color}20`
+              }">
+              <svg class="w-8 h-8 transition-transform duration-500 group-hover/category:rotate-12" 
+                :style="{ color: getCategoryIcon(category).color }" 
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  :d="getCategoryIcon(category).path" />
+              </svg>
+              <!-- Glow effect -->
+              <div class="absolute inset-0 rounded-2xl opacity-0 group-hover/category:opacity-100 
+                transition-opacity duration-500 blur-xl"
+                :style="{ backgroundColor: getCategoryIcon(category).color + '40' }">
               </div>
-
-              <!-- Image -->
-              <div class="relative h-56 overflow-hidden">
-                <img :src="solution.image" :alt="solution.name"
-                  class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
-                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent"></div>
-                <h3 class="absolute bottom-4 left-6 text-2xl font-bold text-white">
+            </div>
+            
+            <div class="flex-1">
+              <h3 class="text-3xl font-bold text-gray-900 mb-1 transition-colors duration-300 
+                group-hover/category:text-dinblu">
+                {{ category }}
+              </h3>
+              <p class="text-base text-gray-600">{{ getCategoryDescription(category) }}</p>
+            </div>
+            
+            <!-- Decorative line -->
+            <div class="hidden lg:block flex-1 h-px bg-gradient-to-r from-gray-200 to-transparent"></div>
+          </div>
+          
+          <!-- Cards Grid with stagger animation -->
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <NuxtLink 
+              v-for="(solution, index) in solutions" 
+              :key="solution.name"
+              :to="solution.path"
+              class="group/card relative bg-white/80 backdrop-blur-sm rounded-2xl 
+                shadow-sm hover:shadow-2xl p-6 transition-all duration-500 
+                hover:-translate-y-2 border border-gray-200/50 hover:border-dinblu/30
+                overflow-hidden card-stagger"
+              :style="{ animationDelay: `${index * 100}ms` }">
+              
+              <!-- Gradient overlay on hover -->
+              <div class="absolute inset-0 bg-gradient-to-br from-dinblu/5 via-transparent to-purple-500/5 
+                opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 rounded-2xl">
+              </div>
+              
+              <!-- Conteúdo -->
+              <div class="relative z-10">
+                <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover/card:text-dinblu 
+                  transition-colors duration-300 leading-tight">
                   {{ solution.name }}
-                </h3>
-              </div>
-
-              <!-- Content -->
-              <div class="p-6">
-                <p class="text-gray-600 mb-6 min-h-[48px] leading-relaxed">
+                </h4>
+                <p class="text-sm text-gray-600 mb-5 line-clamp-2 leading-relaxed">
                   {{ solution.description }}
                 </p>
 
-                <!-- Features -->
-                <ul class="space-y-3 mb-8">
-                  <li v-for="(feature, index) in solution.features" :key="index"
-                    class="flex items-center gap-3 text-sm text-gray-600 bg-gray-50/80 
-                    p-2.5 rounded-xl group-hover:bg-dinblu/5 transition-colors">
-                    <span class="w-6 h-6 rounded-full bg-dinblu/10 flex items-center justify-center
-                      group-hover:bg-dinblu/20 transition-colors">
-                      <svg class="w-4 h-4 text-dinblu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                          d="M5 13l4 4L19 7" />
-                      </svg>
-                    </span>
+                <!-- Features Tags - máximo 3 -->
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span 
+                    v-for="(feature, idx) in solution.features.slice(0, 3)" 
+                    :key="idx"
+                    class="px-3 py-1.5 bg-gradient-to-r from-gray-100 to-gray-50 
+                      rounded-lg text-xs font-medium text-gray-700 
+                      border border-gray-200/50 transition-all duration-300
+                      hover:border-dinblu/30 hover:shadow-sm">
                     {{ feature }}
-                  </li>
-                </ul>
-
-                <!-- CTA -->
-                <NuxtLink :to="solution.path"
-                  class="group relative inline-flex items-center justify-center w-full px-6 py-3.5 
-                  bg-gray-50 text-dinblu rounded-xl font-medium overflow-hidden">
-                  <span class="relative z-10 group-hover:text-white transition-colors duration-300">
-                    Saiba mais
                   </span>
-                  <div class="absolute inset-0 bg-dinblu transform scale-x-0 group-hover:scale-x-100 
-                    transition-transform origin-left duration-300"></div>
-                  <svg class="relative z-10 w-5 h-5 ml-2 text-dinblu group-hover:text-white 
-                    transform group-hover:translate-x-1 transition-all duration-300" 
+                </div>
+
+                <!-- Link com seta e animação -->
+                <div class="flex items-center gap-2 text-dinblu font-semibold text-sm">
+                  <span class="relative">
+                    Saiba mais
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-dinblu 
+                      group-hover/card:w-full transition-all duration-300"></span>
+                  </span>
+                  <svg class="w-5 h-5 transform group-hover/card:translate-x-2 
+                    transition-transform duration-300" 
                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                      d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
-                </NuxtLink>
+                </div>
               </div>
-            </div>
+              
+              <!-- Corner accent -->
+              <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-dinblu/10 to-transparent 
+                rounded-bl-full opacity-0 group-hover/card:opacity-100 transition-opacity duration-500">
+              </div>
+            </NuxtLink>
           </div>
         </div>
       </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-white">
+    <section class="py-24 bg-white relative overflow-hidden">
       <div class="container">
-        <div class="relative bg-dinblu rounded-3xl p-12 md:p-16 text-center overflow-hidden">
-          <!-- Background Pattern -->
-          <div class="absolute inset-0 bg-[url('/images/grid.svg')] opacity-10"></div>
+        <div class="relative bg-gradient-to-br from-dinblu via-dinblu to-purple-600 rounded-3xl 
+          p-12 md:p-20 text-center overflow-hidden shadow-2xl">
+          
+          <!-- Animated Background Pattern -->
+          <div class="absolute inset-0 bg-[url('/images/grid.svg')] opacity-5 animate-pulse"></div>
+          
+          <!-- Decorative circles -->
+          <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl 
+            -translate-y-1/2 translate-x-1/2"></div>
+          <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl 
+            translate-y-1/2 -translate-x-1/2"></div>
 
           <!-- Content -->
           <div class="relative z-10">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
-              Pronto para começar?
+            <span class="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm 
+              rounded-full text-white text-sm font-semibold mb-6 border border-white/30">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              Comece agora mesmo
+            </span>
+            
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              Pronto para <span class="text-yellow-300">transformar</span> seu negócio?
             </h2>
-            <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+            <p class="text-xl text-white/95 mb-10 max-w-2xl mx-auto leading-relaxed">
               Entre em contato conosco e descubra como podemos ajudar seu negócio a crescer
             </p>
-            <div class="flex flex-wrap items-center justify-center gap-4">
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
               <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
-                class="px-8 py-4 bg-white text-dinblu rounded-full font-semibold
-                hover:bg-gray-100 transition-all duration-300 shadow-lg hover:-translate-y-0.5">
+                class="group px-8 py-4 bg-white text-dinblu rounded-full font-bold text-lg
+                hover:bg-yellow-300 hover:text-dinblu transition-all duration-300 
+                shadow-xl hover:shadow-2xl hover:-translate-y-1 
+                flex items-center gap-2 min-w-[250px] justify-center">
                 Fale com um Especialista
+                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" 
+                  fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
               </NuxtLink>
-              <a href="tel:+551140028922"
-                class="px-8 py-4 bg-transparent text-white rounded-full font-semibold
-                border-2 border-white/30 hover:bg-white/10 transition-all duration-300">
+              
+              <a href="tel:+554198769-4250"
+                class="group px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-full 
+                font-semibold text-lg border-2 border-white/40 hover:bg-white/20 
+                transition-all duration-300 flex items-center gap-2 min-w-[250px] justify-center
+                hover:-translate-y-1">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
                 (41) 98769-4250
               </a>
+            </div>
+            
+            <!-- Trust badges -->
+            <div class="flex flex-wrap items-center justify-center gap-8 mt-12 pt-8 
+              border-t border-white/20">
+              <div class="flex items-center gap-2 text-white/90">
+                <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <span class="text-sm font-medium">+1000 clientes satisfeitos</span>
+              </div>
+              
+              <div class="flex items-center gap-2 text-white/90">
+                <svg class="w-5 h-5 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="text-sm font-medium">Suporte especializado</span>
+              </div>
+              
+              <div class="flex items-center gap-2 text-white/90">
+                <svg class="w-5 h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <span class="text-sm font-medium">Ativação rápida</span>
+              </div>
             </div>
           </div>
         </div>
@@ -171,13 +271,47 @@
 import { computed } from 'vue'
 
 const solutions = [
-  // Para Empresas
+  // Desenvolvimento
+  {
+    name: 'Desenvolvimento de Sites',
+    category: 'Desenvolvimento',
+    path: '/solucoes/desenvolvimento-sites',
+    description: 'Sites profissionais e modernos para sua empresa.',
+    features: [
+      'Design responsivo',
+      'SEO otimizado',
+      'Alta performance'
+    ]
+  },
+  {
+    name: 'Soluções Personalizadas',
+    category: 'Desenvolvimento',
+    path: '/solucoes/desenvolvimentos',
+    description: 'Desenvolvimento sob medida para seu negócio.',
+    features: [
+      'Análise de requisitos',
+      'Arquitetura escalável',
+      'Suporte completo'
+    ]
+  },
+  {
+    name: 'Apps iOS e Android',
+    category: 'Desenvolvimento',
+    path: '/solucoes/aplicativos-mobile',
+    description: 'Aplicativos nativos para dispositivos móveis.',
+    features: [
+      'iOS e Android',
+      'Performance nativa',
+      'Design intuitivo'
+    ]
+  },  
+
+// Sistemas
   {
     name: 'Dinblu WEB',
-    category: 'Para Empresas',
+    category: 'Sistemas para gestão empresarial',
     path: '/solucoes/dinblu-web',
     description: 'Sistema completo de gestão empresarial.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000',
     features: [
       'Controle financeiro',
       'Gestão de estoque',
@@ -185,48 +319,10 @@ const solutions = [
     ]
   },
   {
-    name: 'Dinblu Shop',
-    category: 'Para Empresas',
-    path: '/solucoes/dinblu-shop',
-    description: 'E-commerce completo para sua loja virtual.',
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2000',
-    features: [
-      'Loja virtual completa',
-      'Integração com marketplaces',
-      'Gestão de vendas online'
-    ]
-  },
-  {
-    name: 'Dinblu Salão',
-    category: 'Para Empresas',
-    path: '/solucoes/dinblu-salao',
-    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=2069',
-    description: 'Sistema completo para gestão de salões de beleza.',
-    features: [
-      'Agendamento online',
-      'Controle financeiro',
-      'Gestão de profissionais',
-      'Comissionamento'
-    ]
-  },
-  {
-    name: 'Dinblu Agro',
-    category: 'Para Empresas',
-    path: '/solucoes/dinblu-agro',
-    description: 'Sistema completo para gestão do agronegócio.',
-    image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2000',
-    features: [
-      'Controle de produção',
-      'Gestão de custos',
-      'Rastreabilidade'
-    ]
-  },
-  {
     name: 'Dinblu Food',
-    category: 'Para Empresas',
+    category: 'Sistemas para gestão empresarial',
     path: '/solucoes/dinblu-food',
     description: 'Sistema completo para gestão de restaurantes.',
-    image: 'https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?q=80&w=2000',
     features: [
       'Cardápio digital',
       'Gestão de delivery',
@@ -234,11 +330,32 @@ const solutions = [
     ]
   },
   {
+    name: 'Dinblu Shop',
+    category: 'Sistemas para gestão empresarial',
+    path: '/solucoes/dinblu-shop',
+    description: 'E-commerce completo para sua loja virtual.',
+    features: [
+      'Loja virtual completa',
+      'Integração com marketplaces',
+      'Gestão de vendas online'
+    ]
+  },
+  {
+    name: 'Dinblu Pet',
+    category: 'Sistemas para gestão empresarial',
+    path: '/solucoes/dinblu-pet',
+    description: 'Sistema completo para gestão de pet shops.',
+    features: [
+      'Prontuário digital',
+      'Agendamento de serviços',
+      'Gestão de estoque'
+    ]
+  },
+  {
     name: 'Dinblu Clinica',
-    category: 'Para Empresas',
+    category: 'Sistemas para gestão empresarial',
     path: '/solucoes/dinblu-clinica',
     description: 'Sistema completo para gestão de clínicas.',
-    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2000',
     features: [
       'Prontuário eletrônico',
       'Agendamento online',
@@ -246,15 +363,25 @@ const solutions = [
     ]
   },
   {
-    name: 'Dinblu Pet',
-    category: 'Para Empresas',
-    path: '/solucoes/dinblu-pet',
-    description: 'Sistema completo para gestão de pet shops.',
-    image: 'https://images.unsplash.com/photo-1587560699334-cc4ff634909a?q=80&w=2000',
+    name: 'Dinblu Agro',
+    category: 'Sistemas para gestão empresarial',
+    path: '/solucoes/dinblu-agro',
+    description: 'Sistema completo para gestão do agronegócio.',
     features: [
-      'Prontuário digital',
-      'Agendamento de serviços',
-      'Gestão de estoque'
+      'Controle de produção',
+      'Gestão de custos',
+      'Rastreabilidade'
+    ]
+  },
+  {
+    name: 'Dinblu Salão',
+    category: 'Sistemas para gestão empresarial',
+    path: '/solucoes/dinblu-salao',
+    description: 'Sistema completo para gestão de salões de beleza.',
+    features: [
+      'Agendamento online',
+      'Controle financeiro',
+      'Gestão de profissionais'
     ]
   },
 
@@ -263,16 +390,45 @@ const solutions = [
     name: 'Dinblu Finanças',
     category: 'Para Pessoas',
     path: '/solucoes/dinblu-financas',
-    image: 'https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?q=80&w=2070',
     description: 'Controle suas finanças pessoais de forma simples.',
     features: [
       'Controle de gastos',
       'Gestão de investimentos',
-      'Metas financeiras',
-      'Relatórios detalhados'
+      'Metas financeiras'
     ]
   }
 ]
+
+// Funções helper para ícones e descrições das categorias
+const getCategoryIcon = (category) => {
+  const icons = {
+    'Sistemas para gestão empresarial': {
+      path: 'M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z',
+      bg: '#F3E8FF',
+      color: '#9333EA'
+    },
+    'Desenvolvimento': {
+      path: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+      bg: '#D1FAE5',
+      color: '#059669'
+    },
+    'Para Pessoas': {
+      path: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+      bg: '#DCFCE7',
+      color: '#16A34A'
+    }
+  }
+  return icons[category] || icons['Sistemas']
+}
+
+const getCategoryDescription = (category) => {
+  const descriptions = {
+    'Sistemas para gestão empresarial': 'Gestão empresarial',
+    'Desenvolvimento': 'Sites, sistemas e apps personalizados para seu negócio',
+    'Para Pessoas': 'Sua plataforma para Finanças pessoais'
+  }
+  return descriptions[category] || ''
+}
 
 // Agrupa as soluções por categoria
 const solutionsByCategory = computed(() => {
@@ -305,8 +461,58 @@ useHead({
   padding-top: 80px;
 }
 
+/* Limita texto a 2 linhas */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
+}
+
+/* Card stagger animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-stagger {
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+/* Pulse animation for gradient backgrounds */
+@keyframes gradientPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Hover glow effect */
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 </style> 
