@@ -1,41 +1,33 @@
 import nodemailer from 'nodemailer'
 
 export default defineEventHandler(async (event) => {
-    try {
-        const body = await readBody(event)
+  try {
+    const body = await readBody(event)
 
-        // Validação básica
-        if (!body.nome || !body.email || !body.mensagem) {
-            return {
-                success: false,
-                message: 'Por favor, preencha todos os campos obrigatórios.'
-            }
-        }
+    // Validação básica
+    if (!body.nome || !body.email || !body.mensagem) {
+      return {
+        success: false,
+        message: 'Por favor, preencha todos os campos obrigatórios.'
+      }
+    }
 
-        // Validação de email
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-        if (!emailRegex.test(body.email)) {
-            return {
-                success: false,
-                message: 'Por favor, forneça um email válido.'
-            }
-        }
+    // Validação de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(body.email)) {
+      return {
+        success: false,
+        message: 'Por favor, forneça um email válido.'
+      }
+    }
 
-        // Configurar transporter do nodemailer
-        const config = useRuntimeConfig()
+    // Configurar transporter do nodemailer
+    const config = useRuntimeConfig()
 
-        const transporter = nodemailer.createTransport({
-            host: 'smtp.gmail.com',
-            port: 465,
-            secure: true,
-            auth: {
-                user: 'dinblucloud@gmail.com',
-                pass: 'gwfu vhwy mylc irlc'
-            }
-        })
 
-        // Preparar conteúdo do email em HTML
-        const htmlContent = `
+
+    // Preparar conteúdo do email em HTML
+    const htmlContent = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <div style="background-color: #004aad; padding: 20px; text-align: center;">
           <h1 style="color: white; margin: 0;">Nova Mensagem de Contato</h1>
@@ -84,8 +76,8 @@ export default defineEventHandler(async (event) => {
       </div>
     `
 
-        // Preparar conteúdo em texto simples
-        const textContent = `
+    // Preparar conteúdo em texto simples
+    const textContent = `
 Nova mensagem de contato recebida:
 
 Nome: ${body.nome}
@@ -100,25 +92,25 @@ ${body.mensagem}
 Enviado através do formulário de contato do site Dinblu
     `.trim()
 
-        // Enviar email
-        await transporter.sendMail({
-            from: '"Dinblu - Formulário de Contato" <dinblucloud@gmail.com>',
-            to: 'contato@dinblu.com.br',
-            replyTo: body.email,
-            subject: `[SITE] Novo contato - ${body.nome}${body.empresa ? ` - ${body.empresa}` : ''}`,
-            text: textContent,
-            html: htmlContent
-        })
+    // Enviar email
+    await transporter.sendMail({
+      from: '"Dinblu - Formulário de Contato" <dinblucloud@gmail.com>',
+      to: 'contato@dinblu.com.br',
+      replyTo: body.email,
+      subject: `[SITE] Novo contato - ${body.nome}${body.empresa ? ` - ${body.empresa}` : ''}`,
+      text: textContent,
+      html: htmlContent
+    })
 
-        return {
-            success: true,
-            message: 'Mensagem enviada com sucesso! Entraremos em contato em breve.'
-        }
-    } catch (error) {
-        console.error('Erro ao processar contato:', error)
-        return {
-            success: false,
-            message: 'Erro ao enviar mensagem. Por favor, tente novamente.'
-        }
+    return {
+      success: true,
+      message: 'Mensagem enviada com sucesso! Entraremos em contato em breve.'
     }
+  } catch (error) {
+    console.error('Erro ao processar contato:', error)
+    return {
+      success: false,
+      message: 'Erro ao enviar mensagem. Por favor, tente novamente.'
+    }
+  }
 })
