@@ -24,7 +24,15 @@ export default defineEventHandler(async (event) => {
     // Configurar transporter do nodemailer
     const config = useRuntimeConfig()
 
-
+    const transporter = nodemailer.createTransport({
+      host: config.smtpHost,
+      port: parseInt(config.smtpPort),
+      secure: config.smtpSecure === 'true',
+      auth: {
+        user: config.smtpUser,
+        pass: config.smtpPass
+      }
+    })
 
     // Preparar conteúdo do email em HTML
     const htmlContent = `
