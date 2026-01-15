@@ -122,7 +122,7 @@
 
           <!-- CTA Buttons Melhorados -->
           <div class="flex flex-wrap gap-4 animate-fade-in-delayed-2">
-            <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1" 
+            <NuxtLink to="https://https://dinblu.com.br/contato" 
               class="relative group overflow-hidden px-8 py-4 bg-dinblu rounded-xl
               text-white font-medium transition-all duration-300
               hover:shadow-lg hover:shadow-dinblu/20 hover:-translate-y-0.5">

@@ -15,7 +15,7 @@
           Agende uma demonstração gratuita.
         </p>
         <div class="flex flex-wrap items-center justify-center gap-4">
-          <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+          <NuxtLink to="https://https://dinblu.com.br/contato"
             class="px-8 py-4 bg-white text-dinblu rounded-full font-semibold
             hover:bg-gray-100 transition-all duration-300 
             shadow-xl shadow-black/10">
@@ -156,7 +156,7 @@ const quickLinks = [
   { name: 'Sobre Nós', path: '/sobre' },
   { name: 'Soluções', path: '/solucoes' },
   { name: 'Blog', path: '/blog' },
-  { name: 'Contato', path: 'https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1' }
+  { name: 'Contato', path: 'https://https://dinblu.com.br/contato' }
 ]
 
 const solutions = [

@@ -20,7 +20,7 @@
               hover:bg-gray-100 transition-all duration-300 shadow-lg hover:-translate-y-0.5">
               Conhecer recursos
             </a>
-            <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+            <NuxtLink to="https://https://dinblu.com.br/contato"
               class="px-8 py-4 bg-transparent text-white rounded-full font-semibold
               border-2 border-white/30 hover:bg-white/10 transition-all duration-300">
               Tenho interesse
@@ -444,7 +444,7 @@
                     <td v-for="plan in plansFood" :key="plan.name" 
                       class="py-6 px-4 text-center"
                       :class="plan.popular ? 'bg-dinblu/5' : ''">
-                      <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+                      <NuxtLink to="https://https://dinblu.com.br/contato"
                         class="inline-block px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200
                         hover:shadow-md whitespace-nowrap"
                         :class="plan.popular
@@ -465,7 +465,7 @@
           <p class="text-gray-600 mb-4">
             Todos os planos incluem suporte técnico e atualizações gratuitas
           </p>
-          <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+          <NuxtLink to="https://https://dinblu.com.br/contato"
             class="inline-flex items-center gap-2 text-dinblu font-semibold hover:gap-3 transition-all duration-300">
             Falar com especialista
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -636,7 +636,7 @@
               Agende uma demonstração gratuita e descubra como o Dinblu Food pode ajudar seu negócio
             </p>
             <div class="flex flex-wrap items-center justify-center gap-4">
-              <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+              <NuxtLink to="https://https://dinblu.com.br/contato"
                 class="px-8 py-4 bg-white text-dinblu rounded-full font-semibold
                 hover:bg-gray-100 transition-all duration-300 shadow-lg hover:-translate-y-0.5">
                 Agendar demonstração

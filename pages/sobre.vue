@@ -228,7 +228,7 @@
           </p>
           
           <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+            <NuxtLink to="https://https://dinblu.com.br/contato"
               class="group px-8 py-4 bg-white text-dinblu rounded-full font-bold text-lg
                 hover:bg-yellow-300 transition-all duration-300 shadow-xl hover:shadow-2xl 
                 hover:-translate-y-1 flex items-center gap-2 justify-center min-w-[200px]">

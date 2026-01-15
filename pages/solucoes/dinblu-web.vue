@@ -22,7 +22,7 @@
               class="px-8 py-4 font-semibold bg-white rounded-full shadow-lg transition-all duration-300 text-dinblu hover:bg-gray-100 hover:-translate-y-0.5">
               Conhecer recursos
             </a>
-            <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+            <NuxtLink to="https://https://dinblu.com.br/contato"
               class="px-8 py-4 font-semibold text-white bg-transparent rounded-full border-2 transition-all duration-300 border-white/30 hover:bg-white/10">
               Agendar demonstração
             </NuxtLink>
@@ -491,7 +491,7 @@
                     <td v-for="plan in plansWeb" :key="plan.name" 
                       class="py-6 px-2 text-center"
                       :class="plan.popular ? 'bg-dinblu/5' : ''">
-                      <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+                      <NuxtLink to="https://https://dinblu.com.br/contato"
                         class="inline-block px-4 py-3 rounded-lg font-semibold text-sm transition-all duration-200
                         hover:shadow-md whitespace-nowrap"
                         :class="plan.popular
@@ -512,7 +512,7 @@
           <p class="text-gray-600 mb-4">
             Todos os planos incluem suporte técnico e atualizações gratuitas
           </p>
-          <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+          <NuxtLink to="https://https://dinblu.com.br/contato"
             class="inline-flex items-center gap-2 text-dinblu font-semibold hover:gap-3 transition-all duration-300">
             Falar com especialista
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -659,7 +659,7 @@
               Agende uma demonstração gratuita e descubra como podemos ajudar seu negócio a crescer
             </p>
             <div class="flex flex-wrap gap-4 justify-center items-center">
-              <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+              <NuxtLink to="https://https://dinblu.com.br/contato"
                 class="px-8 py-4 font-semibold bg-white rounded-full shadow-lg transition-all duration-300 text-dinblu hover:bg-gray-100 hover:-translate-y-0.5">
                 Agendar demonstração
               </NuxtLink>

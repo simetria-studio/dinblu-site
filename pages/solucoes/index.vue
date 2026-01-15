@@ -29,7 +29,7 @@
               hover:bg-gray-100 transition-all duration-300 shadow-lg hover:-translate-y-0.5">
               Explorar Soluções
             </a>
-            <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+            <NuxtLink to="https://https://dinblu.com.br/contato"
               class="px-8 py-4 bg-transparent text-white rounded-full font-semibold
               border-2 border-white/30 hover:bg-white/10 transition-all duration-300">
               Fale com um Especialista
@@ -206,7 +206,7 @@
             </p>
             
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <NuxtLink to="https://https://gestao.dinblu.com.br/user/login/forms/wtl/e605b7caaadb29805f9252cae79a1479?styled=1"
+              <NuxtLink to="https://https://dinblu.com.br/contato"
                 class="group px-8 py-4 bg-white text-dinblu rounded-full font-bold text-lg
                 hover:bg-yellow-300 hover:text-dinblu transition-all duration-300 
                 shadow-xl hover:shadow-2xl hover:-translate-y-1 
